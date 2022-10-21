@@ -1,0 +1,1 @@
+All Content (C)2022 Sound Stacks Ltd. Just-the-Docs theme provided on an open source, MIT licence
