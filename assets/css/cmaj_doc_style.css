@@ -1,0 +1,122 @@
+/*:root {
+    --serif-font: BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --code-font: monaco, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}*/
+
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+h2 {
+    padding: 5px;
+    margin: 0px;
+    background: rgba(0, 0, 0, 0.027);
+}
+.function,
+.comment{
+    color:rgb(88, 88, 88);
+    font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
+}
+
+.module_type {
+    opacity: 70%;
+    font-style: italic;
+    padding-inline-end: 0.3em;
+    font-family: --serif-font;
+}
+
+.function_decl {
+    font-family: var(--code-font);
+    font-size: 14px; 
+    font-style: normal;
+    color: rgb(88, 88, 88);
+    margin: 20px;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.057);
+}
+.code_using{
+    color: green;
+}
+.code_prim{
+    color: blue;
+}
+
+.namespace{
+    font-family: var(--code-font);
+}
+.code,
+module,
+.code_ident {
+    font-family: var(--code-font);
+    margin: 0;
+    color:black;
+    display:contents;
+    }
+
+.structs,
+.specialisations,
+.functions{
+    font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
+}
+.function_name{
+    display: block;
+    color:black;
+    font-size: 20px;
+    font-family: var(--code-font);
+    padding: 2px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.variables{
+    font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
+    padding: 5px;
+    margin: 0;
+}
+.variable_type{
+    
+    color: #5c5962;
+}
+.struct_member_name{
+    white-space: pre;
+}
+.specialisation{
+    vertical-align: top!important;
+    text-align: left!important;
+    padding: 0;
+}
+.keyword{
+    font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
+    font-size: 22px;
+    color:rgba(0, 0, 0, 0.494);
+}
+.struct_member,
+.struct_name,
+.variable_name,
+.variable{
+    font-family: var(--code-font);
+    padding: 0;
+    margin: 0 0 .05em 0;  
+}
+
+.custom_table{
+    border-style : hidden!important;
+    box-shadow: none;
+    text-align: left;
+}
+.struct_table,
+.variable_table,
+.specialisation_table{
+    border:none;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-align: left;
+    empty-cells: hide;
+}
+
+.hide_header{
+    visibility: collapse;
+}
