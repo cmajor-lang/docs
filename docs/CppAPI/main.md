@@ -71,4 +71,13 @@ As well the name and type information for an endpoint, the `EndpointDetails` cla
 
 ## Helper classes
 
-TODO...
+#### `cmaj::AudioMIDIPerformer`
+
+This helper owns and manages a `cmaj::Performer`, providing a simple `process()` function that can be called with audio/MIDI buffers in the way that a plugin or other traditional C++ audio processor might look.
+
+As well as taking care of the audio and MIDI i/o, it has lock-free FIFOs to allow other threads to safely inject events and value changes while it's running. It also allows the caller to attach a callback for handling output event data.
+
+To use this class
+1. Create yourself a suitable `Engine`, add your code to it and link it.
+2. Then create a `AudioMIDIPerformer::Builder` object with your engine, and use the builder's methods to set the appropriate audio i/o channel mappings.
+3. Call `Builder::createPerfomer()` to get an `AudioMIDIPerformer` object which you can then use for playback.
