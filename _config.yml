@@ -1,4 +1,4 @@
-remote_theme: pdmosses/just-the-docs
+remote_theme: pdmosses/just-the-docs@rec-nav
 title: Cmajor Documentation
 description: Documentation for the Cmajor language
 # baseurl: "/cmajor" # the subpath of your site, e.g. /blog
