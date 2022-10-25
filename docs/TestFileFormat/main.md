@@ -178,6 +178,48 @@ void f (XX& x) {}
 
 You can write your own javascript test functions at the start of the test file, and invoke them on a `##` line.
 
-The javascript API available for test functions includes:
+The javascript API provides some built-in functions for managing the test status and logging results:
 
-TODO
+
+```javascript
+// A TestSection object provides functions that the current test can call. You get
+// this object by calling the global function getCurrentTestSection()
+
+class TestSection
+{
+    // logs a message to the console
+    logMessage (message)
+
+    // adds a failure to the test results, with a message
+    reportFail (message)
+    // adds a success to the test results, with a message
+    reportSuccess (message)
+    // adds a disabled test to the results, with a message
+    reportDisabled (message)
+    // notes that a test is unsupported on the current platform
+    reportUnsupported (message)
+    // logs an internal compiler error
+    logCompilerError (error)
+
+    // writes some stream data to a wav file
+    writeStreamData (filename, streamData)
+    // writes some event data to a JSON file
+    writeEventData (filename, eventData)
+    // reads some stream data from a wav file
+    readStreamData (filename)
+    // reads some event data from a JSON file
+    readEventData (filename)
+
+    // replaces the text of the current test invocation line with a new string
+    updateTestHeader (newHeaderText)
+
+    // converts a relative path from the test file to an absolute system path
+    getAbsolutePath (relativePath)
+}
+
+function getCurrentTestSection()
+function getDefaultEngineOptions()
+function getEngineName()
+```
+
+The script also has access to the javascript bindings to create and render Cmajor processors - for details, see the [Script File Format](./Cmaj%20Script%20File%20Format.md).
