@@ -72,7 +72,9 @@ To quickly disable a test, insert the token `disabled` in front of the test dire
 
 ## Built-in Test Functions
 
-A library of standard javascript test functions is available. The code for all of these is available, but the main ones include:
+There's a built-in library of standard test functions, and you can have a closer look at their implementations in [cmaj_test_functions.js](../tests/cmaj_test_functions.js).
+
+The main functions include:
 
 ### `## testFunction`
 
@@ -178,8 +180,9 @@ void f (XX& x) {}
 
 You can write your own javascript test functions at the start of the test file, and invoke them on a `##` line.
 
-The javascript API provides some built-in functions for managing the test status and logging results:
+If writing your own tests, it's probably helpful to look at how the standard ones are implemented, in [cmaj_test_functions.js](../tests/cmaj_test_functions.js).
 
+The underlying javascript API used for managing the test status looks like this:
 
 ```javascript
 // A TestSection object provides functions that the current test can call. You get
