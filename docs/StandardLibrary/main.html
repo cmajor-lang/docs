@@ -15,15 +15,23 @@ has_toc: false
  </head>
  <body>
   <div class="namespace" id="std" href="#std">
-   <h2><span class="keyword">namespace </span>std</h2>
+   <div class="namespaceTitle">
+    <h2><span class="keyword">namespace </span>std</h2>
+   </div>
    <div class="module" id="audio_data" href="#audio_data">
-    <h2>std.audio_data</h2>
+    <div class="moduleTitle">
+     <h2>std.audio_data</h2>
+    </div>
     <div class="comment">These structures are useful for representing chunks of audio data with a known sample-rate. They&#39;re useful types when you&#39;re declaring an external variable which is going to hold audio file data or generated waveform data. <br>Note that duck-typing is used for the types of externals which contain audio data, so you can use your own classes as long as they contain a couple of fields which can hold the frame data and a sample rate. If you need a struct for audio data with more than 2 channels, you can just declare your own type using an appropriately-sized vector for the frames. <br></div>
    </div>
    <div class="namespace" id="audio_data" href="#audio_data">
-    <h2><span class="keyword">namespace </span>std::audio_data</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::audio_data</h2>
+    </div>
     <div class="processor" id="SamplePlayer">
-     <h2><span class="keyword">processor </span>std::audio_data::SamplePlayer</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::audio_data::SamplePlayer</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -41,11 +49,31 @@ has_toc: false
      <div class="comment">This processor will play chunks of audio sample data with a speed ratio applied. <br>It provides input events to set the audio data, speed ratio and other properties to control playback. <br>The SampleContent type must be a struct containing a &#39;frames&#39; member, which is an array of audio frames, and a &#39;sampleRate&#39; member with the original rate of the audio data. <br></div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">SampleContent</span><span class="code">::</span><span class="code_ident">frames</span><span class="code">.</span><span class="code_ident">elementType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">content</span> (<span class="code_ident">SampleContent</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">speedRatio</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">shouldLoop</span> (<span class="code_prim">bool</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">position</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">SampleContent</span><span class="code">::</span><span class="code_ident">frames</span><span class="code">.</span><span class="code_ident">elementType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">content</span> (<span class="code_ident">SampleContent</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">speedRatio</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">shouldLoop</span> (<span class="code_prim">bool</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">position</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -180,13 +208,19 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="delay" href="#delay">
-    <h2>std.delay</h2>
+    <div class="moduleTitle">
+     <h2>std.delay</h2>
+    </div>
     <div class="comment">Utilities and processors for implementing delays. Note that you graph connections allow a delay to be added without needing to use an explicit processor - see the language guide for more details. <br></div>
    </div>
    <div class="namespace" id="delay" href="#delay">
-    <h2><span class="keyword">namespace </span>std::delay</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::delay</h2>
+    </div>
     <div class="processor" id="StreamDelay">
-     <h2><span class="keyword">processor </span>std::delay::StreamDelay</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::delay::StreamDelay</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -209,8 +243,16 @@ has_toc: false
      <div class="comment">A delay that acts on a pair of input/output streams</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">StreamType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">StreamType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">StreamType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">StreamType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -250,7 +292,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="ValueDelay">
-     <h2><span class="keyword">processor </span>std::delay::ValueDelay</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::delay::ValueDelay</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -273,8 +317,16 @@ has_toc: false
      <div class="comment">A delay that acts on a pair of input/output values</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">value</span> <span class="endpoint_name">out</span> (<span class="code_ident">StreamType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">value</span> <span class="endpoint_name">in</span> (<span class="code_ident">StreamType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">value</span> <span class="endpoint_name">out</span> (<span class="code_ident">StreamType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">value</span> <span class="endpoint_name">in</span> (<span class="code_ident">StreamType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -314,7 +366,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="EventDelay">
-     <h2><span class="keyword">processor </span>std::delay::EventDelay</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::delay::EventDelay</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -342,8 +396,16 @@ has_toc: false
      <div class="comment">A delay that acts on a pair of input/output event endpoints</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">out</span> (<span class="code_ident">EventType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">in</span> (<span class="code_ident">EventType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">out</span> (<span class="code_ident">EventType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">in</span> (<span class="code_ident">EventType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="structs">
       <h2>Structs</h2>
@@ -448,13 +510,19 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="envelopes" href="#envelopes">
-    <h2>std.envelopes</h2>
+    <div class="moduleTitle">
+     <h2>std.envelopes</h2>
+    </div>
     <div class="comment">Utilities for calculating and applying gain levels. <br></div>
    </div>
    <div class="namespace" id="envelopes" href="#envelopes">
-    <h2><span class="keyword">namespace </span>std::envelopes</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::envelopes</h2>
+    </div>
     <div class="processor" id="FixedASR">
-     <h2><span class="keyword">processor </span>std::envelopes::FixedASR</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::envelopes::FixedASR</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -476,8 +544,16 @@ has_toc: false
      <div class="comment">A very minimal, fixed-length, attack-sustain-release envelope generator. <br>This has fixed-length attach and release times. Given input events of NoteOn and NoteOff objects, it will emit a stream of output gain levels that can be used to attenuate a voice. <br></div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gainOut</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">eventIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gainOut</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">eventIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -526,11 +602,15 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="filters" href="#filters">
-    <h2>std.filters</h2>
+    <div class="moduleTitle">
+     <h2>std.filters</h2>
+    </div>
     <div class="comment">Contains implementations of some common filters. <br>The module is parameterised with the FrameType, which can be a float32/64 primitive or vector, and represents the data which is being filtered. <br>The CoefficientType is the internal data type used for calculating the filter coefficients, and can be float32 or float64, with increased precision and accuracy from float64, but at the cost of higher computational cost. <br>When filters are modulated, the filter parameters are updated intermittently, with the parameterUpdateRate specifying how often the updates are applied, to reduce the cost of recalculating coefficients <br></div>
    </div>
    <div class="namespace" id="filters" href="#filters">
-    <h2><span class="keyword">namespace </span>std::filters</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::filters</h2>
+    </div>
     <div class="specialisations">
      <h2>Specialisations</h2>
      <div class="spec_members">
@@ -555,13 +635,19 @@ has_toc: false
      </div>
     </div>
     <div class="namespace" id="tpt" href="#tpt">
-     <h2><span class="keyword">namespace </span>std::filters::tpt</h2>
+     <div class="namespaceTitle">
+      <h2><span class="keyword">namespace </span>std::filters::tpt</h2>
+     </div>
      <div class="comment">These filters are based on the designs outlined in The Art of VA Filter Design by Vadim Zavalishin, with help from Will Pirkle in Virtual Analog Filter Implementation. The topology-preserving transform approach leads to designs where parameter modulation can be applied with minimal instability. <br>Parameter changes are applied at a lower rate than processor.frequency to reduce computational cost, and the frames between updates can be altered using the parameterUpdateRate, smaller being more frequent. <br></div>
      <div class="namespace" id="onepole" href="#onepole">
-      <h2><span class="keyword">namespace </span>std::filters::tpt::onepole</h2>
+      <div class="namespaceTitle">
+       <h2><span class="keyword">namespace </span>std::filters::tpt::onepole</h2>
+      </div>
       <div class="comment">One pole filter implementation providing low and high pass options. The frequency and mode can be modulated at the parameterUpdateRate</div>
       <div class="namespace" id="Mode" href="#Mode">
-       <h2><span class="keyword">namespace </span>std::filters::tpt::onepole::Mode</h2>
+       <div class="namespaceTitle">
+        <h2><span class="keyword">namespace </span>std::filters::tpt::onepole::Mode</h2>
+       </div>
        <div class="variables">
         <h2>Constants</h2>
         <table class="variable_table">
@@ -593,7 +679,9 @@ has_toc: false
        </div>
       </div>
       <div class="processor" id="Processor">
-       <h2><span class="keyword">processor </span>std::filters::tpt::onepole::Processor</h2>
+       <div class="processorTitle">
+        <h2><span class="keyword">processor </span>std::filters::tpt::onepole::Processor</h2>
+       </div>
        <div class="specialisations">
         <h2>Specialisations</h2>
         <div class="spec_members">
@@ -614,10 +702,26 @@ has_toc: false
        </div>
        <div class="endpoints">
         <h2>Endpoints</h2>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+         </li>
+        </ul>
        </div>
        <div class="variables">
         <h2>Variables</h2>
@@ -740,10 +844,14 @@ has_toc: false
       </div>
      </div>
      <div class="namespace" id="svf" href="#svf">
-      <h2><span class="keyword">namespace </span>std::filters::tpt::svf</h2>
+      <div class="namespaceTitle">
+       <h2><span class="keyword">namespace </span>std::filters::tpt::svf</h2>
+      </div>
       <div class="comment">State variable filter implementation, suitable for modulation.</div>
       <div class="namespace" id="Mode2" href="#Mode2">
-       <h2><span class="keyword">namespace </span>std::filters::tpt::svf::Mode</h2>
+       <div class="namespaceTitle">
+        <h2><span class="keyword">namespace </span>std::filters::tpt::svf::Mode</h2>
+       </div>
        <div class="variables">
         <h2>Constants</h2>
         <table class="variable_table">
@@ -786,7 +894,9 @@ has_toc: false
        </div>
       </div>
       <div class="processor" id="Processor2">
-       <h2><span class="keyword">processor </span>std::filters::tpt::svf::Processor</h2>
+       <div class="processorTitle">
+        <h2><span class="keyword">processor </span>std::filters::tpt::svf::Processor</h2>
+       </div>
        <div class="specialisations">
         <h2>Specialisations</h2>
         <div class="spec_members">
@@ -812,11 +922,31 @@ has_toc: false
        </div>
        <div class="endpoints">
         <h2>Endpoints</h2>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">q</span> (<span class="code_prim">float32</span>)</div>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">q</span> (<span class="code_prim">float32</span>)</div>
+         </li>
+        </ul>
        </div>
        <div class="variables">
         <h2>Variables</h2>
@@ -897,7 +1027,9 @@ has_toc: false
        </div>
       </div>
       <div class="processor" id="MultimodeProcessor">
-       <h2><span class="keyword">processor </span>std::filters::tpt::svf::MultimodeProcessor</h2>
+       <div class="processorTitle">
+        <h2><span class="keyword">processor </span>std::filters::tpt::svf::MultimodeProcessor</h2>
+       </div>
        <div class="specialisations">
         <h2>Specialisations</h2>
         <div class="spec_members">
@@ -918,12 +1050,36 @@ has_toc: false
        </div>
        <div class="endpoints">
         <h2>Endpoints</h2>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">lowOut</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">highOut</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">bandOut</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">q</span> (<span class="code_prim">float32</span>)</div>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">lowOut</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">highOut</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">bandOut</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+         </li>
+        </ul>
+        <ul>
+         <li>
+          <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">q</span> (<span class="code_prim">float32</span>)</div>
+         </li>
+        </ul>
        </div>
        <div class="variables">
         <h2>Variables</h2>
@@ -1064,14 +1220,26 @@ has_toc: false
      </div>
     </div>
     <div class="namespace" id="dcblocker" href="#dcblocker">
-     <h2><span class="keyword">namespace </span>std::filters::dcblocker</h2>
+     <div class="namespaceTitle">
+      <h2><span class="keyword">namespace </span>std::filters::dcblocker</h2>
+     </div>
      <div class="comment">Highpass filter for blocking DC. An implementation of <a href="https://ccrma.stanford.edu/~jos/fp/DC_Blocker.html">https://ccrma.stanford.edu/~jos/fp/DC_Blocker.html</a> <br>The DC blocker is a small recursive filter specified by the difference equation: <br><pre><code>y(n) = x(n) - x(n-1) + Ry(n-1) </code></pre>..where R is a parameter that is typically somewhere between 0.9 and 1 <br></div>
      <div class="processor" id="Processor3">
-      <h2><span class="keyword">processor </span>std::filters::dcblocker::Processor</h2>
+      <div class="processorTitle">
+       <h2><span class="keyword">processor </span>std::filters::dcblocker::Processor</h2>
+      </div>
       <div class="endpoints">
        <h2>Endpoints</h2>
-       <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
       </div>
       <div class="variables">
        <h2>Variables</h2>
@@ -1137,7 +1305,9 @@ has_toc: false
      </div>
     </div>
     <div class="namespace" id="butterworth" href="#butterworth">
-     <h2><span class="keyword">namespace </span>std::filters::butterworth</h2>
+     <div class="namespaceTitle">
+      <h2><span class="keyword">namespace </span>std::filters::butterworth</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -1153,7 +1323,9 @@ has_toc: false
      </div>
      <div class="comment">Butterworth filter, built from cascaded tpt filters. <br>The order is set at compile time, but the type and frequency can be modulated at runtime. <br></div>
      <div class="namespace" id="Mode3" href="#Mode3">
-      <h2><span class="keyword">namespace </span>std::filters::butterworth::Mode</h2>
+      <div class="namespaceTitle">
+       <h2><span class="keyword">namespace </span>std::filters::butterworth::Mode</h2>
+      </div>
       <div class="variables">
        <h2>Constants</h2>
        <table class="variable_table">
@@ -1185,7 +1357,9 @@ has_toc: false
       </div>
      </div>
      <div class="processor" id="Processor4">
-      <h2><span class="keyword">processor </span>std::filters::butterworth::Processor</h2>
+      <div class="processorTitle">
+       <h2><span class="keyword">processor </span>std::filters::butterworth::Processor</h2>
+      </div>
       <div class="specialisations">
        <h2>Specialisations</h2>
        <div class="spec_members">
@@ -1206,10 +1380,26 @@ has_toc: false
       </div>
       <div class="endpoints">
        <h2>Endpoints</h2>
-       <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+        </li>
+       </ul>
       </div>
       <div class="variables">
        <h2>Variables</h2>
@@ -1326,10 +1516,14 @@ has_toc: false
      </div>
     </div>
     <div class="namespace" id="crossover" href="#crossover">
-     <h2><span class="keyword">namespace </span>std::filters::crossover</h2>
+     <div class="namespaceTitle">
+      <h2><span class="keyword">namespace </span>std::filters::crossover</h2>
+     </div>
      <div class="comment">4th Order two band crossover filter <br>This filter is implemented using the StateVariableFilter and outputs two streams which can be summed to produce a flat response. The crossover frequency can be modulated <br></div>
      <div class="processor" id="Processor5">
-      <h2><span class="keyword">processor </span>std::filters::crossover::Processor</h2>
+      <div class="processorTitle">
+       <h2><span class="keyword">processor </span>std::filters::crossover::Processor</h2>
+      </div>
       <div class="specialisations">
        <h2>Specialisations</h2>
        <div class="spec_members">
@@ -1345,10 +1539,26 @@ has_toc: false
       </div>
       <div class="endpoints">
        <h2>Endpoints</h2>
-       <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">lowOut</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">highOut</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">lowOut</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">highOut</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+        </li>
+       </ul>
       </div>
       <div class="variables">
        <h2>Variables</h2>
@@ -1439,10 +1649,14 @@ has_toc: false
      </div>
     </div>
     <div class="namespace" id="simper" href="#simper">
-     <h2><span class="keyword">namespace </span>std::filters::simper</h2>
+     <div class="namespaceTitle">
+      <h2><span class="keyword">namespace </span>std::filters::simper</h2>
+     </div>
      <div class="comment">Simper filter <br>This filter is based on the design by Andy Simper, and is an implementation of the State Variable filter providing many different operational modes. It is documented here: <a href="https://cytomic.com/files/dsp/SvfLinearTrapOptimised2.pdf">https://cytomic.com/files/dsp/SvfLinearTrapOptimised2.pdf</a> <br></div>
      <div class="namespace" id="Mode4" href="#Mode4">
-      <h2><span class="keyword">namespace </span>std::filters::simper::Mode</h2>
+      <div class="namespaceTitle">
+       <h2><span class="keyword">namespace </span>std::filters::simper::Mode</h2>
+      </div>
       <div class="variables">
        <h2>Constants</h2>
        <table class="variable_table">
@@ -1551,7 +1765,9 @@ has_toc: false
       </div>
      </div>
      <div class="processor" id="Processor6">
-      <h2><span class="keyword">processor </span>std::filters::simper::Processor</h2>
+      <div class="processorTitle">
+       <h2><span class="keyword">processor </span>std::filters::simper::Processor</h2>
+      </div>
       <div class="specialisations">
        <h2>Specialisations</h2>
        <div class="spec_members">
@@ -1582,12 +1798,36 @@ has_toc: false
       </div>
       <div class="endpoints">
        <h2>Endpoints</h2>
-       <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">q</span> (<span class="code_prim">float32</span>)</div>
-       <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">gain</span> (<span class="code_prim">float32</span>)</div>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">mode</span> (<span class="code_prim">int32</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequency</span> (<span class="code_prim">float32</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">q</span> (<span class="code_prim">float32</span>)</div>
+        </li>
+       </ul>
+       <ul>
+        <li>
+         <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">gain</span> (<span class="code_prim">float32</span>)</div>
+        </li>
+       </ul>
       </div>
       <div class="variables">
        <h2>Variables</h2>
@@ -1829,11 +2069,15 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="frequency7" href="#frequency7">
-    <h2>std.frequency</h2>
+    <div class="moduleTitle">
+     <h2>std.frequency</h2>
+    </div>
     <div class="comment">Contains DFT implementations for complex and real numbers <br>The buffers can be either float32 or float64 (or complex32/complex64). Buffer sizes must be a power of 2. <br></div>
    </div>
    <div class="namespace" id="frequency7" href="#frequency7">
-    <h2><span class="keyword">namespace </span>std::frequency</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::frequency</h2>
+    </div>
     <div class="functions">
      <h2>Functions</h2>
      <div class="function" id="realOnlyForwardFFT"><span class="function_name">realOnlyForwardFFT</span>
@@ -1859,11 +2103,15 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="intrinsics" href="#intrinsics">
-    <h2>std.intrinsics</h2>
+    <div class="moduleTitle">
+     <h2>std.intrinsics</h2>
+    </div>
     <div class="comment">Contains placeholders and reference implementations of basic functions. <br>The compiler treats the <code>intrinsics</code> namespace as a special-case, allowing its functions to act as if they&#39;re in the global namespace. <br>When running code, the JIT engines are free to replace the implementation of intrinsic functions with optimised alternatives if possible, although many of the functions in here also provide reference implementations to be used as a fallback when no native version is available. <br></div>
    </div>
    <div class="namespace" id="intrinsics" href="#intrinsics">
-    <h2><span class="keyword">namespace </span>std::intrinsics</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::intrinsics</h2>
+    </div>
     <div class="functions">
      <h2>Functions</h2>
      <div class="function" id="max"><span class="function_name">max</span>
@@ -2094,10 +2342,14 @@ has_toc: false
     </div>
    </div>
    <div class="namespace" id="smoothing" href="#smoothing">
-    <h2><span class="keyword">namespace </span>std::smoothing</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::smoothing</h2>
+    </div>
     <div class="comment">Utilities for smoothing non-audio signals, such as control parameters.</div>
     <div class="processor" id="SmoothedValueStream">
-     <h2><span class="keyword">processor </span>std::smoothing::SmoothedValueStream</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::smoothing::SmoothedValueStream</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2119,8 +2371,16 @@ has_toc: false
      <div class="comment">Takes an input that receives floating point events, and produces a continuous output stream of floats which are smoothed by a specified amount. This is handy for smoothing plugin parameters</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">in</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">in</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -2215,9 +2475,13 @@ has_toc: false
     </div>
    </div>
    <div class="namespace" id="levels" href="#levels">
-    <h2><span class="keyword">namespace </span>std::levels</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::levels</h2>
+    </div>
     <div class="processor" id="ConstantGain">
-     <h2><span class="keyword">processor </span>std::levels::ConstantGain</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::levels::ConstantGain</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2240,8 +2504,16 @@ has_toc: false
      <div class="comment">This helper processor simply passes its input through to its output with a constant gain applied. The FrameType parameter could be a float, or a vector of floats. See: DynamicGain, SmoothedGain</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2252,7 +2524,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="DynamicGain">
-     <h2><span class="keyword">processor </span>std::levels::DynamicGain</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::levels::DynamicGain</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2270,9 +2544,21 @@ has_toc: false
      <div class="comment">This helper processor takes two input streams - one for data and the other for a gain level, and emits the input signal with the gain applied. The FrameType parameter could be a float, or a vector of floats. See: ConstantGain, SmoothedGain</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2306,10 +2592,22 @@ has_toc: false
      <div class="comment">Takes an input stream of the given FrameType, and passes it through using a SmoothedGainParameter processor to apply a smoothed gain to it. The gain level is exposed via the &#39;volume&#39; input.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">volume</span> <span class="endpoint_source"><span class="code_ident">gainParameter</span><span class="code">.</span><span class="code_ident">volume</span></span>
-      </div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">volume</span> <span class="endpoint_source"><span class="code_ident">gainParameter</span><span class="code">.</span><span class="code_ident">volume</span></span>
+        </div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="nodes">
       <h2>Nodes</h2>
@@ -2329,7 +2627,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="SmoothedGainParameter">
-     <h2><span class="keyword">processor </span>std::levels::SmoothedGainParameter</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::levels::SmoothedGainParameter</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2346,8 +2646,16 @@ has_toc: false
      <div class="comment">Takes input events which change the level in decibels, and produces an output stream of smoothed gain factors which can be applied to a signal.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">volume</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">volume</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -2394,7 +2702,9 @@ has_toc: false
     </div>
    </div>
    <div class="namespace" id="pan_law" href="#pan_law">
-    <h2><span class="keyword">namespace </span>std::pan_law</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::pan_law</h2>
+    </div>
     <div class="functions">
      <h2>Functions</h2>
      <div class="function" id="linear"><span class="function_name">linear</span>
@@ -2410,25 +2720,39 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="midi" href="#midi">
-    <h2>std.midi</h2>
+    <div class="moduleTitle">
+     <h2>std.midi</h2>
+    </div>
     <div class="comment">Various utilities for handling raw MIDI data. <br>The classes in the standard library which deal with synthesisers have been designed to avoid raw MIDI messages, and instead to work with strongly-typed event objects for note-ons/offs, pitch-bends, etc, which are vastly more usable than a 3-byte code that was designed for a 1980s serial link. <br></div>
    </div>
    <div class="namespace" id="midi" href="#midi">
-    <h2><span class="keyword">namespace </span>std::midi</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::midi</h2>
+    </div>
     <div class="processor" id="MPEConverter">
-     <h2><span class="keyword">processor </span>std::midi::MPEConverter</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::midi::MPEConverter</h2>
+     </div>
      <div class="comment">Accepts an input stream of raw MIDI MPE events and converts them to a stream of note event objects which can be more easily used by synthesiser classes.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">eventOut</span> (<span class="code_ident">
-        <a href="#NoteOn">NoteOn</a></span>, <span class="code_ident">
-        <a href="#NoteOff">NoteOff</a></span>, <span class="code_ident">
-        <a href="#PitchBend">PitchBend</a></span>, <span class="code_ident">
-        <a href="#Slide">Slide</a></span>, <span class="code_ident">
-        <a href="#Pressure">Pressure</a></span>, <span class="code_ident">
-        <a href="#Control">Control</a></span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">parseMIDI</span> (<span class="code_ident">
-        <a href="#Message">Message</a></span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">eventOut</span> (<span class="code_ident">
+          <a href="#NoteOn">NoteOn</a></span>, <span class="code_ident">
+          <a href="#NoteOff">NoteOff</a></span>, <span class="code_ident">
+          <a href="#PitchBend">PitchBend</a></span>, <span class="code_ident">
+          <a href="#Slide">Slide</a></span>, <span class="code_ident">
+          <a href="#Pressure">Pressure</a></span>, <span class="code_ident">
+          <a href="#Control">Control</a></span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">parseMIDI</span> (<span class="code_ident">
+          <a href="#Message">Message</a></span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2453,7 +2777,7 @@ has_toc: false
           <div class="struct_member_name">message</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This contains 3 packed bytes, arranged as (byte2 | (byte1 &lt;&lt; 8) | (byte0 &lt;&lt; 16)).This layout means that when you view the value in hex in your debugger, it reads inthe natural order for a MIDI message.</td>
+           <td>This contains 3 packed bytes, arranged as (byte2 | (byte1 &lt;&lt; 8) | (byte0 &lt;&lt; 16)). This layout means that when you view the value in hex in your debugger, it reads in the natural order for a MIDI message.</td>
           </div>
          </td>
         </tr>
@@ -2656,12 +2980,18 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="mixers" href="#mixers">
-    <h2>std.mixers</h2>
+    <div class="moduleTitle">
+     <h2>std.mixers</h2>
+    </div>
    </div>
    <div class="namespace" id="mixers" href="#mixers">
-    <h2><span class="keyword">namespace </span>std::mixers</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::mixers</h2>
+    </div>
     <div class="processor" id="StereoToMono">
-     <h2><span class="keyword">processor </span>std::mixers::StereoToMono</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::mixers::StereoToMono</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2679,8 +3009,16 @@ has_toc: false
      <div class="comment">Simple utility processor that takes a vector size 2 and outputs the sum of its elements.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">SampleType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">SampleType</span><span class="code">&lt;</span><span class="code_literal">2</span><span class="code">&gt;</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">SampleType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">SampleType</span><span class="code">&lt;</span><span class="code_literal">2</span><span class="code">&gt;</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2691,7 +3029,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="MonoToStereo">
-     <h2><span class="keyword">processor </span>std::mixers::MonoToStereo</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::mixers::MonoToStereo</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2709,8 +3049,16 @@ has_toc: false
      <div class="comment">Simple utility processor that takes a scalar input and outputs a vector size 2 which contains two copies of the input value</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">SampleType</span><span class="code">&lt;</span><span class="code_literal">2</span><span class="code">&gt;</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">SampleType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">SampleType</span><span class="code">&lt;</span><span class="code_literal">2</span><span class="code">&gt;</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">SampleType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2721,7 +3069,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="DynamicSum">
-     <h2><span class="keyword">processor </span>std::mixers::DynamicSum</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::mixers::DynamicSum</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2739,11 +3089,31 @@ has_toc: false
      <div class="comment">Takes two input streams and two gain streams which it uses to attenuate the inputs. Their result is then emitted. FrameType can be a float or float vector type.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in1</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in2</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain1</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain2</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in1</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in2</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain1</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">gain2</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2754,7 +3124,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="ConstantSum">
-     <h2><span class="keyword">processor </span>std::mixers::ConstantSum</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::mixers::ConstantSum</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2782,9 +3154,21 @@ has_toc: false
      <div class="comment">Takes two input streams which it adds together after applying some optional constant gains. FrameType can be a float or float vector type.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in1</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in2</span> (<span class="code_ident">FrameType</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in1</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in2</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2795,7 +3179,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="Interpolator">
-     <h2><span class="keyword">processor </span>std::mixers::Interpolator</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::mixers::Interpolator</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -2818,10 +3204,26 @@ has_toc: false
      <div class="comment">Takes two input streams and outputs a dynamic mix of their values, using a third stream to control the mix. <br>mixRange determines the range of values that the mix stream will take. So the mix input is expected to be between 0 and mixRange, where mix = 0 will cause 100% of in1 to be emitted, and mix = mixRange will cause 100% of in2 to be emitted. <br>This processor is handy as a wet/dry mixer - for example you could connect a dry stream to in1, a wet stream to in2, and set mixRange to 100. Then, the mix input will act as a &quot;percentage wet&quot; control.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in1</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in2</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">mix</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in1</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in2</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">mix</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="functions">
       <h2>Functions</h2>
@@ -2833,17 +3235,27 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="noise" href="#noise">
-    <h2>std.noise</h2>
+    <div class="moduleTitle">
+     <h2>std.noise</h2>
+    </div>
    </div>
    <div class="namespace" id="noise" href="#noise">
-    <h2><span class="keyword">namespace </span>std::noise</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::noise</h2>
+    </div>
     <div class="processor" id="White">
-     <h2><span class="keyword">processor </span>std::noise::White</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::noise::White</h2>
+     </div>
      <div class="comment">Simple white noise generator. See <a href="https://en.wikipedia.org/wiki/White_noise">https://en.wikipedia.org/wiki/White_noise</a>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -2877,12 +3289,18 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="Brown">
-     <h2><span class="keyword">processor </span>std::noise::Brown</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::noise::Brown</h2>
+     </div>
      <div class="comment">Brown (a.k.a. Brownian) noise generator. See <a href="https://en.wikipedia.org/wiki/Brownian_noise">https://en.wikipedia.org/wiki/Brownian_noise</a>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -2949,12 +3367,18 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="Pink">
-     <h2><span class="keyword">processor </span>std::noise::Pink</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::noise::Pink</h2>
+     </div>
      <div class="comment">Pink noise generator See <a href="https://en.wikipedia.org/wiki/Pink_noise">https://en.wikipedia.org/wiki/Pink_noise</a>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -3022,11 +3446,15 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="notes" href="#notes">
-    <h2>std.notes</h2>
+    <div class="moduleTitle">
+     <h2>std.notes</h2>
+    </div>
     <div class="comment">These structs are used for events that model the start/stop/control of notes that are playing in synthesisers. <br>Unlike sending raw MIDI around, these are strongly typed and use floating point data so are far nicer to work with. <br>The objects include a channel ID field, so that a multi-channel input device can indicate which events should be applied to each of the active notes that are being played. <br></div>
    </div>
    <div class="namespace" id="notes" href="#notes">
-    <h2><span class="keyword">namespace </span>std::notes</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::notes</h2>
+    </div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="NoteOn"><span class="code">struct </span><span class="struct_name">NoteOn</span>
@@ -3040,7 +3468,7 @@ has_toc: false
           <div class="struct_member_name">channel</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This channel ID is used to associate events which act on a particular voice.When a NoteOn object is sent, the sender will create a unique ID, anduse the same ID for any subsequent pitch and control events, and for thefinal matching NoteOff event.</td>
+           <td>This channel ID is used to associate events which act on a particular voice. When a NoteOn object is sent, the sender will create a unique ID, and use the same ID for any subsequent pitch and control events, and for the final matching NoteOff event.</td>
           </div>
          </td>
         </tr>
@@ -3049,7 +3477,7 @@ has_toc: false
           <div class="struct_member_name">pitch</div> <td>
            <div class="type"></div><span class="code_prim">float32</span></td>
           <div class="comment">
-           <td>The pitch uses the same semitone scale as MIDI note numbers, between0 and 127, where middle C = 60.</td>
+           <td>The pitch uses the same semitone scale as MIDI note numbers, between 0 and 127, where middle C = 60.</td>
           </div>
          </td>
         </tr>
@@ -3076,7 +3504,7 @@ has_toc: false
           <div class="struct_member_name">channel</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This channel ID can be used to associate this NoteOff event with the earlierNoteOn to which it applies.</td>
+           <td>This channel ID can be used to associate this NoteOff event with the earlier NoteOn to which it applies.</td>
           </div>
          </td>
         </tr>
@@ -3085,7 +3513,7 @@ has_toc: false
           <div class="struct_member_name">pitch</div> <td>
            <div class="type"></div><span class="code_prim">float32</span></td>
           <div class="comment">
-           <td>You may not care exactly what the pitch is when a note is released, butin case it&#39;s needed, it&#39;s included here.</td>
+           <td>You may not care exactly what the pitch is when a note is released, but in case it&#39;s needed, it&#39;s included here.</td>
           </div>
          </td>
         </tr>
@@ -3112,7 +3540,7 @@ has_toc: false
           <div class="struct_member_name">channel</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This channel ID can be used to associate this event with the earlierNoteOn to which it applies.</td>
+           <td>This channel ID can be used to associate this event with the earlier NoteOn to which it applies.</td>
           </div>
          </td>
         </tr>
@@ -3139,7 +3567,7 @@ has_toc: false
           <div class="struct_member_name">channel</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This channel ID can be used to associate this event with the earlierNoteOn to which it applies.</td>
+           <td>This channel ID can be used to associate this event with the earlier NoteOn to which it applies.</td>
           </div>
          </td>
         </tr>
@@ -3167,7 +3595,7 @@ has_toc: false
           <div class="struct_member_name">channel</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This channel ID can be used to associate this event with the earlierNoteOn to which it applies.</td>
+           <td>This channel ID can be used to associate this event with the earlier NoteOn to which it applies.</td>
           </div>
          </td>
         </tr>
@@ -3176,7 +3604,7 @@ has_toc: false
           <div class="struct_member_name">slide</div> <td>
            <div class="type"></div><span class="code_prim">float32</span></td>
           <div class="comment">
-           <td>The slide position ranges from 0 to 1. Exactly what you choose to dowith it depends on the instrument.</td>
+           <td>The slide position ranges from 0 to 1. Exactly what you choose to do with it depends on the instrument.</td>
           </div>
          </td>
         </tr>
@@ -3194,7 +3622,7 @@ has_toc: false
           <div class="struct_member_name">channel</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This channel ID can be used to associate this event with the earlierNoteOn to which it applies.</td>
+           <td>This channel ID can be used to associate this event with the earlier NoteOn to which it applies.</td>
           </div>
          </td>
         </tr>
@@ -3203,7 +3631,7 @@ has_toc: false
           <div class="struct_member_name">control</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This could be used for any kind of controller index, but is probablybest used for MIDI controller numbers.</td>
+           <td>This could be used for any kind of controller index, but is probably best used for MIDI controller numbers.</td>
           </div>
          </td>
         </tr>
@@ -3255,12 +3683,18 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="oscillators" href="#oscillators">
-    <h2>std.oscillators</h2>
+    <div class="moduleTitle">
+     <h2>std.oscillators</h2>
+    </div>
    </div>
    <div class="namespace" id="oscillators" href="#oscillators">
-    <h2><span class="keyword">namespace </span>std::oscillators</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::oscillators</h2>
+    </div>
     <div class="namespace" id="waveshape" href="#waveshape">
-     <h2><span class="keyword">namespace </span>std::oscillators::waveshape</h2>
+     <div class="namespaceTitle">
+      <h2><span class="keyword">namespace </span>std::oscillators::waveshape</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -3376,7 +3810,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="Phasor">
-     <h2><span class="keyword">processor </span>std::oscillators::Phasor</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::oscillators::Phasor</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -3399,8 +3835,16 @@ has_toc: false
      <div class="comment">A processor which generates a unipolar ramp, and has an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequencyIn</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequencyIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -3437,7 +3881,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="Sine">
-     <h2><span class="keyword">processor </span>std::oscillators::Sine</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::oscillators::Sine</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -3460,8 +3906,16 @@ has_toc: false
      <div class="comment">A basic sinewave generation processor with an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequencyIn</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequencyIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -3498,7 +3952,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="PolyblepOscillator">
-     <h2><span class="keyword">processor </span>std::oscillators::PolyblepOscillator</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::oscillators::PolyblepOscillator</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -3526,9 +3982,21 @@ has_toc: false
      <div class="comment">Uses a polyblep algorithm to generate a wave, with inputs to control its shape and frequency.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequencyIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">shapeIn</span> (<span class="code_prim">float32</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">frequencyIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">shapeIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -3580,7 +4048,9 @@ has_toc: false
      </div>
     </div>
     <div class="processor" id="LFO">
-     <h2><span class="keyword">processor </span>std::oscillators::LFO</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::oscillators::LFO</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -3612,17 +4082,61 @@ has_toc: false
      <div class="comment">A LFO processor with event inputs to control its parameters.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">shapeIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">rateHzIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">rateTempoIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">amplitudeIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">offsetIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">rateModeIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">syncIn</span> (<span class="code_prim">float32</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">positionIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">timeline</span><span class="code">::</span><span class="code_ident">Position</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">transportStateIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">timeline</span><span class="code">::</span><span class="code_ident">TransportState</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">tempoIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">timeline</span><span class="code">::</span><span class="code_ident">Tempo</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">shapeIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">rateHzIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">rateTempoIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">amplitudeIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">offsetIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">rateModeIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">syncIn</span> (<span class="code_prim">float32</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">positionIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">timeline</span><span class="code">::</span><span class="code_ident">Position</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">transportStateIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">timeline</span><span class="code">::</span><span class="code_ident">TransportState</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">tempoIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">timeline</span><span class="code">::</span><span class="code_ident">Tempo</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="variables">
       <h2>Variables</h2>
@@ -3843,7 +4357,9 @@ has_toc: false
      </div>
     </div>
     <div class="namespace" id="std_oscillators_waveshape_specialised__K0a57" href="#std_oscillators_waveshape_specialised__K0a57">
-     <h2><span class="keyword">namespace </span>std::oscillators::waveshape</h2>
+     <div class="namespaceTitle">
+      <h2><span class="keyword">namespace </span>std::oscillators::waveshape</h2>
+     </div>
      <div class="functions">
       <h2>Functions</h2>
       <div class="function" id="sine4"><span class="function_name">sine</span>
@@ -4027,7 +4543,9 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="random" href="#random">
-    <h2>std.random</h2>
+    <div class="moduleTitle">
+     <h2>std.random</h2>
+    </div>
     <div class="comment">If you&#39;re writing code that needs to be cryptographically secure, then this is not the random number generation library that you want. The target audience for these classes are those who need quick-and-dirty RNGs for noise generation and similar non-critical tasks. <br>When seeding RNGs, the <code>processor.id</code> and <code>processor.session</code> values are very useful: <br><ul>
       <li><code>processor.id</code> is different for each instance of a processor, but the same for each run of the program. If you have multiple instances of a processor node which each have an RNG, then if you seed them with a value based on <code>processor.id</code>, they&#39;ll each use a different stream of values, but the sequences will be the same each time the program runs. </li></ul>
      <ul>
@@ -4036,7 +4554,9 @@ has_toc: false
     </div>
    </div>
    <div class="namespace" id="random" href="#random">
-    <h2><span class="keyword">namespace </span>std::random</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::random</h2>
+    </div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="RNG"><span class="code">struct </span><span class="struct_name">RNG</span>
@@ -4094,11 +4614,15 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="timeline" href="#timeline">
-    <h2>std.timeline</h2>
+    <div class="moduleTitle">
+     <h2>std.timeline</h2>
+    </div>
     <div class="comment">This namespace contains various types and functions for dealing with tempos, positions and events that describe DAW-style timelines. <br></div>
    </div>
    <div class="namespace" id="timeline" href="#timeline">
-    <h2><span class="keyword">namespace </span>std::timeline</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::timeline</h2>
+    </div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="Tempo"><span class="code">struct </span><span class="struct_name">Tempo</span>
@@ -4151,7 +4675,7 @@ has_toc: false
           <div class="struct_member_name">flags</div> <td>
            <div class="type"></div><span class="code_prim">int32</span></td>
           <div class="comment">
-           <td>This is used as a bit-field, wherebit 0 = playingbit 1 = recordingbit 2 = looping</td>
+           <td>This is used as a bit-field, where bit 0 = playing bit 1 = recording bit 2 = looping</td>
           </div>
          </td>
         </tr>
@@ -4179,7 +4703,7 @@ has_toc: false
           <div class="struct_member_name">quarterNote</div> <td>
            <div class="type"></div><span class="code_prim">float64</span></td>
           <div class="comment">
-           <td>A floating-point count of quarter-notes from the start of the host&#39;s timeline.If a host doesn&#39;t count time in terms of beats, then this could be left as 0.</td>
+           <td>A floating-point count of quarter-notes from the start of the host&#39;s timeline. If a host doesn&#39;t count time in terms of beats, then this could be left as 0.</td>
           </div>
          </td>
         </tr>
@@ -4188,7 +4712,7 @@ has_toc: false
           <div class="struct_member_name">barStartQuarterNote</div> <td>
            <div class="type"></div><span class="code_prim">float64</span></td>
           <div class="comment">
-           <td>The position of the start of the current bar, measured as the number ofquarter-notes from the start of the host&#39;s timeline.If a host doesn&#39;t count time in terms of beats, then this could be left as 0.This is useful in conjunction with quarterNote if you need to know e.g. how manybeats you are into the current bar.</td>
+           <td>The position of the start of the current bar, measured as the number of quarter-notes from the start of the host&#39;s timeline. If a host doesn&#39;t count time in terms of beats, then this could be left as 0. This is useful in conjunction with quarterNote if you need to know e.g. how many beats you are into the current bar.</td>
           </div>
          </td>
         </tr>
@@ -4253,13 +4777,19 @@ has_toc: false
     </div>
    </div>
    <div class="module" id="voices" href="#voices">
-    <h2>std.voices</h2>
+    <div class="moduleTitle">
+     <h2>std.voices</h2>
+    </div>
     <div class="comment">This module demonstrates a simple voice-allocation algorithm. <br>The way it&#39;s structured is that you pass an incoming stream of note events to the voice allocator processor, and it redirects them to an array of destination processors which each handle a single voice. <br>The voice allocators use the channel property of the incoming events to group them together, and take care of ensuring that each target voice only receives the events from one channel at a time. <br></div>
    </div>
    <div class="namespace" id="voices" href="#voices">
-    <h2><span class="keyword">namespace </span>std::voices</h2>
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::voices</h2>
+    </div>
     <div class="processor" id="VoiceAllocator">
-     <h2><span class="keyword">processor </span>std::voices::VoiceAllocator</h2>
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::voices::VoiceAllocator</h2>
+     </div>
      <div class="specialisations">
       <h2>Specialisations</h2>
       <div class="spec_members">
@@ -4281,8 +4811,16 @@ has_toc: false
      <div class="comment">A basic least-recently-used voice allocator. <br>If there&#39;s an inactive voice, then a new note will be assigned to it, otherwise it will steal the least-recently-used active voice. For more fancy note-stealing algorithms, you can use this as an example and add your own logic! <br></div>
      <div class="endpoints">
       <h2>Endpoints</h2>
-      <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">voiceEventOut</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">PitchBend</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Slide</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Pressure</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Control</span>)</div>
-      <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">eventIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">PitchBend</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Slide</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Pressure</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Control</span>)</div>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">voiceEventOut</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">PitchBend</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Slide</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Pressure</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Control</span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">eventIn</span> (<span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">PitchBend</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Slide</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Pressure</span>, <span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Control</span>)</div>
+       </li>
+      </ul>
      </div>
      <div class="structs">
       <h2>Structs</h2>
