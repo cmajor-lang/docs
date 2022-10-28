@@ -605,7 +605,12 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.filters</h2>
     </div>
-    <div class="comment">Contains implementations of some common filters. <br>The module is parameterised with the FrameType, which can be a float32/64 primitive or vector, and represents the data which is being filtered. <br>The CoefficientType is the internal data type used for calculating the filter coefficients, and can be float32 or float64, with increased precision and accuracy from float64, but at the cost of higher computational cost. <br>When filters are modulated, the filter parameters are updated intermittently, with the parameterUpdateRate specifying how often the updates are applied, to reduce the cost of recalculating coefficients <br></div>
+    <div class="comment">This module contains standard filter types, using implementations which allow for the filter parameters to be modulated. <br>The <code>std::filters</code> namespace is parametersised, allowing both the <code>FrameType</code> and the <code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use 32 bit preecision, and filter frames of a single channel. <code>FrameType</code> can be specified as a vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter). <br>For efficiency reasons, modulated parameters are not applied every frame, and the <code>parameterUpdateRate</code> can be used to tune the frequency of updates <br>Each filter type is provided as both a Processor, which can be included in graphs, and as an <code>Implementation</code> structure, suitable for being composed into a user processor. <br>The filter processors are parameterised with these parameters setting the initial state of the filter. Parameter modulation is provided by input events. <br>The filter <code>Implementation</code> struture provides the following functions: <ul>
+      <li><code>create()</code> functions which construct an <code>Implementation</code> with the specified initial properties - this is the typical way that the structs are constructed </li>
+      <li><code>process()</code> which generates an output frame from an input frame </li>
+      <li><code>setFrequency()</code>/<code>setMode()</code> functions for filter parameters to allow the filter to be modified post construction. </li>
+      <li><code>reset()</code> which clears out any internal state, returning it to the state post creation </li></ul>
+    </div>
    </div>
    <div class="namespace" id="filters" href="#filters">
     <div class="namespaceTitle">

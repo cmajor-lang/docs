@@ -52,10 +52,11 @@ cmaj version                Displays the current Cmajor version
 cmaj licenses               Print out legally required licensing details for 3rd-party
                             libraries that are used by this application.
 
-cmaj play file [opts]       Plays a patch or executes a javascript script file.
-                            See the supporting documentation for a guide to the options.
+cmaj play file [opts]       Plays a .cmajorpatch, or executes a .js javascript file.
 
     --no-gui                Disable automatic launching of the UI in a web browser
+    --stop-on-error         Exits the app if there's a compile error (default is to keep
+                            running and retry when files are modified)
 
 cmaj test [opts] <files>    Runs one or more .cmajtest scripts, and print the aggregate results
                             for the tests. See the documentation for writing tests for more info.
