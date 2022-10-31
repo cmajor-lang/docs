@@ -2,7 +2,7 @@
 layout: default
 title: `-- testConsole()`
 permalink: /docs/TestFileFormat#-testconsole
-parent: testProcessor()
+parent: Built-in Test Functions
 grand_parent: Test File Format
-nav_order: 2
+nav_order: 4
 ---
