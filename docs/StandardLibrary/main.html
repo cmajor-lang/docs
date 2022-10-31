@@ -22,7 +22,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.audio_data</h2>
     </div>
-    <div class="comment">These structures are useful for representing chunks of audio data with a known sample-rate. They&#39;re useful types when you&#39;re declaring an external variable which is going to hold audio file data or generated waveform data. <br>Note that duck-typing is used for the types of externals which contain audio data, so you can use your own classes as long as they contain a couple of fields which can hold the frame data and a sample rate. If you need a struct for audio data with more than 2 channels, you can just declare your own type using an appropriately-sized vector for the frames. <br></div>
+    <div class="comment">These structures are useful for representing chunks of audio data with aknown sample-rate. They&#39;re useful types when you&#39;re declaring an externalvariable which is going to hold audio file data or generated waveform data.<br>Note that duck-typing is used for the types of externals which contain audiodata, so you can use your own classes as long as they contain a couple offields which can hold the frame data and a sample rate. If you need a structfor audio data with more than 2 channels, you can just declare your own typeusing an appropriately-sized vector for the frames.<br></div>
    </div>
    <div class="namespace" id="audio_data" href="#audio_data">
     <div class="namespaceTitle">
@@ -46,7 +46,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">This processor will play chunks of audio sample data with a speed ratio applied. <br>It provides input events to set the audio data, speed ratio and other properties to control playback. <br>The SampleContent type must be a struct containing a &#39;frames&#39; member, which is an array of audio frames, and a &#39;sampleRate&#39; member with the original rate of the audio data. <br></div>
+     <div class="comment"><br>This processor will play chunks of audio sample data with a speed ratio applied. <br>It provides input events to set the audio data, speed ratio and other properties to control playback. <br>The SampleContent type must be a struct containing a &#39;frames&#39; member, which is an array of audio frames, and a &#39;sampleRate&#39; member with the original rate of the audio data. <br></div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -211,7 +211,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.delay</h2>
     </div>
-    <div class="comment">Utilities and processors for implementing delays. Note that you graph connections allow a delay to be added without needing to use an explicit processor - see the language guide for more details. <br></div>
+    <div class="comment">Utilities and processors for implementing delays. Note that yougraph connections allow a delay to be added without needing to usean explicit processor - see the language guide for more details.<br></div>
    </div>
    <div class="namespace" id="delay" href="#delay">
     <div class="namespaceTitle">
@@ -513,7 +513,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.envelopes</h2>
     </div>
-    <div class="comment">Utilities for calculating and applying gain levels. <br></div>
+    <div class="comment">Utilities for calculating and applying gain levels.<br></div>
    </div>
    <div class="namespace" id="envelopes" href="#envelopes">
     <div class="namespaceTitle">
@@ -605,11 +605,11 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.filters</h2>
     </div>
-    <div class="comment">This module contains standard filter types, using implementations which allow for the filter parameters to be modulated. <br>The <code>std::filters</code> namespace is parametersised, allowing both the <code>FrameType</code> and the <code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use 32 bit preecision, and filter frames of a single channel. <code>FrameType</code> can be specified as a vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter). <br>For efficiency reasons, modulated parameters are not applied every frame, and the <code>parameterUpdateRate</code> can be used to tune the frequency of updates <br>Each filter type is provided as both a Processor, which can be included in graphs, and as an <code>Implementation</code> structure, suitable for being composed into a user processor. <br>The filter processors are parameterised with these parameters setting the initial state of the filter. Parameter modulation is provided by input events. <br>The filter <code>Implementation</code> struture provides the following functions: <ul>
-      <li><code>create()</code> functions which construct an <code>Implementation</code> with the specified initial properties - this is the typical way that the structs are constructed </li>
-      <li><code>process()</code> which generates an output frame from an input frame </li>
-      <li><code>setFrequency()</code>/<code>setMode()</code> functions for filter parameters to allow the filter to be modified post construction. </li>
-      <li><code>reset()</code> which clears out any internal state, returning it to the state post creation </li></ul>
+    <div class="comment">This module contains standard filter types, using implementations which allow forthe filter parameters to be modulated.<br>The <code>std::filters</code> namespace is parametersised, allowing both the <code>FrameType</code> and the<code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use32 bit preecision, and filter frames of a single channel. <code>FrameType</code> can be specified asa vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter).<br>For efficiency reasons, modulated parameters are not applied every frame, and the<code>parameterUpdateRate</code> can be used to tune the frequency of updates<br>Each filter type is provided as both a Processor, which can be included in graphs, andas an <code>Implementation</code> structure, suitable for being composed into a user processor.<br>The filter processors are parameterised with these parameters setting the initial state ofthe filter. Parameter modulation is provided by input events.<br>The filter <code>Implementation</code> struture provides the following functions:<ul>
+      <li><code>create()</code> functions which construct an <code>Implementation</code> with the specified initialproperties - this is the typical way that the structs are constructed</li>
+      <li><code>process()</code> which generates an output frame from an input frame</li>
+      <li><code>setFrequency()</code>/<code>setMode()</code> functions for filter parameters to allow the filter to bemodified post construction.</li>
+      <li><code>reset()</code> which clears out any internal state, returning it to the state post creation</li></ul>
     </div>
    </div>
    <div class="namespace" id="filters" href="#filters">
@@ -643,7 +643,7 @@ has_toc: false
      <div class="namespaceTitle">
       <h2><span class="keyword">namespace </span>std::filters::tpt</h2>
      </div>
-     <div class="comment">These filters are based on the designs outlined in The Art of VA Filter Design by Vadim Zavalishin, with help from Will Pirkle in Virtual Analog Filter Implementation. The topology-preserving transform approach leads to designs where parameter modulation can be applied with minimal instability. <br>Parameter changes are applied at a lower rate than processor.frequency to reduce computational cost, and the frames between updates can be altered using the parameterUpdateRate, smaller being more frequent. <br></div>
+     <div class="comment"><br>These filters are based on the designs outlined in The Art of VA Filter Design by Vadim Zavalishin, with help from Will Pirkle in Virtual Analog Filter Implementation. The topology-preserving transform approach leads to designs where parameter modulation can be applied with minimal instability. <br>Parameter changes are applied at a lower rate than processor.frequency to reduce computational cost, and the frames between updates can be altered using the parameterUpdateRate, smaller being more frequent. <br></div>
      <div class="namespace" id="onepole" href="#onepole">
       <div class="namespaceTitle">
        <h2><span class="keyword">namespace </span>std::filters::tpt::onepole</h2>
@@ -1228,7 +1228,7 @@ has_toc: false
      <div class="namespaceTitle">
       <h2><span class="keyword">namespace </span>std::filters::dcblocker</h2>
      </div>
-     <div class="comment">Highpass filter for blocking DC. An implementation of <a href="https://ccrma.stanford.edu/~jos/fp/DC_Blocker.html">https://ccrma.stanford.edu/~jos/fp/DC_Blocker.html</a> <br>The DC blocker is a small recursive filter specified by the difference equation: <br><pre><code>y(n) = x(n) - x(n-1) + Ry(n-1) </code></pre>..where R is a parameter that is typically somewhere between 0.9 and 1 <br></div>
+     <div class="comment"><br>Highpass filter for blocking DC. An implementation of <a href="https://ccrma.stanford.edu/~jos/fp/DC_Blocker.html">https://ccrma.stanford.edu/~jos/fp/DC_Blocker.html</a> <br>The DC blocker is a small recursive filter specified by the difference equation: <br><pre><code>y(n) = x(n) - x(n-1) + Ry(n-1) </code></pre>..where R is a parameter that is typically somewhere between 0.9 and 1 <br></div>
      <div class="processor" id="Processor3">
       <div class="processorTitle">
        <h2><span class="keyword">processor </span>std::filters::dcblocker::Processor</h2>
@@ -1326,7 +1326,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Butterworth filter, built from cascaded tpt filters. <br>The order is set at compile time, but the type and frequency can be modulated at runtime. <br></div>
+     <div class="comment"><br>Butterworth filter, built from cascaded tpt filters. <br>The order is set at compile time, but the type and frequency can be modulated at runtime. <br></div>
      <div class="namespace" id="Mode3" href="#Mode3">
       <div class="namespaceTitle">
        <h2><span class="keyword">namespace </span>std::filters::butterworth::Mode</h2>
@@ -1524,7 +1524,7 @@ has_toc: false
      <div class="namespaceTitle">
       <h2><span class="keyword">namespace </span>std::filters::crossover</h2>
      </div>
-     <div class="comment">4th Order two band crossover filter <br>This filter is implemented using the StateVariableFilter and outputs two streams which can be summed to produce a flat response. The crossover frequency can be modulated <br></div>
+     <div class="comment"><br>4th Order two band crossover filter <br>This filter is implemented using the StateVariableFilter and outputs two streams which can be summed to produce a flat response. The crossover frequency can be modulated <br></div>
      <div class="processor" id="Processor5">
       <div class="processorTitle">
        <h2><span class="keyword">processor </span>std::filters::crossover::Processor</h2>
@@ -1657,7 +1657,7 @@ has_toc: false
      <div class="namespaceTitle">
       <h2><span class="keyword">namespace </span>std::filters::simper</h2>
      </div>
-     <div class="comment">Simper filter <br>This filter is based on the design by Andy Simper, and is an implementation of the State Variable filter providing many different operational modes. It is documented here: <a href="https://cytomic.com/files/dsp/SvfLinearTrapOptimised2.pdf">https://cytomic.com/files/dsp/SvfLinearTrapOptimised2.pdf</a> <br></div>
+     <div class="comment"><br>Simper filter <br>This filter is based on the design by Andy Simper, and is an implementation of the State Variable filter providing many different operational modes. It is documented here: <a href="https://cytomic.com/files/dsp/SvfLinearTrapOptimised2.pdf">https://cytomic.com/files/dsp/SvfLinearTrapOptimised2.pdf</a> <br></div>
      <div class="namespace" id="Mode4" href="#Mode4">
       <div class="namespaceTitle">
        <h2><span class="keyword">namespace </span>std::filters::simper::Mode</h2>
@@ -2077,7 +2077,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.frequency</h2>
     </div>
-    <div class="comment">Contains DFT implementations for complex and real numbers <br>The buffers can be either float32 or float64 (or complex32/complex64). Buffer sizes must be a power of 2. <br></div>
+    <div class="comment">Contains DFT implementations for complex and real numbers<br>The buffers can be either float32 or float64 (or complex32/complex64).Buffer sizes must be a power of 2.<br></div>
    </div>
    <div class="namespace" id="frequency7" href="#frequency7">
     <div class="namespaceTitle">
@@ -2096,7 +2096,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="complexFFT"><span class="function_name">complexFFT</span>
-      <div class="comment">Performs an in-place forward FFT on complex data.</div>
+      <div class="comment"><br>Performs an in-place forward FFT on complex data.</div>
       <div class="function_decl"><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">complexFFT</span><span class="code">&lt;</span><span class="code_ident">ComplexArray</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ComplexArray</span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">data</span><span class="code">)</span>
       </div>
      </div>
@@ -2111,7 +2111,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.intrinsics</h2>
     </div>
-    <div class="comment">Contains placeholders and reference implementations of basic functions. <br>The compiler treats the <code>intrinsics</code> namespace as a special-case, allowing its functions to act as if they&#39;re in the global namespace. <br>When running code, the JIT engines are free to replace the implementation of intrinsic functions with optimised alternatives if possible, although many of the functions in here also provide reference implementations to be used as a fallback when no native version is available. <br></div>
+    <div class="comment">Contains placeholders and reference implementations of basic functions.<br>The compiler treats the <code>intrinsics</code> namespace as a special-case, allowing itsfunctions to act as if they&#39;re in the global namespace.<br>When running code, the JIT engines are free to replace the implementation of intrinsicfunctions with optimised alternatives if possible, although many of the functions in herealso provide reference implementations to be used as a fallback when no native versionis available.<br></div>
    </div>
    <div class="namespace" id="intrinsics" href="#intrinsics">
     <div class="namespaceTitle">
@@ -2135,7 +2135,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="clamp"><span class="function_name">clamp</span>
-      <div class="comment">Returns a value which has been clamped to fit within the given range (inclusive of the top).</div>
+      <div class="comment"><br>Returns a value which has been clamped to fit within the given range (inclusive of the top).</div>
       <div class="function_decl"><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">clamp</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">value</span><span class="code">, </span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">minimum</span><span class="code">, </span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">maximum</span><span class="code">)</span>
       </div>
      </div>
@@ -2155,7 +2155,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="abs"><span class="function_name">abs</span>
-      <div class="comment">Returns the absolute value of a scalar or vector value.</div>
+      <div class="comment"><br>Returns the absolute value of a scalar or vector value.</div>
       <div class="function_decl"><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">abs</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">n</span><span class="code">)</span>
       </div>
      </div>
@@ -2200,7 +2200,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="sqrt"><span class="function_name">sqrt</span>
-      <div class="comment">Returns the square root of its argument.</div>
+      <div class="comment"><br>Returns the square root of its argument.</div>
       <div class="function_decl"><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">sqrt</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">n</span><span class="code">)</span>
       </div>
      </div>
@@ -2235,7 +2235,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="isinf"><span class="function_name">isinf</span>
-      <div class="comment">Checks whether the supplied argument is a floating point INF.</div>
+      <div class="comment"><br>Checks whether the supplied argument is a floating point INF.</div>
       <div class="function_decl"><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">isinf</span><span class="code">&lt;</span><span class="code_ident">FloatType</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">FloatType</span><span class="code"> </span><span class="code_ident">value</span><span class="code">)</span>
       </div>
      </div>
@@ -2245,7 +2245,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="sum"><span class="function_name">sum</span>
-      <div class="comment">Calculates the sum of the elements in a vector or array.</div>
+      <div class="comment"><br>Calculates the sum of the elements in a vector or array.</div>
       <div class="function_decl"><span class="code_ident">ArrayType</span><span class="code">.</span><span class="code_ident">elementType</span><span class="code"> </span><span class="code_ident">sum</span><span class="code">&lt;</span><span class="code_ident">ArrayType</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ArrayType</span><span class="code"> </span><span class="code_ident">array</span><span class="code">)</span>
       </div>
      </div>
@@ -2265,7 +2265,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="anyTrue"><span class="function_name">anyTrue</span>
-      <div class="comment">Takes a bool vector, and returns true if any of its elements are true.</div>
+      <div class="comment"><br>Takes a bool vector, and returns true if any of its elements are true.</div>
       <div class="function_decl"><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">anyTrue</span><span class="code">&lt;</span><span class="code_ident">BoolVector</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">BoolVector</span><span class="code"> </span><span class="code_ident">boolVector</span><span class="code">)</span>
       </div>
      </div>
@@ -2280,7 +2280,7 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="sin"><span class="function_name">sin</span>
-      <div class="comment">Sine of an angle.</div>
+      <div class="comment"><br>Sine of an angle.</div>
       <div class="function_decl"><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">sin</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">n</span><span class="code">)</span>
       </div>
      </div>
@@ -2373,7 +2373,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Takes an input that receives floating point events, and produces a continuous output stream of floats which are smoothed by a specified amount. This is handy for smoothing plugin parameters</div>
+     <div class="comment"><br>Takes an input that receives floating point events, and produces a continuous output stream of floats which are smoothed by a specified amount. This is handy for smoothing plugin parameters</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -2424,7 +2424,7 @@ has_toc: false
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="SmoothedValue"><span class="code">struct </span><span class="struct_name">SmoothedValue</span>
-      <div class="comment">Holds a float value and is given a target to move towards over a given time. Call setTarget() to tell the object where to go and how many steps to take to get there, then repeatedly call getNext() to iterate to the target.</div>
+      <div class="comment"><br>Holds a float value and is given a target to move towards over a given time. Call setTarget() to tell the object where to go and how many steps to take to get there, then repeatedly call getNext() to iterate to the target.</div>
       <div class="struct_members">
        <table class="struct_table">
         <th>Member</th>
@@ -2506,7 +2506,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">This helper processor simply passes its input through to its output with a constant gain applied. The FrameType parameter could be a float, or a vector of floats. See: DynamicGain, SmoothedGain</div>
+     <div class="comment"><br>This helper processor simply passes its input through to its output with a constant gain applied. The FrameType parameter could be a float, or a vector of floats. See: DynamicGain, SmoothedGain</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -2546,7 +2546,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">This helper processor takes two input streams - one for data and the other for a gain level, and emits the input signal with the gain applied. The FrameType parameter could be a float, or a vector of floats. See: ConstantGain, SmoothedGain</div>
+     <div class="comment"><br>This helper processor takes two input streams - one for data and the other for a gain level, and emits the input signal with the gain applied. The FrameType parameter could be a float, or a vector of floats. See: ConstantGain, SmoothedGain</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -2594,7 +2594,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Takes an input stream of the given FrameType, and passes it through using a SmoothedGainParameter processor to apply a smoothed gain to it. The gain level is exposed via the &#39;volume&#39; input.</div>
+     <div class="comment"><br>Takes an input stream of the given FrameType, and passes it through using a SmoothedGainParameter processor to apply a smoothed gain to it. The gain level is exposed via the &#39;volume&#39; input.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -2648,7 +2648,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Takes input events which change the level in decibels, and produces an output stream of smoothed gain factors which can be applied to a signal.</div>
+     <div class="comment"><br>Takes input events which change the level in decibels, and produces an output stream of smoothed gain factors which can be applied to a signal.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -2728,7 +2728,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.midi</h2>
     </div>
-    <div class="comment">Various utilities for handling raw MIDI data. <br>The classes in the standard library which deal with synthesisers have been designed to avoid raw MIDI messages, and instead to work with strongly-typed event objects for note-ons/offs, pitch-bends, etc, which are vastly more usable than a 3-byte code that was designed for a 1980s serial link. <br></div>
+    <div class="comment">Various utilities for handling raw MIDI data.<br>The classes in the standard library which deal with synthesisers have been designedto avoid raw MIDI messages, and instead to work with strongly-typed event objectsfor note-ons/offs, pitch-bends, etc, which are vastly more usable than a 3-bytecode that was designed for a 1980s serial link.<br></div>
    </div>
    <div class="namespace" id="midi" href="#midi">
     <div class="namespaceTitle">
@@ -2738,7 +2738,7 @@ has_toc: false
      <div class="processorTitle">
       <h2><span class="keyword">processor </span>std::midi::MPEConverter</h2>
      </div>
-     <div class="comment">Accepts an input stream of raw MIDI MPE events and converts them to a stream of note event objects which can be more easily used by synthesiser classes.</div>
+     <div class="comment"><br>Accepts an input stream of raw MIDI MPE events and converts them to a stream of note event objects which can be more easily used by synthesiser classes.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3011,7 +3011,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Simple utility processor that takes a vector size 2 and outputs the sum of its elements.</div>
+     <div class="comment"><br>Simple utility processor that takes a vector size 2 and outputs the sum of its elements.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3051,7 +3051,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Simple utility processor that takes a scalar input and outputs a vector size 2 which contains two copies of the input value</div>
+     <div class="comment"><br>Simple utility processor that takes a scalar input and outputs a vector size 2 which contains two copies of the input value</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3091,7 +3091,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Takes two input streams and two gain streams which it uses to attenuate the inputs. Their result is then emitted. FrameType can be a float or float vector type.</div>
+     <div class="comment"><br>Takes two input streams and two gain streams which it uses to attenuate the inputs. Their result is then emitted. FrameType can be a float or float vector type.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3156,7 +3156,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Takes two input streams which it adds together after applying some optional constant gains. FrameType can be a float or float vector type.</div>
+     <div class="comment"><br>Takes two input streams which it adds together after applying some optional constant gains. FrameType can be a float or float vector type.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3206,7 +3206,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Takes two input streams and outputs a dynamic mix of their values, using a third stream to control the mix. <br>mixRange determines the range of values that the mix stream will take. So the mix input is expected to be between 0 and mixRange, where mix = 0 will cause 100% of in1 to be emitted, and mix = mixRange will cause 100% of in2 to be emitted. <br>This processor is handy as a wet/dry mixer - for example you could connect a dry stream to in1, a wet stream to in2, and set mixRange to 100. Then, the mix input will act as a &quot;percentage wet&quot; control.</div>
+     <div class="comment"><br>Takes two input streams and outputs a dynamic mix of their values, using a third stream to control the mix. <br>mixRange determines the range of values that the mix stream will take. So the mix input is expected to be between 0 and mixRange, where mix = 0 will cause 100% of in1 to be emitted, and mix = mixRange will cause 100% of in2 to be emitted. <br>This processor is handy as a wet/dry mixer - for example you could connect a dry stream to in1, a wet stream to in2, and set mixRange to 100. Then, the mix input will act as a &quot;percentage wet&quot; control.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3454,7 +3454,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.notes</h2>
     </div>
-    <div class="comment">These structs are used for events that model the start/stop/control of notes that are playing in synthesisers. <br>Unlike sending raw MIDI around, these are strongly typed and use floating point data so are far nicer to work with. <br>The objects include a channel ID field, so that a multi-channel input device can indicate which events should be applied to each of the active notes that are being played. <br></div>
+    <div class="comment">These structs are used for events that model the start/stop/control of notesthat are playing in synthesisers.<br>Unlike sending raw MIDI around, these are strongly typed and use floating pointdata so are far nicer to work with.<br>The objects include a channel ID field, so that a multi-channel input device canindicate which events should be applied to each of the active notes that arebeing played.<br></div>
    </div>
    <div class="namespace" id="notes" href="#notes">
     <div class="namespaceTitle">
@@ -3656,7 +3656,7 @@ has_toc: false
     <div class="functions">
      <h2>Functions</h2>
      <div class="function" id="frequencyToNote"><span class="function_name">frequencyToNote</span>
-      <div class="comment">Returns the MIDI note equivalent for a frequency in Hz. This uses the standard A = 440Hz reference tuning. See: noteToFrequency</div>
+      <div class="comment"><br>Returns the MIDI note equivalent for a frequency in Hz. This uses the standard A = 440Hz reference tuning. See: noteToFrequency</div>
       <div class="function_decl"><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">frequencyToNote</span><span class="code"> </span><span class="code">(</span><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">frequency</span><span class="code">)</span>
       </div>
      </div>
@@ -3716,7 +3716,7 @@ has_toc: false
      <div class="functions">
       <h2>Functions</h2>
       <div class="function" id="sine"><span class="function_name">sine</span>
-       <div class="comment">Returns a sine wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a sine wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">sine</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -3731,7 +3731,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="square"><span class="function_name">square</span>
-       <div class="comment">Returns a bipolar square wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar square wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">square</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -3746,7 +3746,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="triangle"><span class="function_name">triangle</span>
-       <div class="comment">Returns a bipolar triangle wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar triangle wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">triangle</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -3761,7 +3761,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="sawtoothUp"><span class="function_name">sawtoothUp</span>
-       <div class="comment">Returns a bipolar upwards sawtooth wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar upwards sawtooth wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">sawtoothUp</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -3776,7 +3776,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="sawtoothDown"><span class="function_name">sawtoothDown</span>
-       <div class="comment">Returns a bipolar downwards sawtooth wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar downwards sawtooth wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">sawtoothDown</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -3803,7 +3803,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="generate"><span class="function_name">generate</span>
-       <div class="comment">Returns a wave of the shape type passed in as an argument, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a wave of the shape type passed in as an argument, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">generate</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">Shape</span><span class="code"> </span><span class="code_ident">waveShapeType</span><span class="code">, </span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -3837,7 +3837,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">A processor which generates a unipolar ramp, and has an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
+     <div class="comment"><br>A processor which generates a unipolar ramp, and has an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3908,7 +3908,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">A basic sinewave generation processor with an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
+     <div class="comment"><br>A basic sinewave generation processor with an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -3984,7 +3984,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">Uses a polyblep algorithm to generate a wave, with inputs to control its shape and frequency.</div>
+     <div class="comment"><br>Uses a polyblep algorithm to generate a wave, with inputs to control its shape and frequency.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -4084,7 +4084,7 @@ has_toc: false
        </table>
       </div>
      </div>
-     <div class="comment">A LFO processor with event inputs to control its parameters.</div>
+     <div class="comment"><br>A LFO processor with event inputs to control its parameters.</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
@@ -4368,7 +4368,7 @@ has_toc: false
      <div class="functions">
       <h2>Functions</h2>
       <div class="function" id="sine4"><span class="function_name">sine</span>
-       <div class="comment">Returns a sine wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a sine wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">sine</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -4383,7 +4383,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="square4"><span class="function_name">square</span>
-       <div class="comment">Returns a bipolar square wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar square wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">square</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -4398,7 +4398,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="triangle4"><span class="function_name">triangle</span>
-       <div class="comment">Returns a bipolar triangle wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar triangle wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">triangle</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -4413,7 +4413,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="sawtoothUp4"><span class="function_name">sawtoothUp</span>
-       <div class="comment">Returns a bipolar upwards sawtooth wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar upwards sawtooth wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">sawtoothUp</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -4428,7 +4428,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="sawtoothDown4"><span class="function_name">sawtoothDown</span>
-       <div class="comment">Returns a bipolar downwards sawtooth wave, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a bipolar downwards sawtooth wave, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">sawtoothDown</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -4455,7 +4455,7 @@ has_toc: false
        </div>
       </div>
       <div class="function" id="generate3"><span class="function_name">generate</span>
-       <div class="comment">Returns a wave of the shape type passed in as an argument, where phase is in the range 0 to 1</div>
+       <div class="comment"><br>Returns a wave of the shape type passed in as an argument, where phase is in the range 0 to 1</div>
        <div class="function_decl"><span class="code_ident">SampleType</span><span class="code"> </span><span class="code_ident">generate</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">Shape</span><span class="code"> </span><span class="code_ident">waveShapeType</span><span class="code">, </span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">phase</span><span class="code">)</span>
        </div>
       </div>
@@ -4469,7 +4469,7 @@ has_toc: false
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="PhasorState"><span class="code">struct </span><span class="struct_name">PhasorState</span>
-      <div class="comment">A class to manage a phase and increment that loops between 0 and 1.</div>
+      <div class="comment"><br>A class to manage a phase and increment that loops between 0 and 1.</div>
       <div class="struct_members">
        <table class="struct_table">
         <th>Member</th>
@@ -4551,10 +4551,10 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.random</h2>
     </div>
-    <div class="comment">If you&#39;re writing code that needs to be cryptographically secure, then this is not the random number generation library that you want. The target audience for these classes are those who need quick-and-dirty RNGs for noise generation and similar non-critical tasks. <br>When seeding RNGs, the <code>processor.id</code> and <code>processor.session</code> values are very useful: <br><ul>
-      <li><code>processor.id</code> is different for each instance of a processor, but the same for each run of the program. If you have multiple instances of a processor node which each have an RNG, then if you seed them with a value based on <code>processor.id</code>, they&#39;ll each use a different stream of values, but the sequences will be the same each time the program runs. </li></ul>
+    <div class="comment">If you&#39;re writing code that needs to be cryptographically secure, then this is not therandom number generation library that you want. The target audience for these classesare those who need quick-and-dirty RNGs for noise generation and similar non-criticaltasks.<br>When seeding RNGs, the <code>processor.id</code> and <code>processor.session</code> values are very useful:<br><ul>
+      <li><code>processor.id</code> is different for each instance of a processor, but the same for eachrun of the program. If you have multiple instances of a processor node which eachhave an RNG, then if you seed them with a value based on <code>processor.id</code>, they&#39;lleach use a different stream of values, but the sequences will be the same each timethe program runs.</li></ul>
      <ul>
-      <li><code>processor.session</code> is the same for all processors, but different each time the program runs, so if you use it as part of your seed, it&#39;ll make the program behave differently each time. </li>
+      <li><code>processor.session</code> is the same for all processors, but different each time theprogram runs, so if you use it as part of your seed, it&#39;ll make the programbehave differently each time.</li>
      </ul>
     </div>
    </div>
@@ -4622,7 +4622,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.timeline</h2>
     </div>
-    <div class="comment">This namespace contains various types and functions for dealing with tempos, positions and events that describe DAW-style timelines. <br></div>
+    <div class="comment">This namespace contains various types and functions for dealing with tempos,positions and events that describe DAW-style timelines.<br></div>
    </div>
    <div class="namespace" id="timeline" href="#timeline">
     <div class="namespaceTitle">
@@ -4669,7 +4669,7 @@ has_toc: false
       </div>
      </div>
      <div class="struct" id="TransportState"><span class="code">struct </span><span class="struct_name">TransportState</span>
-      <div class="comment">Indicates whether a host is currently playing or recording. This struct is intended for purposes like sending as an event into a plugin to tell it when the host&#39;s playback state changes.</div>
+      <div class="comment"><br>Indicates whether a host is currently playing or recording. This struct is intended for purposes like sending as an event into a plugin to tell it when the host&#39;s playback state changes.</div>
       <div class="struct_members">
        <table class="struct_table">
         <th>Member</th>
@@ -4688,7 +4688,7 @@ has_toc: false
       </div>
      </div>
      <div class="struct" id="Position"><span class="code">struct </span><span class="struct_name">Position</span>
-      <div class="comment">This struct holds data that a host may want to send as an event to a plugin to update it with various measurements of positions along its timeline.</div>
+      <div class="comment"><br>This struct holds data that a host may want to send as an event to a plugin to update it with various measurements of positions along its timeline.</div>
       <div class="struct_members">
        <table class="struct_table">
         <th>Member</th>
@@ -4785,7 +4785,7 @@ has_toc: false
     <div class="moduleTitle">
      <h2>std.voices</h2>
     </div>
-    <div class="comment">This module demonstrates a simple voice-allocation algorithm. <br>The way it&#39;s structured is that you pass an incoming stream of note events to the voice allocator processor, and it redirects them to an array of destination processors which each handle a single voice. <br>The voice allocators use the channel property of the incoming events to group them together, and take care of ensuring that each target voice only receives the events from one channel at a time. <br></div>
+    <div class="comment">This module demonstrates a simple voice-allocation algorithm.<br>The way it&#39;s structured is that you pass an incoming stream of note events tothe voice allocator processor, and it redirects them to an array of destinationprocessors which each handle a single voice.<br>The voice allocators use the channel property of the incoming events to groupthem together, and take care of ensuring that each target voice only receivesthe events from one channel at a time.<br></div>
    </div>
    <div class="namespace" id="voices" href="#voices">
     <div class="namespaceTitle">
