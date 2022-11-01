@@ -25,12 +25,6 @@ h2 {
 }
 
 pre{
-    /*margin: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);*/
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,13 +37,12 @@ pre{
     list-style-type: circle;
 }
 .function{
-    margin-left: 40px;
+    margin-left: 20px;
 }
 .function,
 .comment{
     color:black;
     font-family: Inter;
-    padding-bottom: 0.5em;
     padding-left: 1em;
 }
 .moduleTitle h2{
@@ -83,8 +76,7 @@ pre{
     font-family: var(--code-font);
 }
 .code,
-module,
-.code_ident {
+module {
     font-family: var(--code-font);
     margin: 0;
     color:black;
@@ -101,7 +93,7 @@ module,
 .function_name{
     display: block;
     color:black;
-    font-size: 20px;
+    font-size: 17px;
     font-family: var(--code-font);
     padding: 2px;
     padding-bottom: 10px;
@@ -121,11 +113,7 @@ module,
 .struct_member_name{
     white-space: pre;
 }
-.specialisation{
-    vertical-align: top!important;
-    text-align: left!important;
-    padding: 0;
-}
+
 .keyword{
     font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
     font-size: 22px;
@@ -162,6 +150,7 @@ module,
 .module{
     border-top: 1px solid rgba(0, 0, 0, 0.31);
     margin-top: 50px;
+    background: rgba(0, 0, 0, 0.027);
 }
 
 .moduleTitle{
@@ -174,11 +163,11 @@ module,
     margin-top: 0px;
 }
 .specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2 {
-    font-size: 18px;
-    padding: 0 0 0.5em 0;
+    font-size: 18px!important;
+    padding: 0 0 0.5em 0!important;
 }
 code .keyword{
-    
+    color:rgba(0, 0, 0, 0.728);
     font-size: 14px;
     font-family: monospace;
 }
@@ -187,4 +176,21 @@ code {
     font-size: 14px;
     font-family: monospace;
     background-color: #f5f6fa00!important;
+}
+.specialisation code {
+    padding-left: 40px;
+    white-space: pre-wrap;
+    display: inline-block;
+}
+
+.function_decl{
+    font-family: var(--code-font);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align:left;
+    font-size: 0;
+}
+.code_ident a{
+    margin-left: -8px;
 }
