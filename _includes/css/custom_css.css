@@ -1,0 +1,686 @@
+/* New */
+body{
+position: absolute;
+width: 1440px;
+height: 746px;
+left: 0px;
+top: 0px;
+
+background: #FFFFFF;
+}
+
+/* Navigation */
+.side-bar{
+position: absolute;
+width: 264px;
+height: 657px;
+left: 188px;
+top: 89px;
+}
+
+.nav-list{
+/* Navigation-items */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+
+position: absolute;
+width: 264px;
+height: 185px;
+left: 0px;
+top: 30px;
+}
+
+.nav-list-item{
+/* Item */
+
+width: 264px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+/* Item */
+
+width: 264px;
+height: 32px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+}
+
+
+/* Home */
+.nav-list-item active{
+position: absolute;
+width: 40px;
+height: 17px;
+left: 31px;
+top: 8px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Blue */
+color: #2C84FA;
+}
+
+/* Getting Started */
+
+position: absolute;
+width: 104px;
+height: 17px;
+left: 31px;
+top: 8px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Black */
+color: #111111;
+
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 10px;
+height: 6px;
+left: 206px;
+top: 14px;
+
+/* Black */
+background: #111111;
+
+
+/* Item */
+
+width: 264px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+flex-grow: 0;
+
+
+/* Developer Guides */
+
+position: absolute;
+width: 119px;
+height: 17px;
+left: 31px;
+top: 8px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Black */
+color: #111111;
+
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 10px;
+height: 6px;
+left: 206px;
+top: 14px;
+
+/* Black */
+background: #111111;
+
+
+/* Item */
+
+width: 264px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 3;
+flex-grow: 0;
+
+
+/* Code Examples */
+
+position: absolute;
+width: 104px;
+height: 17px;
+left: 31px;
+top: 8px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Black */
+color: #111111;
+
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 10px;
+height: 6px;
+left: 206px;
+top: 14px;
+
+/* Black */
+background: #111111;
+
+
+/* Item */
+
+width: 264px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 4;
+flex-grow: 0;
+
+
+/* Language Reference */
+
+position: absolute;
+width: 138px;
+height: 17px;
+left: 31px;
+top: 8px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Black */
+color: #111111;
+
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 10px;
+height: 6px;
+left: 206px;
+top: 14px;
+
+/* Black */
+background: #111111;
+
+
+/* Item */
+
+width: 264px;
+height: 32px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 5;
+flex-grow: 0;
+
+
+/* Patch format */
+
+position: absolute;
+width: 87px;
+height: 17px;
+left: 31px;
+top: 8px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 17px;
+/* identical to box height */
+
+/* Black */
+color: #111111;
+
+
+
+/* Vector 1 */
+
+position: absolute;
+width: 10px;
+height: 6px;
+left: 206px;
+top: 14px;
+
+/* Black */
+background: #111111;
+
+
+/* This site uses Just the Docs, a documentation theme for Jekyll. */
+
+position: absolute;
+width: 180px;
+height: 34px;
+left: 31px;
+bottom: 16px;
+
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 11px;
+line-height: 150%;
+/* or 16px */
+
+/* Medium-grey */
+color: #777777;
+
+
+
+/* Content */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 30px;
+gap: 50px;
+
+position: absolute;
+width: 800px;
+height: 854px;
+left: 452px;
+top: 89px;
+
+
+
+/* Hero */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 20px;
+
+width: 740px;
+height: 194px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Text */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 15px;
+
+width: 740px;
+height: 134px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Welcome to Cmajor */
+
+width: 740px;
+height: 47px;
+
+/* H1 */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 36px;
+line-height: 130%;
+/* identical to box height, or 47px */
+
+/* Black */
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* The programming language for writing and developing audio software. If you’re new to Cmajor, check out the Getting Started Guide. */
+
+width: 740px;
+height: 72px;
+
+/* P */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+/* or 24px */
+
+/* Black */
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Buttons */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 0px;
+gap: 20px;
+
+width: 349px;
+height: 40px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* Button */
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 8px 16px;
+
+width: 177px;
+height: 40px;
+
+/* Blue */
+background: #2C84FA;
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Try the Playground */
+
+width: 145px;
+height: 24px;
+
+/* P (link & button) */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+
+/* White */
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* Button */
+
+box-sizing: border-box;
+
+/* Auto layout */
+display: flex;
+flex-direction: row;
+align-items: flex-start;
+padding: 8px 16px;
+
+width: 152px;
+height: 40px;
+
+/* Light-grey */
+border: 2px solid #EEEEEE;
+border-radius: 4px;
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+flex-grow: 0;
+
+
+/* View on GitHub */
+
+width: 120px;
+height: 24px;
+
+/* P (link & button) */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 150%;
+/* identical to box height, or 24px */
+
+/* Blue */
+color: #2C84FA;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+flex-grow: 0;
+
+
+/* About */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 15px;
+
+width: 740px;
+height: 310px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* About */
+
+width: 740px;
+height: 31px;
+
+/* H2 */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 130%;
+/* or 31px */
+
+/* Black */
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Cmajor is an audio development platform created to improve the developer’s workflow. It was developed to provide a safe environment for DSP development and fast implementation. Being able to go from an idea to a resulting output is key. Cmajor was designed with these main goals: To allow simple procedural DSP code to be easily composed into graph structures To offer performance that at least matches C/C++ To make it impossible to write code that can crash or break real-time safety rules To use a simple, familiar syntax which will be very easily learned by anyone who’s dabbled with C/C++, javascript or other common languages */
+
+width: 740px;
+height: 264px;
+
+/* P */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+/* or 24px */
+
+/* Black */
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Why */
+
+/* Auto layout */
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 0px;
+gap: 15px;
+
+width: 740px;
+height: 190px;
+
+
+/* Inside auto layout */
+flex: none;
+order: 2;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Why use Cmajor? */
+
+width: 740px;
+height: 31px;
+
+/* H2 */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 500;
+font-size: 24px;
+line-height: 130%;
+/* or 31px */
+
+/* Black */
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* The purpose of Cmajor is to fufil all the criteria of a successful and great audio specific DSL. It is designed for all levels of developers. For Beginners, it provides an environment and community to learn with great libraries and safety. For Developers, Cmajor provides JIT compilation for C++ performance levels. */
+
+width: 740px;
+height: 144px;
+
+/* P */
+font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 150%;
+/* or 24px */
+
+/* Black */
+color: #111111;
+
+
+/* Inside auto layout */
+flex: none;
+order: 1;
+align-self: stretch;
+flex-grow: 0;
+
+
+/* Line 1 */
+
+position: absolute;
+width: 1034px;
+height: 0px;
+left: 218px;
+top: 88px;
+
+/* Light-grey */
+border: 1px solid #EEEEEE;
+
+
+/* Search */
+
+position: absolute;
+width: 280px;
+height: 59px;
+left: 452px;
+top: 19px;
+
+background: url(image.png);
+
+
+/* logo */
+
+position: absolute;
+width: 162px;
+height: 48px;
+left: 218px;
+top: 20px;
+
+background: url(image);

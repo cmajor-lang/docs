@@ -1,0 +1,78 @@
+/* New */
+body{
+    position: absolute;
+    width: 1440px;
+    height: 746px;
+    left: 0px;
+    top: 0px;
+    
+    background: #FFFFFF;
+    }
+    
+    /* Navigation */
+    .side-bar{
+    position: absolute;
+    width: 264px;
+    height: 657px;
+    left: 188px;
+    top: 89px;
+    }
+    
+    .nav-list{
+    /* Navigation-items */
+    
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    
+    position: absolute;
+    width: 264px;
+    height: 185px;
+    left: 0px;
+    top: 30px;
+    }
+    
+    .nav-list-item{
+    /* Item */
+    
+    width: 264px;
+    height: 32px;
+    
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    
+    /* Item */
+    
+    width: 264px;
+    height: 32px;
+    
+    /* Inside auto layout */
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    }
+    
+    
+    /* Home */
+    .nav-list-item active{
+    position: absolute;
+    width: 40px;
+    height: 17px;
+    left: 31px;
+    top: 8px;
+    
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    /* identical to box height */
+    
+    /* Blue */
+    color: #2C84FA;
+    }
