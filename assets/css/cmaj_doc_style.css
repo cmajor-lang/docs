@@ -7,27 +7,54 @@
 @supports (font-variation-settings: normal) {
   :root { font-family: 'Inter var', sans-serif; }
 }
+.namespaceTitle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
-/*.namespace{
+.namespaceTitle h2,.processorTitle h2{
     background: rgba(0, 0, 0, 0.027);
-}*/
+    font-size: 22px!important;
+}
 
 h2 {
     padding: 5px;
     margin: 0px;
-    background: rgba(0, 0, 0, 0.027);
+    font-size: 20px;
+    /*background: rgba(0, 0, 0, 0.027);*/
 }
 
+pre{
+    /*margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.endpoint{
+    list-style: none;
+    font-family: var(--code-font); 
+}
+.li{
+    list-style-type: circle;
+}
 .function{
     margin-left: 40px;
 }
 .function,
 .comment{
-    /*border-bottom: 1px solid rgba(0, 0, 0, 0.057);*/
-    color:rgb(88, 88, 88);
-    font-family: inter;
+    color:black;
+    font-family: Inter;
+    padding-bottom: 0.5em;
+    padding-left: 1em;
 }
-
+.moduleTitle h2{
+    font-size: 26px;
+}
 .module_type {
     opacity: 70%;
     font-style: italic;
@@ -66,9 +93,11 @@ module,
 
 .structs,
 .specialisations,
-.functions{
-    font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
+.functions,
+.endpoints{
+    font-family: Inter;
 }
+
 .function_name{
     display: block;
     color:black;
@@ -101,6 +130,7 @@ module,
     font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
     font-size: 22px;
     color:rgba(0, 0, 0, 0.494);
+    margin-right: 7px;
 }
 .struct_member,
 .struct_name,
@@ -129,6 +159,31 @@ module,
     empty-cells: hide;
 }
 
-.hide_header{
-    visibility: collapse;
+.module{
+    border-top: 1px solid rgba(0, 0, 0, 0.31);
+    margin-top: 50px;
+}
+
+.moduleTitle{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#audio_data {
+    border-top: 1px solid rgba(0, 0, 0, 0);
+    margin-top: 0px;
+}
+.specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2 {
+    font-size: 18px;
+    padding: 0 0 0.5em 0;
+}
+code .keyword{
+    
+    font-size: 14px;
+    font-family: monospace;
+}
+code {
+    color:black;
+    font-size: 14px;
+    font-family: monospace;
 }
