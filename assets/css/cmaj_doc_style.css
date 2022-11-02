@@ -1,5 +1,4 @@
 :root {
-    --serif-font: BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --code-font: monaco, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
@@ -15,6 +14,11 @@
 .namespaceTitle h2,.processorTitle h2{
     background: rgba(0, 0, 0, 0.027);
     font-size: 22px!important;
+    margin-bottom: 10px;
+}
+
+.processor,.namespace{
+    padding-left: 15px;
 }
 
 h2 {
@@ -36,6 +40,11 @@ pre{
 .li{
     list-style-type: circle;
 }
+
+.main-content ul>li::before {
+    position: absolute;
+    margin-left: -2.7em;
+}
 .function{
     margin-left: 20px;
 }
@@ -43,7 +52,7 @@ pre{
 .comment{
     color:black;
     font-family: Inter;
-    padding-left: 1em;
+    padding-left: 1.5em;
 }
 .moduleTitle h2{
     font-size: 26px;
@@ -61,7 +70,7 @@ pre{
     font-style: normal;
     color: rgb(88, 88, 88);
     /*white-space: pre;*/
-    margin: 15px;
+    margin-left: -15px;
     margin-bottom: 20px;
     
 }
@@ -107,7 +116,6 @@ module {
     margin: 0;
 }
 .variable_type{
-    
     color: #5c5962;
 }
 .struct_member_name{
@@ -150,10 +158,11 @@ module {
 .module{
     border-top: 1px solid rgba(0, 0, 0, 0.31);
     margin-top: 50px;
-    background: rgba(0, 0, 0, 0.027);
+    text-indent: 1.5em;
 }
 
 .moduleTitle{
+    text-indent: 0em;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -165,7 +174,19 @@ module {
 .specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2 {
     font-size: 18px!important;
     padding: 0 0 0.5em 0!important;
+    color: #2C84FA;
 }
+
+.specialisations h2:after, .endpoints h2:after, .variables h2:after, .functions h2:after, .structs h2:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    /*margin: 0 auto; /* This will center the border. */
+    margin-left: 20px;
+    width: 30%; /* Change this to whatever width you want. */
+    padding-top: 2px; /* This creates some space between the element and the border. */
+    border-bottom: 1px solid rgba(0, 0, 0, 0.209);; /* This creates the border. Replace black with whatever color you want. */
+}
+
 code .keyword{
     color:rgba(0, 0, 0, 0.728);
     font-size: 14px;
@@ -179,6 +200,7 @@ code {
 }
 .specialisation code {
     padding-left: 40px;
+    text-align: left;
     white-space: pre-wrap;
     display: inline-block;
 }
