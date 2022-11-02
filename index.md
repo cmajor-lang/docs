@@ -10,7 +10,7 @@ permalink: /
 
 The programming language for writing and developing audio software.
 
-<img src="https://haz-test.github.io/cmajor/docs/Assets/Cmajor-Word-Logo.png" width="450">
+<img src="https://soundstacks.github.io/docs-dev/assets/images/Cmajor-Word-Logo.png" width="450">
 
 If you're new to Cmajor, check out the getting started guide.
 
