@@ -211,7 +211,9 @@ module {
     padding-bottom: 7pt;
     padding-left: 16.78pt;
 }
-
+th{
+    display:none;
+}
 code .keyword{
     color:rgba(0, 0, 0, 0.728);
     font-size: 14px;
