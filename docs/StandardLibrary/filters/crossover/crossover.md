@@ -1,5 +1,5 @@
 ---
-title: std::filters::crossover
+title: crossover
 permalink: /docs/StandardLibrary#crossover
 parent: std.filters
 grand_parent: Standard Library

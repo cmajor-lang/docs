@@ -1,5 +1,5 @@
 ---
-title: std::filters::simper
+title: simper
 permalink: /docs/StandardLibrary#simper
 parent: std.filters
 grand_parent: Standard Library

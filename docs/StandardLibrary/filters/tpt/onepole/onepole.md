@@ -1,7 +1,7 @@
 ---
-title: std::filters::tpt::onepole
+title: onepole
 permalink: /docs/StandardLibrary#onepole
-parent: std::filters::tpt
+parent: tpt
 grand_parent: std.filters
 has_children: True
 nav_order: 0
