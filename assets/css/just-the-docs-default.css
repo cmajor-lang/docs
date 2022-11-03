@@ -419,7 +419,7 @@ blockquote {
 @media (min-width: 62.5rem) {
     .site-title {
         padding-top:.5rem;
-        padding-bottom: .5rem
+        padding-bottom: 2.5rem
     }
 }
 
@@ -966,7 +966,9 @@ h4,.text-delta {
 }
 
 h4 code {
-    text-transform: none
+    text-transform: none;
+    font-size: 14px;
+    font-weight: bold
 }
 
 h5,.text-epsilon {

@@ -7,24 +7,24 @@
   :root { font-family: 'Inter var', sans-serif; }
 }
 .namespaceTitle{
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
 }
 
 .namespaceTitle h2,.processorTitle h2{
     background: rgba(0, 0, 0, 0.027);
-    font-size: 22px!important;
-    margin-bottom: 10px;
+    font-size: 16pt!important;
+    margin-bottom: 7.5pt;
 }
 
 .processor,.namespace{
-    padding-left: 15px;
+    padding-left: 11pt;
 }
 
 h2 {
-    padding: 5px;
-    margin: 0px;
-    font-size: 20px;
+    padding: 5pt;
+    margin: 0pt;
+    font-size: 20pt;
     /*background: rgba(0, 0, 0, 0.027);*/
 }
 
@@ -43,35 +43,35 @@ pre{
 
 .main-content ul>li::before {
     position: absolute;
-    margin-left: -2.7em;
+    margin-left: -30.2pt;
 }
 .function{
-    margin-left: 20px;
+    margin-left: 15pt;
 }
 .function,
 .comment{
     color:black;
     font-family: Inter;
-    padding-left: 1.5em;
+    padding-left: 16.78pt;
 }
 .moduleTitle h2{
-    font-size: 26px;
+    font-size: 20pt;
 }
 .module_type {
     opacity: 70%;
     font-style: italic;
-    padding-inline-end: 0.3em;
+    padding-inline-end: 3.35pt;
     font-family: --serif-font;
 }
 
 .function_decl {
     font-family: var(--code-font);
-    font-size: 14px; 
+    font-size: 10.5pt; 
     font-style: normal;
     color: rgb(88, 88, 88);
     /*white-space: pre;*/
-    margin-left: -15px;
-    margin-bottom: 20px;
+    margin-left: -11pt;
+    margin-bottom: 15pt;
     
 }
 .code_using{
@@ -102,17 +102,17 @@ module {
 .function_name{
     display: block;
     color:black;
-    font-size: 17px;
+    font-size: 13pt;
     font-family: var(--code-font);
-    padding: 2px;
-    padding-bottom: 10px;
+    padding: 1.5pt;
+    padding-bottom: 7.5pt;
     margin: 0;
-    margin-left:-20px;
+    margin-left:-14pt;
 }
 
 .variables{
     font-family: inter;
-    padding: 5px;
+    padding: 4pt;
     margin: 0;
 }
 .variable_type{
@@ -124,9 +124,9 @@ module {
 
 .keyword{
     font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
-    font-size: 22px;
+    font-size: 17pt;
     color:rgba(0, 0, 0, 0.494);
-    margin-right: 7px;
+    margin-right: 4pt;
 }
 .struct_member,
 .struct_name,
@@ -134,7 +134,7 @@ module {
 .variable{
     font-family: var(--code-font);
     padding: 0;
-    margin: 0 0 .05em 0;  
+    margin: 0 0 .559pt 0;  
 }
 
 .custom_table{
@@ -156,24 +156,23 @@ module {
 }
 
 .module{
-    border-top: 1px solid rgba(0, 0, 0, 0.31);
-    margin-top: 50px;
-    text-indent: 1.5em;
+    border-top: 0.75pt solid rgba(0, 0, 0, 0.31);
+    margin-top: 37.5pt;
 }
 
 .moduleTitle{
-    text-indent: 0em;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    text-indent: 0pt;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
 }
 
 #audio_data {
-    border-top: 1px solid rgba(0, 0, 0, 0);
-    margin-top: 0px;
+    border-top: 0.75pt solid rgba(0, 0, 0, 0);
+    margin-top: 0pt;
 }
 .specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2 {
-    font-size: 18px!important;
-    padding: 0 0 0.5em 0!important;
+    font-size: 18pt!important;
+    padding: 0 0 5.59pt 0!important;
     color: #2C84FA;
 }
 
@@ -181,10 +180,10 @@ module {
     content: ""; /* This is necessary for the pseudo element to work. */ 
     display: block; /* This will put the pseudo element on its own line. */
     /*margin: 0 auto; /* This will center the border. */
-    margin-left: 20px;
+    margin-left: 0pt;
     width: 30%; /* Change this to whatever width you want. */
-    padding-top: 2px; /* This creates some space between the element and the border. */
-    border-bottom: 1px solid rgba(0, 0, 0, 0.209);; /* This creates the border. Replace black with whatever color you want. */
+    padding-top: 1.5pt; /* This creates some space between the element and the border. */
+    border-bottom: .75pt solid rgba(0, 0, 0, 0.209);; /* This creates the border. Replace black with whatever color you want. */
 }
 
 code .keyword{
@@ -194,12 +193,12 @@ code .keyword{
 }
 code {
     color:black;
-    font-size: 14px;
+    font-size: 10.5pt;
     font-family: monospace;
     background-color: #f5f6fa00!important;
 }
 .specialisation code {
-    padding-left: 40px;
+    padding-left: 30pt;
     text-align: left;
     white-space: pre-wrap;
     display: inline-block;
@@ -214,5 +213,5 @@ code {
     font-size: 0;
 }
 .code_ident a{
-    margin-left: -8px;
+    margin-left: -6pt;
 }
