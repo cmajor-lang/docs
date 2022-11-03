@@ -1,5 +1,5 @@
 ---
-title: std::filters::butterworth
+title: butterworth
 permalink: /docs/StandardLibrary#butterworth
 parent: std.filters
 grand_parent: Standard Library

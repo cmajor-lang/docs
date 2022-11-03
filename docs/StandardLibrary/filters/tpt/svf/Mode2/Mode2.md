@@ -1,8 +1,8 @@
 ---
-title: std::filters::tpt::svf::Mode
+title: Mode
 permalink: /docs/StandardLibrary#Mode2
-parent: std::filters::tpt::svf
-grand_parent: std::filters::tpt
+parent: svf
+grand_parent: tpt
 has_children: False
 nav_order: 0
 ---

@@ -1,5 +1,5 @@
 ---
-title: std::levels
+title: levels
 permalink: /docs/StandardLibrary#levels
 parent: std
 grand_parent: Standard Library

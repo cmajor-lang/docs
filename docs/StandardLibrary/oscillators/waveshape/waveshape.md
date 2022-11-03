@@ -1,5 +1,5 @@
 ---
-title: std::oscillators::waveshape
+title: waveshape
 permalink: /docs/StandardLibrary#waveshape
 parent: std.oscillators
 grand_parent: Standard Library
