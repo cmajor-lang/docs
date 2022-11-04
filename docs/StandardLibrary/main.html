@@ -3857,8 +3857,15 @@ has_toc: false
        </code>
       </div>
      </div>
-     <div class="function" id="nextSquare"><span class="function_name">nextSquare</span>
+     <div class="function" id="nextSine"><span class="function_name">nextSine</span>
       <div class="comment">Returns the sample of a square wave.</div>
+      <div class="function_decl">
+       <code><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">nextSine</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+         <a href="#PolyblepState">PolyblepState</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="nextSquare"><span class="function_name">nextSquare</span>
       <div class="function_decl">
        <code><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">nextSquare</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
          <a href="#PolyblepState">PolyblepState</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">)</span>
@@ -4008,7 +4015,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::oscillators::PolyblepOscillator</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::oscillators::PolyblepOscillator (<span class="keyword">using </span>FrameType,<br>                                                <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialShape</span><span class="code"> = </span><span class="code_ident">Shape</span><span class="code">::</span><span class="code_ident">sawtooth</span>,<br>                                                <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">440.0f</span>)</code></span>
+       <code><span class="keyword">processor</span> std::oscillators::PolyblepOscillator (<span class="keyword">using </span>FrameType,<br>                                                <span class="code_ident">Shape</span><span class="code"> </span><span class="code_ident">initialShape</span><span class="code"> = </span><span class="code_ident">Shape</span><span class="code">::</span><span class="code_ident">sawtoothUp</span>,<br>                                                <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">440.0f</span>)</code></span>
      </div>
      <div class="comment"><br>Uses a polyblep algorithm to generate a wave, with inputs to control its shape and frequency.</div>
      <div class="endpoints">
