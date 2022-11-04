@@ -18,16 +18,17 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.audio_data</h2>
    </div>
-   <div class="comment">These structures are useful for representing chunks of audio data with aknown sample-rate. They&#39;re useful types when you&#39;re declaring an externalvariable which is going to hold audio file data or generated waveform data.<br>Note that duck-typing is used for the types of externals which contain audiodata, so you can use your own classes as long as they contain a couple offields which can hold the frame data and a sample rate. If you need a structfor audio data with more than 2 channels, you can just declare your own typeusing an appropriately-sized vector for the frames.</div>
    <div class="namespace" id="std" href="#std">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std</h2>
     </div>
+    <div class="comment"><br>The <code>std</code> namespace is the root for all the built-in Cmajor library code. <br>It contains various child namespaces that group tasks into various sub-categories. <br></div>
    </div>
    <div class="namespace" id="audio_data" href="#audio_data">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::audio_data</h2>
     </div>
+    <div class="comment"><br>These structures are useful for representing chunks of audio data with a known sample-rate. They&#39;re useful types when you&#39;re declaring an external variable which is going to hold audio file data or generated waveform data. <br>Note that duck-typing is used for the types of externals which contain audio data, so you can use your own classes as long as they contain a couple of fields which can hold the frame data and a sample rate. If you need a struct for audio data with more than 2 channels, you can just declare your own type using an appropriately-sized vector for the frames. <br></div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="Mono"><span class="code">struct </span><span class="struct_name">Mono</span>
@@ -215,11 +216,11 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.delay</h2>
    </div>
-   <div class="comment">Utilities and processors for implementing delays. Note that yougraph connections allow a delay to be added without needing to usean explicit processor - see the language guide for more details.</div>
    <div class="namespace" id="delay" href="#delay">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::delay</h2>
     </div>
+    <div class="comment"><br>Utilities and processors for implementing delays. Note that you graph connections allow a delay to be added without needing to use an explicit processor - see the language guide for more details. <br></div>
     <div class="processor" id="StreamDelay">
      <div class="processorTitle">
       <h2><span class="keyword">processor </span>std::delay::StreamDelay</h2>
@@ -476,11 +477,11 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.envelopes</h2>
    </div>
-   <div class="comment">Utilities for calculating and applying gain levels.</div>
    <div class="namespace" id="envelopes" href="#envelopes">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::envelopes</h2>
     </div>
+    <div class="comment"><br>Utilities for calculating and applying static and dynamic gain levels. <br></div>
     <div class="processor" id="FixedASR">
      <div class="processorTitle">
       <h2><span class="keyword">processor </span>std::envelopes::FixedASR</h2>
@@ -2036,11 +2037,11 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.frequency</h2>
    </div>
-   <div class="comment">Contains DFT implementations for complex and real numbers<br>The buffers can be either float32 or float64 (or complex32/complex64).Buffer sizes must be a power of 2.</div>
    <div class="namespace" id="frequency7" href="#frequency7">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::frequency</h2>
     </div>
+    <div class="comment"><br>Contains DFT implementations for complex and real numbers <br>The buffers can be either float32 or float64 (or complex32/complex64). Buffer sizes must be a power of 2. <br></div>
     <div class="functions">
      <h2>Functions</h2>
      <div class="function" id="realOnlyForwardFFT"><span class="function_name">realOnlyForwardFFT</span>
@@ -2408,11 +2409,11 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.levels</h2>
    </div>
-   <div class="comment">Utilities for calculating and applying smoothing ramps and gain levels.</div>
    <div class="namespace" id="smoothing" href="#smoothing">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::smoothing</h2>
     </div>
+    <div class="comment"><br>Utilities for calculating and applying smoothing ramps and gain levels. <br></div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="SmoothedValue"><span class="code">struct </span><span class="struct_name">SmoothedValue</span>
@@ -3099,6 +3100,7 @@ has_toc: false
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::mixers</h2>
     </div>
+    <div class="comment"><br>These processors can be used to mix various combinations of audio streams together with static or dynamic gains. <br></div>
     <div class="processor" id="StereoToMono">
      <div class="processorTitle">
       <h2><span class="keyword">processor </span>std::mixers::StereoToMono</h2>
@@ -3294,6 +3296,7 @@ has_toc: false
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::noise</h2>
     </div>
+    <div class="comment"><br>These processors can be used to generate various flavours of noise. <br></div>
     <div class="processor" id="White">
      <div class="processorTitle">
       <h2><span class="keyword">processor </span>std::noise::White</h2>
@@ -3513,11 +3516,11 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.notes</h2>
    </div>
-   <div class="comment">These structs are used for events that model the start/stop/control of notesthat are playing in synthesisers.<br>Unlike sending raw MIDI around, these are strongly typed and use floating pointdata so are far nicer to work with.<br>The objects include a channel ID field, so that a multi-channel input device canindicate which events should be applied to each of the active notes that arebeing played.</div>
    <div class="namespace" id="notes" href="#notes">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::notes</h2>
     </div>
+    <div class="comment"><br>These structs are used for events that model the start/stop/control of notes that are playing in synthesisers. <br>Unlike sending raw MIDI around, these are strongly typed and use floating point data so are far nicer to work with. <br>The objects include a channel ID field, so that a multi-channel input device can indicate which events should be applied to each of the active notes that are being played. <br></div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="NoteOn"><span class="code">struct </span><span class="struct_name">NoteOn</span>
@@ -3781,6 +3784,7 @@ has_toc: false
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::oscillators</h2>
     </div>
+    <div class="comment"><br>These utility functions and processors provide oscillators such as sine, square, triangle and sawtooth. <br></div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="PhasorState"><span class="code">struct </span><span class="struct_name">PhasorState</span>
@@ -4697,15 +4701,15 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.random</h2>
    </div>
-   <div class="comment">If you&#39;re writing code that needs to be cryptographically secure, then this is not therandom number generation library that you want. The target audience for these classesare those who need quick-and-dirty RNGs for noise generation and similar non-criticaltasks.<br>When seeding RNGs, the <code>processor.id</code> and <code>processor.session</code> values are very useful:<br><ul>
-     <li><code>processor.id</code> is different for each instance of a processor, but the same for eachrun of the program. If you have multiple instances of a processor node which eachhave an RNG, then if you seed them with a value based on <code>processor.id</code>, they&#39;lleach use a different stream of values, but the sequences will be the same each timethe program runs.</li></ul>
-    <ul>
-     <li><code>processor.session</code> is the same for all processors, but different each time theprogram runs, so if you use it as part of your seed, it&#39;ll make the programbehave differently each time.</li>
-    </ul>
-   </div>
    <div class="namespace" id="random" href="#random">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::random</h2>
+    </div>
+    <div class="comment"><br>If you&#39;re writing code that needs to be cryptographically secure, then this is not the random number generation library that you want. The target audience for these classes are those who need quick-and-dirty RNGs for noise generation and similar non-critical tasks. <br>When seeding RNGs, the <code>processor.id</code> and <code>processor.session</code> values are very useful: <br><ul>
+      <li><code>processor.id</code> is different for each instance of a processor, but the same for each run of the program. If you have multiple instances of a processor node which each have an RNG, then if you seed them with a value based on <code>processor.id</code>, they&#39;ll each use a different stream of values, but the sequences will be the same each time the program runs. </li></ul>
+     <ul>
+      <li><code>processor.session</code> is the same for all processors, but different each time the program runs, so if you use it as part of your seed, it&#39;ll make the program behave differently each time. </li>
+     </ul>
     </div>
     <div class="structs">
      <h2>Structs</h2>
@@ -4779,11 +4783,11 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.timeline</h2>
    </div>
-   <div class="comment">This namespace contains various types and functions for dealing with tempos,positions and events that describe DAW-style timelines.</div>
    <div class="namespace" id="timeline" href="#timeline">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::timeline</h2>
     </div>
+    <div class="comment"><br>This namespace contains various types and functions for dealing with tempos, positions and events that describe DAW-style timelines. <br></div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="Tempo"><span class="code">struct </span><span class="struct_name">Tempo</span>
@@ -4969,11 +4973,11 @@ has_toc: false
    <div class="moduleTitle">
     <h2>std.voices</h2>
    </div>
-   <div class="comment">This module demonstrates a simple voice-allocation algorithm.<br>The way it&#39;s structured is that you pass an incoming stream of note events tothe voice allocator processor, and it redirects them to an array of destinationprocessors which each handle a single voice.<br>The voice allocators use the channel property of the incoming events to groupthem together, and take care of ensuring that each target voice only receivesthe events from one channel at a time.</div>
    <div class="namespace" id="voices" href="#voices">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::voices</h2>
     </div>
+    <div class="comment"><br>This module demonstrates a simple voice-allocation algorithm. <br>The way it&#39;s structured is that you pass an incoming stream of note events to the voice allocator processor, and it redirects them to an array of destination processors which each handle a single voice. <br>The voice allocators use the channel property of the incoming events to group them together, and take care of ensuring that each target voice only receives the events from one channel at a time. <br></div>
     <div class="processor" id="VoiceAllocator">
      <div class="processorTitle">
       <h2><span class="keyword">processor </span>std::voices::VoiceAllocator</h2>
