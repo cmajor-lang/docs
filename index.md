@@ -43,11 +43,11 @@ There are two ways of working with the API. The high level format of Cmajor patc
 
 ### Cmajor Patch
 
-A Cmajor patch is similar in nature to formats such as VST, AAX and AU plug-ins. It configures audio i/o bus configuration, MIDI handling and parameters in similar ways. Find more information about Cmajor patches [here](https://haz-test.github.io/cmajor/docs/GettingStarted#processors-and-graphs).
+A Cmajor patch is similar in nature to formats such as VST, AAX and AU plug-ins. It configures audio i/o bus configuration, MIDI handling and parameters in similar ways. Find more information about Cmajor patches [here](https://soundstacks.github.io/docs-dev/docs/PatchFormat).
 
 ### Low Level API
 
-The low level API is aimed toward developers wanting to delve deeper into Cmajor. More information [here]().
+The low level API is aimed toward developers wanting to delve deeper into Cmajor. More information [here](https://soundstacks.github.io/docs-dev/docs/C++API).
 
 ## Why the Name?
 
