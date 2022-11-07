@@ -7,25 +7,48 @@ has_children: true
 has_toc: false
 ---
 
-# Setting up Cmajor
+# Getting Started with Cmajor
 
-To begin, you may want to follow this guide to setup Cmajor with command line tools. This will give you a whole guide to running your first Cmajor patch.
 
-## Download the latest release of Cmajor Binaries
+## Using Cmajor in VScode
 
-[Click here to download the latest binaries](https://github.com/SoundStacks/cmajor/releases)
+If you're a VScode user, then the [Cmajor VScode extension](https://marketplace.visualstudio.com/items?itemName=SoundStacks.cmajor) offers a hassle-free way to play with the language.
 
-On the Github releases page, you'll find downloadable binaries for Mac, Windows and Linux. These provide:
+It's a one-click process to get up and running: VScode will automatically install everything you need to create, edit and test Cmajor patches. Simply go to the extensions tab in VScode, search for "Cmajor" and click "install" on the extension.
 
-- The command-line tool (`cmaj` or `cmaj.exe`) which provides a compiler, utilities and can load and run Cmajor patches.
-- The redistributable libraries (`CmajPerformer.dll` or `libCmajPerformer.so`) which are needed if you build your own native app which incorporates the Cmajor JIT engine.
+The extension provides syntax-highlighting for Cmajor code, and adds some new commands to the VScode command-palette. The commands include:
+
+#### `Cmajor: Run patch`
+
+If you open a `.cmajorpatch` file in the editor, then invoking this command will build and run it.
+
+Any compile errors will be reported in the problems panel, making it easy to fix mistakes. When your patch compiles successfully, it'll open a separate pop-up window showing its GUI, and any output while running will appear in the embedded terminal inside VScode. To stop the patch running, you can either close its popup window, or kill the process in the terminal.
+
+While a patch is running, re-saving any of the patch source files should automatically trigger a rebuild and reload, so you can immediately see the effect of your changes.
+
+#### `Cmajor: Create a new patch`
+
+This command will prompt you to select the name of a new `.cmajorpatch` file. It will then create a template patch and some simple placeholder code as a way of getting started. You can run it with the `Cmajor: Run patch` command, and use it as a starting point to build upon.
+
+#### `Cmajor: Find example patches`
+
+This command will take you to the Cmajor repository where you can find our example patches. You can either clone the [whole repository](https://github.com/SoundStacks/cmajor) from github, or just download specific examples from the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
 
 -------------------------------------------------------------------------------
-## Using the `cmaj` command-Line tool
 
-The command line tool can create, build, test and run patches, as well as code-generation of C++ and plugin projects, and various other related utilities.
+## Installing the Cmajor command-line tools
 
-Installing the command-line app is simply a case of copying the `cmaj` executable to a location of your choice, and running it from a terminal.
+On the Github releases page, you'll find [downloadable binaries for Mac, Windows and Linux](https://github.com/SoundStacks/cmajor/releases). These provide:
+
+- The command-line tool (`cmaj` or `cmaj.exe`) which provides a compiler, utilities and can load and run Cmajor patches.
+- The redistributable libraries (`CmajPerformer.dll` or `libCmajPerformer.so`) which are needed if you're building your own native app which embeds the Cmajor JIT engine.
+- Builds of the Cmajor VST/AU plugin, which can be used in DAWs and other audio hosts to run Cmajor patches.
+
+### The `cmaj` command-line tool
+
+The `cmaj` command can create, build, test and run patches, as well as perform code-generation of C++ and plugin projects, and various other tasks.
+
+To install, just [download](https://github.com/SoundStacks/cmajor/releases) and unzip the executable into a location of your choice, and you can run it from a terminal.
 
 For help, run:
 
@@ -117,6 +140,10 @@ $ cmaj create --name="Hello" MyNewPatchFolderName
 ```
 
 This creates a new folder containing a patch called "Hello" that can be explored, renamed and built upon. For in-depth details on how these files work, see the [Patch Format Guide](./Cmaj%20Patch%20Format.md)
+
+## Advanced functionality
+
+The `cmaj` tool can also code-generate C++ VST/AU versions of patches and run javascript scripts and automated tests. These are described in detail in their own documentation guides.
 
 -------------------------------------------------------------------------------
 

@@ -9,9 +9,9 @@ has_toc: false
 
 # Cmajor Language Reference
 
-This guide aims to cover all aspects of Cmaj with enough depth to be a technical reference guide.
+This guide aims to be a technical reference guide for all aspects of the Cmaj language.
 
-It's written for developers who have a decent level of familiarity with common languages and the concepts involved. Beginners who are looking for a more friendly "getting started" tutorial should probably start their journey elsewhere!
+It's written for developers who have a decent level of familiarity with common languages and the concepts involved. Beginners who are looking for a more friendly "getting started" tutorial should probably start with the example code walkthroughs.
 
 Cmaj was designed with these main goals:
 

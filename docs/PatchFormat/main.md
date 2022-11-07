@@ -9,10 +9,9 @@ has_toc: false
 
 # The Cmajor Patch Format
 
-Cmajor patches are a format for bundling together code and other resources, so that they can be loaded into DAWs and other hosts as an intrument or effect plugin.
+Cmajor patches are a format for bundling together code and other resources, so that they can be loaded into audio hosts such as DAWs, to provide instruments or effect plugin functionality.
 
 ------------------------------------------------------------------------------
-
 
 A Cmajor "patch" is essentially a bundle of files, including:
 
