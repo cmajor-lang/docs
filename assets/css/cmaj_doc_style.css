@@ -56,6 +56,11 @@
     padding-left: 15pt;
 }
 
+.namespaceTitle a {
+    float: right;
+    font-family: var(--code-font);
+}
+
 .specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2 {
     font-size: 14pt!important;
     padding: 0 0 5.59pt 0!important;
@@ -209,7 +214,256 @@ module {
     text-align: left;
     empty-cells: hide;
     padding-bottom: 7pt;
+    padding-left: 7pt;
+}
+th{
+    display:none;
+}
+code .keyword{
+    color:rgba(0, 0, 0, 0.728);
+    font-size: 14px;
+    font-family: monospace;
+}
+code {
+    color:black;
+    font-size: 10.5pt;
+    font-family: var(--code-font); 
+    background-color: #f5f6fa00!important;
+}
+.specialisation code {
     padding-left: 16.78pt;
+    text-align: left;
+    white-space: pre-wrap;
+    display: inline-block;
+}
+
+.function_decl{
+    font-family: var(--code-font);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    text-align:left;
+    font-size: 0;
+}
+.code_ident a{
+    margin-left: -6pt;
+}:root {
+    --code-font: monaco, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+
+:root { font-family: 'Inter', sans-serif; }
+@supports (font-variation-settings: normal) {
+  :root { font-family: 'Inter var', sans-serif; }
+}
+
+.module{
+    border-top: 0.75pt solid rgba(0, 0, 0, 0.31);
+    margin-top: 37.5pt;
+}
+
+.moduleTitle h2{
+    font-size: 20pt;
+}
+
+.module_type {
+    opacity: 70%;
+    font-style: italic;
+    padding-inline-end: 3.35pt;
+    font-family: --serif-font;
+}
+
+.moduleTitle{
+    text-indent: 0pt;
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+}
+
+#audio_data {
+    border-top: 0.75pt solid rgba(0, 0, 0, 0);
+    margin-top: 0pt;
+}
+
+.specialisations h2:after, .endpoints h2:after, .variables h2:after, .functions h2:after, .structs h2:after {
+    content: ""; /* This is necessary for the pseudo element to work. */ 
+    display: block; /* This will put the pseudo element on its own line. */
+    /*margin: 0 auto; /* This will center the border. */
+    margin-left: 0pt;
+    width: 30%; /* Change this to whatever width you want. */
+    padding-top: 1.5pt; /* This creates some space between the element and the border. */
+    border-bottom: .75pt solid rgba(0, 0, 0, 0.209);; /* This creates the border. Replace black with whatever color you want. */
+}
+
+.namespaceTitle{
+    margin-top: 15pt;
+    margin-bottom: 15pt;
+}
+
+.namespaceTitle h2,.processorTitle h2, .graphTitle h2{
+    background: rgba(0, 0, 0, 0.027);
+    font-size: 16pt!important;
+    margin-bottom: 7.5pt;
+    padding-left: 15pt;
+}
+
+.namespaceTitle a {
+    float: right;
+    font-family: var(--code-font);
+}
+
+.specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2 {
+    font-size: 14pt!important;
+    padding: 0 0 5.59pt 0!important;
+    color: #2C84FA;
+    padding-left: 16.78pt!important;
+    padding-top: 3pt;
+}
+
+h2 {
+    padding: 5pt;
+    margin: 0pt;
+    font-size: 20pt;
+}
+
+pre{
+    display: flex;
+    padding-left: 20pt;
+    padding-bottom: 5pt;
+}
+
+.endpoint{
+    list-style: none;
+    font-family: var(--code-font); 
+}
+
+.li{
+    list-style-type: circle;
+}
+
+.main-content ul{
+    padding-left: 31pt!important;
+}
+
+.main-content ul>li::before {
+    position: absolute;
+    margin-left: -15.2pt;
+}
+.function{
+    margin-left: 15pt;
+}
+.function,
+.comment{
+    color:black;
+    font-family: Inter;
+    padding-left: 16.78pt;
+}
+
+.comment{
+    padding-bottom: 7pt;
+}
+
+.function_name{
+    display: block;
+    color:black;
+    font-size: 13pt;
+    font-weight: 500;
+    font-family: var(--code-font);
+    padding: 1.5pt;
+    padding-bottom: 7.5pt;
+    margin: 0;
+
+}
+
+.function_decl code{
+    font-family: var(--code-font);
+    font-size: 11pt; 
+    font-style: normal;
+    /*white-space: pre;*/
+    margin-top: 7pt;
+
+    margin-bottom: 15pt;
+    padding-left: 16.78pt;
+}
+.code_using{
+    color: green;
+}
+.code_prim{
+    color: blue;
+}
+
+.namespace{
+    font-family: var(--code-font);
+}
+.code,
+module {
+    font-family: var(--code-font);
+    margin: 0;
+    color:black;
+    display:contents;
+    }
+
+.structs,
+.specialisations,
+.functions,
+.endpoints{
+    font-family: Inter;
+}
+
+.variables{
+    font-family: inter;
+    padding: 4pt;
+    margin: 0;
+}
+.variable_type{
+    color: #5c5962;
+}
+.struct_member_name{
+    white-space: pre;
+}
+
+.keyword{
+    font-family: system-ui,-apple-system,blinkmacsystemfont,"Segoe UI",roboto,"Helvetica Neue",arial,sans-serif;
+    font-size: 17pt;
+    color:rgba(0, 0, 0, 0.494);
+    margin-right: 4pt;
+}
+.struct_member,
+.struct_name,
+.variable_name,
+.variable{
+    font-family: var(--code-font);
+    padding: 0;
+    margin: 0 0 .559pt 0;  
+}
+
+.struct .code, .struct_name{
+    display:inline-block;
+    padding-bottom: 7pt;
+    padding-left: 16.78pt;
+}
+
+.struct_table .code{
+    padding-bottom: 0pt;
+    padding-left: 0pt;
+}
+
+.custom_table{
+    border-style : hidden!important;
+    box-shadow: none;
+    text-align: left;
+}
+.struct_table,
+.variable_table,
+.specialisation_table{
+    border:none;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+    text-align: left;
+    empty-cells: hide;
+    padding-bottom: 7pt;
+    padding-left: 7pt;
 }
 th{
     display:none;

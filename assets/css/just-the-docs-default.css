@@ -1627,8 +1627,8 @@ table {
 
 th,td {
     font-size: 12px !important;
-    padding-top: .5rem;
-    padding-right: .75rem;
+    padding-top: 0;
+    padding-right: 0;
     padding-bottom: .5rem;
     padding-left: .75rem;
     background-color: #fff;
