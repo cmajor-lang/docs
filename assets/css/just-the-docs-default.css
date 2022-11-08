@@ -375,6 +375,27 @@ blockquote {
     }
 }
 
+.site-nav {
+    -ms-overflow-style: none;
+    scrollbar-width: none
+}
+
+.site-nav::-webkit-scrollbar {
+    width: 7pt
+}
+
+.site-nav::-webkit-scrollbar-track {
+    background: #f1f1f1
+}
+
+.site-nav::-webkit-scrollbar-thumb {
+    background: #d3d1d1
+}
+
+.site-nav::-webkit-scrollbar-thumb:hover {
+    background: #9f9d9d
+}
+
 .site-header {
     display: flex;
     min-height: 60px;
@@ -700,6 +721,7 @@ body {
 }
 
 .nav-list .nav-list-item .nav-list-link {
+    color: #111111;
     display: block;
     min-height: 3rem;
     padding-top: .25rem;
@@ -718,9 +740,16 @@ body {
     }
 }
 
+.nav-list .nav-list-item .nav-list-link.external>svg {
+    width: 1rem;
+    height: 1rem;
+    vertical-align: text-bottom
+}
+
 .nav-list .nav-list-item .nav-list-link.active {
     font-weight: 600;
-    text-decoration: none
+    text-decoration: none;
+    color: #2C84FA
 }
 
 .nav-list .nav-list-item .nav-list-link:hover,.nav-list .nav-list-item .nav-list-link.active {
@@ -736,7 +765,7 @@ body {
     padding-right: .75rem;
     padding-bottom: .75rem;
     padding-left: .75rem;
-    color: #2C84FA
+    color: #111111
 }
 
 @media (min-width: 62.5rem) {
@@ -769,11 +798,11 @@ body {
 }
 
 .nav-list .nav-list-item>.nav-list .nav-list-item .nav-list-link {
-    color: #111
+    color: #111111
 }
 
 .nav-list .nav-list-item>.nav-list .nav-list-item .nav-list-expander {
-    color: #111
+    color: #111111
 }
 
 .nav-list .nav-list-item.active>.nav-list-expander svg {
@@ -790,7 +819,7 @@ body {
     padding-bottom: .5rem;
     padding-left: 1rem;
     font-weight: 600;
-    text-align: end;
+    text-align: start;
     text-transform: uppercase;
     border-bottom: 1px solid #fff;
     font-size: 11px !important
@@ -813,6 +842,30 @@ body {
     .nav-category:first-child {
         margin-top: 0
     }
+}
+
+.nav-list-item:focus>.nav-list-expander svg {
+    transform: rotate(-90deg)
+}
+
+.nav-list-item:focus>.nav-list {
+    display: block
+}
+
+.nav-list.nav-category-list>.nav-list-item {
+    margin: 0
+}
+
+.nav-list.nav-category-list>.nav-list-item>.nav-list {
+    padding: 0
+}
+
+.nav-list.nav-category-list>.nav-list-item>.nav-list>.nav-list-item>.nav-list-link {
+    color: #111111
+}
+
+.nav-list.nav-category-list>.nav-list-item>.nav-list>.nav-list-item>.nav-list-expander {
+    color: #111111
 }
 
 .aux-nav {
