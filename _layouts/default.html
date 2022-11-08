@@ -7,7 +7,6 @@ layout: table_wrappers
 <html lang="{{ site.lang | default: 'en-US' }}">
 {% include head.html %}
 <body>
-  <a class="skip-to-main" href="#main-content">Skip to main content</a>
   <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="svg-link" viewBox="0 0 24 24">
       <title>Link</title>
@@ -39,83 +38,33 @@ layout: table_wrappers
         <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
       </svg>
     </symbol>
-    {% include icons/external_link.html %}
   </svg>
 
   <div class="side-bar">
     <div class="site-header">
-      <a href="{{ '/' | relative_url }}" class="site-title lh-tight">{% include title.html %}</a>
+      <a href="{{ '/' | absolute_url }}" class="site-title lh-tight">{% include title.html %}</a>
       <a href="#" id="menu-button" class="site-button">
         <svg viewBox="0 0 24 24" class="icon"><use xlink:href="#svg-menu"></use></svg>
       </a>
     </div>
-    <nav aria-label="Main" id="site-nav" class="site-nav">
-      {% assign pages_top_size = site.html_pages
-          | where_exp:"item", "item.title != nil"
-          | where_exp:"item", "item.parent == nil"
-          | where_exp:"item", "item.nav_exclude != true"
-          | size %}
-      {% if pages_top_size > 0 %}
-        {% include nav.html pages=site.html_pages key=nil %}
-      {% endif %}
-      {% if site.just_the_docs.collections %}
-        {% assign collections_size = site.just_the_docs.collections | size %}
-        {% for collection_entry in site.just_the_docs.collections %}
-          {% assign collection_key = collection_entry[0] %}
-          {% assign collection_value = collection_entry[1] %}
-          {% assign collection = site[collection_key] %}
-          {% if collection_value.nav_exclude != true %}
-            {% if collections_size > 1 or pages_top_size > 0 %}
-              {% if collection_value.nav_fold == true %}
-                <ul class="nav-list nav-category-list">
-                  <li class="nav-list-item{% if page.collection == collection_key %} active{% endif %}">
-                    {%- if collection.size > 0 -%}
-                    <a href="#" class="nav-list-expander"><svg viewBox="0 0 24 24"><use xlink:href="#svg-arrow-right"></use></svg></a>
-                    {%- endif -%}
-                    <div class="nav-category">{{ collection_value.name }}</div>
-                    {% include nav.html pages=collection key=collection_key %}
-                  </li>
-                </ul>
-              {% else %}
-                <div class="nav-category">{{ collection_value.name }}</div>
-                {% include nav.html pages=collection key=collection_key %}
-              {% endif %}
-            {% else %}
-              {% include nav.html pages=collection key=collection_key %}
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      {% endif %}
+    <nav role="navigation" aria-label="Main" id="site-nav" class="site-nav">
+      {% include nav/main.html %}
     </nav>
-
-    {% capture nav_footer_custom %}
-      {%- include nav_footer_custom.html -%}
-    {% endcapture %}
-    {% if nav_footer_custom != "" %}
-      {{ nav_footer_custom }}
-    {% else %}
-      <footer class="site-footer">
-        Copyright &copy; 2022 Sound Stacks Ltd.
-      </footer>
-    {% endif %}
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/pmarsceill/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
   </div>
   <div class="main" id="top">
     <div id="main-header" class="main-header">
       {% if site.search_enabled != false %}
-
-        {% capture search_placeholder %}{% include search_placeholder_custom.html %}{% endcapture %}
-
         <div class="search">
           <div class="search-input-wrap">
-            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="{{ search_placeholder | strip_html | strip }}" aria-label="{{ search_placeholder | strip_html| strip }}" autocomplete="off">
+            <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search {{ site.title }}" aria-label="Search {{ site.title }}" autocomplete="off">
             <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
           </div>
           <div id="search-results" class="search-results"></div>
         </div>
-      {% else %}
-        <div></div>
       {% endif %}
-      {% include header_custom.html %}
       {% if site.aux_links %}
         <nav aria-label="Auxiliary" class="aux-nav">
           <ul class="aux-nav-list">
@@ -135,21 +84,10 @@ layout: table_wrappers
       {% endif %}
     </div>
     <div id="main-content-wrap" class="main-content-wrap">
-      {% unless page.url == "/" %}
-        {% if page.parent %}
-          <nav aria-label="Breadcrumb" class="breadcrumb-nav">
-            <ol class="breadcrumb-nav-list">
-              {% if page.grand_parent %}
-                <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.grand_parent }}</a></li>
-                <li class="breadcrumb-nav-list-item"><a href="{{ second_level_url }}">{{ page.parent }}</a></li>
-              {% else %}
-                <li class="breadcrumb-nav-list-item"><a href="{{ first_level_url }}">{{ page.parent }}</a></li>
-              {% endif %}
-              <li class="breadcrumb-nav-list-item"><span>{{ page.title }}</span></li>
-            </ol>
-          </nav>
-        {% endif %}
-      {% endunless %}
+      {% if page.parent and page.url != "/" %}
+        {% include nav/crumbs.html nodes=nav_page_ancestors %}
+      {% endif %}
+      
       <div id="main-content" class="main-content" role="main">
         {% if site.heading_anchors != false %}
           {% include vendor/anchor_headings.html html=content beforeHeading="true" anchorBody="<svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><use xlink:href=\"#svg-link\"></use></svg>" anchorClass="anchor-heading" anchorAttrs="aria-labelledby=\"%html_id%\"" %}
@@ -157,29 +95,19 @@ layout: table_wrappers
           {{ content }}
         {% endif %}
 
-        {% if page.has_children == true and page.has_toc != false %}
-          <hr>
-          {% include toc_heading_custom.html %}
-          <ul>
-            {% for child in toc_list %}
-              <li>
-                <a href="{{ child.url | relative_url }}">{{ child.title }}</a>{% if child.summary %} - {{ child.summary }}{% endif %}
-              </li>
-            {% endfor %}
-          </ul>
-        {% endif %}
+        {% unless page.has_toc == false %}
+          {% include nav/toc.html nodes=nav_page_children %}
+        {% endunless %}
 
-        {% capture footer_custom %}
-          {%- include footer_custom.html -%}
-        {% endcapture %}
-        {% if footer_custom != "" or site.last_edit_timestamp or site.gh_edit_link %}
+        {% if site.footer_content != nil or site.last_edit_timestamp or site.gh_edit_link %}
           <hr>
           <footer>
             {% if site.back_to_top %}
               <p><a href="#top" id="back-to-top">{{ site.back_to_top_text }}</a></p>
             {% endif %}
-
-            {{ footer_custom }}
+            {% if site.footer_content != nil %}
+              <p class="text-small text-grey-dk-000 mb-0">{{ site.footer_content }}</p>
+            {% endif %}
 
             {% if site.last_edit_timestamp or site.gh_edit_link %}
               <div class="d-flex mt-2">
@@ -196,14 +124,18 @@ layout: table_wrappers
                   site.gh_edit_view_mode
                 %}
                   <p class="text-small text-grey-dk-000 mb-0">
-                    <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}{% if page.collection and site.collections_dir %}/{{ site.collections_dir }}{% endif %}/{{ page.path }}" id="edit-this-page">{{ site.gh_edit_link_text }}</a>
+                    <a href="{{ site.gh_edit_repository }}/{{ site.gh_edit_view_mode }}/{{ site.gh_edit_branch }}{% if site.gh_edit_source %}/{{ site.gh_edit_source }}{% endif %}/{{ page.path }}" id="edit-this-page">{{ site.gh_edit_link_text }}</a>
                   </p>
                 {% endif %}
               </div>
             {% endif %}
           </footer>
         {% endif %}
-
+        
+        {%- if site.url contains "localhost" and site.nav_debug -%}
+          {%- include nav/debug.html -%}
+        {% endif %}
+        
       </div>
     </div>
 
