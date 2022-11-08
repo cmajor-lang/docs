@@ -106,7 +106,6 @@ cmaj generate [opts] <file> Generates some code from the given file or patch
     --target=<type>         The type of code to generate - can be cpp|wasm|wast|plugin|module|syntaxtree
     --output=<file>         Write the generated runtime to the given file (or folder for a plugin)
     --jucePath=<folder>     If generating a JUCE plugin, this is the path to your JUCE folder
-    --cmajorIncludePath=<folder>  If generating a plugin, this is the path to your cmajor/include folder
 
 cmaj create [opts] <folder> Creates a folder containing files for a new empty patch
 

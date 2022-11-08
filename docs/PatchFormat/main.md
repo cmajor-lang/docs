@@ -242,7 +242,6 @@ To use this feature, run the command line app in `generate` mode, e.g.
 ```
 % cmaj generate --target=plugin
                 --output=[path to a target folder for the project]
-                --cmajorIncludePath=[path to your cmajor/include folder]
                 --jucePath=[path to your JUCE folder]
                 MyAmazingPatch.cmajorpatch
 ```
