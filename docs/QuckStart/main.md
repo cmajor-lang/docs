@@ -34,6 +34,10 @@ This command will prompt you to select the name of a new `.cmajorpatch` file. It
 
 This command will take you to the Cmajor repository where you can find our example patches. You can either clone the [whole repository](https://github.com/SoundStacks/cmajor) from github, or just download specific examples from the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
 
+#### `Cmajor: Export patch as JUCE plugin`
+
+This will prompt you for a folder in which to create a new JUCE project containing a complete C++ version of the patch that has focus. This allows you to build a native VST/AU/AAX plugin of your patch.
+
 -------------------------------------------------------------------------------
 
 ## Installing the Cmajor command-line tools
