@@ -406,7 +406,8 @@ blockquote {
     .site-header {
         height:60px;
         max-height: 60px;
-        border-bottom: 1px solid #fff
+        border-bottom: 1px solid #fff;
+        margin-top: 10pt
     }
 }
 
