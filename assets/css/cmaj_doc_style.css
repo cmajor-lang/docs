@@ -34,7 +34,7 @@
     margin-top: 0pt;
 }
 
-.specialisations h2:after, .endpoints h2:after, .variables h2:after, .functions h2:after, .structs h2:after {
+.specialisations h2:after, .endpoints h2:after, .variables h2:after, .functions h2:after, .structs h2:after, .nodes h2:after, .connections h2:after {
     content: ""; /* This is necessary for the pseudo element to work. */ 
     display: block; /* This will put the pseudo element on its own line. */
     /*margin: 0 auto; /* This will center the border. */
@@ -61,7 +61,7 @@
     font-family: var(--code-font);
 }
 
-.specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2 {
+.specialisations h2, .endpoints h2, .variables h2, .functions h2, .structs h2, .nodes h2, .connections h2 {
     font-size: 14pt!important;
     padding: 0 0 5.59pt 0!important;
     color: #2C84FA;
@@ -97,9 +97,6 @@ pre{
 .main-content ul>li::before {
     position: absolute;
     margin-left: -15.2pt;
-}
-.function{
-    margin-left: 15pt;
 }
 .function,
 .comment{
@@ -236,6 +233,11 @@ code {
     white-space: pre-wrap;
     display: inline-block;
 }
+.nodes code, .connections code {
+    padding-left: 16.78pt;
+    text-align: left;
+    display: inline-block;
+}
 
 .function_decl{
     font-family: var(--code-font);
@@ -281,16 +283,6 @@ code {
 #audio_data {
     border-top: 0.75pt solid rgba(0, 0, 0, 0);
     margin-top: 0pt;
-}
-
-.specialisations h2:after, .endpoints h2:after, .variables h2:after, .functions h2:after, .structs h2:after {
-    content: ""; /* This is necessary for the pseudo element to work. */ 
-    display: block; /* This will put the pseudo element on its own line. */
-    /*margin: 0 auto; /* This will center the border. */
-    margin-left: 0pt;
-    width: 30%; /* Change this to whatever width you want. */
-    padding-top: 1.5pt; /* This creates some space between the element and the border. */
-    border-bottom: .75pt solid rgba(0, 0, 0, 0.209);; /* This creates the border. Replace black with whatever color you want. */
 }
 
 .namespaceTitle{
@@ -347,9 +339,6 @@ pre{
     position: absolute;
     margin-left: -15.2pt;
 }
-.function{
-    margin-left: 15pt;
-}
 .function,
 .comment{
     color:black;
@@ -470,7 +459,7 @@ th{
 }
 code .keyword{
     color:rgba(0, 0, 0, 0.728);
-    font-size: 14px;
+    font-size: 10.5pt;
     font-family: monospace;
 }
 code {
@@ -478,12 +467,6 @@ code {
     font-size: 10.5pt;
     font-family: var(--code-font); 
     background-color: #f5f6fa00!important;
-}
-.specialisation code {
-    padding-left: 16.78pt;
-    text-align: left;
-    white-space: pre-wrap;
-    display: inline-block;
 }
 
 .function_decl{
