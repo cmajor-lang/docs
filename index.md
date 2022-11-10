@@ -6,21 +6,21 @@ description: "This is a test website for C major documentation."
 permalink: /
 ---
 
-# Welcome to Cmajor
+# Welcome to Cmajor!
 
 The programming language for writing fast, portable audio software.
 
-You've heard of C, C++, C#, objective-C... well, C*major* is a C-family language with the specific purpose of writing DSP signal processing code.
+You've heard of C, C++, C#, objective-C... well, C*major* is a C-family language designed specifically for writing DSP signal processing code.
 
 ## About
 
-As a language and development platform, the goal is to improve on the current standard-practice for audio development in quite a few ways:
+Our goal is to improve on the current status-quo for audio development in quite a few ways:
 
-- To match (and often beat) the performance traditional C/C++
-- To make the same code portable across diverse processor architectures
-- To be powerful and flexible enough for commercial use
-- To speed-up commercial product cycles by enabling sound-designers less dependent on instrument builders
-- To be far easier to learn than C++, and impossible to crash
+- To match (and often beat) the performance of traditional C/C++
+- To make the same code portable across diverse processor architectures (CPU, DSP, GPU, TPU etc)
+- To offer enough power and flexibility to satify professional audio tech industry users
+- To speed-up commercial product cycles by enabling sound-designers to be more independent from the instrument platforms
+- To attract students and beginners by being vastly easier to learn than C/C++
 
 If you're keen to learn the nitty-gritty of the language itself, the [language guide](docs/LanguageReference) offers a deep dive. To see some examples of the code, try the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
 
@@ -42,7 +42,7 @@ When you have a finished Cmajor patch, you can use our tools to convert it to a 
 
 ### Using Cmajor code in C++ projects
 
-Our tools can also export a raw, dependency-free C++ version of any Cmajor code. This means that you could design and test a DSP algorithm using our JIT engine and hot-reloader, and then export the finished code as bare C++ for use in an embedded target or other low-level project.
+Our tools can also export a raw, dependency-free C++ version of any Cmajor code. This means that you could design and test a DSP algorithm using our JIT engine and hot-reloader, and then export the finished code as C++ for use in any kind of app or even a bare-metal project.
 
 ### Embedding the Cmajor JIT engine in your app
 
