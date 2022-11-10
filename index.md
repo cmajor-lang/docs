@@ -22,7 +22,7 @@ As a language and development platform, the goal is to improve on the current st
 - To speed-up commercial product cycles by enabling sound-designers less dependent on instrument builders
 - To be far easier to learn than C++, and impossible to crash
 
-If you're keen to learn the nitty-gritty of the language itself, the [language guide](docs-dev/docs/LanguageReference) offers a deep dive. To see some examples of the code, try the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
+If you're keen to learn the nitty-gritty of the language itself, the [language guide](docs/LanguageReference) offers a deep dive. To see some examples of the code, try the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
 
 ## How can Cmajor be used?
 
@@ -52,13 +52,13 @@ As well as an API, we supply a whole range of utility C++ classes that make it e
 
 ### (Coming soon!) Develop and run Cmajor in your browser
 
-Cmajor has been designed from the outset to fit into a WASM/WebAssembly stack, and we'll soon be offering a full online playground at [cmajor.dev](cmajor.dev). This will let people dabble with the language without needing to install anything on their local machine.
+Cmajor has been designed from the outset to fit into a WASM/WebAssembly stack, and we'll soon be offering a full online playground at [cmajor.dev](https://cmajor.dev). This will let people dabble with the language without needing to install anything on their local machine.
 
 #### (Coming soon!) Native support for Cmajor patches in DAWs
 
 Tracktion Waveform will be the first DAW to support native loading of patches, but we hope others will follow soon!
 
-A DAW which is Cmajor-aware will offer a better experience of scanning for patches, and can do a better job of presenting and hot-reloading them. Our Cmajor JIT plugin can load patches into a DAW, but thanks to the VST/AU formats being designed for static plugins, there are some things it can't do, such as allowing dynamic changes to parameter lists or i/o buses.
+A DAW with native support for Cmajor will offer a better experience of scanning for patches, and can do a better job of presenting and hot-reloading them. Our Cmajor JIT plugin can load patches into a DAW, but thanks to the VST/AU formats being designed for static plugins, there are some things it can't do, such as allowing dynamic changes to parameter lists or i/o buses.
 
 ---------------------------------------------------------------------------------
 
