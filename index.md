@@ -54,7 +54,7 @@ As well as an API, we supply a whole range of utility C++ classes that make it e
 
 Cmajor has been designed from the outset to fit into a WASM/WebAssembly stack, and we'll soon be offering a full online playground at [cmajor.dev](https://cmajor.dev). This will let people dabble with the language without needing to install anything on their local machine.
 
-#### (Coming soon!) Native support for Cmajor patches in DAWs
+### (Coming soon!) Native support for Cmajor patches in DAWs
 
 Tracktion Waveform will be the first DAW to support native loading of patches, but we hope others will follow soon!
 
