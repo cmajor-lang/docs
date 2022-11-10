@@ -62,6 +62,6 @@ A DAW which is Cmajor-aware will offer a better experience of scanning for patch
 
 ---------------------------------------------------------------------------------
 
-<img src="assets/images/SoundStacks-logo.svg" width="190pt">
+<img src="assets/images/SoundStacks-logo.png" width="190pt">
 
 Cmajor is developed by Sound Stacks Ltd.
