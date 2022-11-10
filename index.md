@@ -8,47 +8,60 @@ permalink: /
 
 # Welcome to Cmajor
 
-The programming language for writing and developing audio software.
+The programming language for writing fast, portable audio software.
 
-<img src="https://soundstacks.github.io/docs-dev/assets/images/Cmajor-Word-Logo.png" width="450">
-
-If you're new to Cmajor, check out the getting started guide.
-
-[Try the Playground (Coming Soon!)](){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 } [View on GitHub](https://github.com/SoundStacks/cmajor){: .btn .btn-outline .fs-5 .mb-4 .mb-md-0 }
-
--------------------------------------------------------------------------------
+You've heard of C, C++, C#, objective-C... well, C*major* is a C-family language with the specific purpose of writing DSP signal processing code.
 
 ## About
 
-Cmajor is an audio development platform created to improve the developer's workflow. It was developed to provide a safe environment for DSP development and fast implementation. Being able to go from an idea to a resulting output is key.
+As a language and development platform, the goal is to improve on the current standard-practice for audio development in quite a few ways:
 
-Cmajor was designed with these main goals:
+- To match (and often beat) the performance traditional C/C++
+- To make the same code portable across diverse processor architectures
+- To be powerful and flexible enough for commercial use
+- To speed-up commercial product cycles by enabling sound-designers less dependent on instrument builders
+- To be far easier to learn than C++, and impossible to crash
 
-- To allow simple procedural DSP code to be easily composed into graph structures
-- To offer performance that *at least* matches C/C++
-- To make it impossible to write code that can crash or break real-time safety rules
-- To use a simple, familiar syntax which will be very easily learned by anyone who's dabbled with C/C++, javascript or other common languages
+If you're keen to learn the nitty-gritty of the language itself, the [language guide](docs-dev/docs/LanguageReference) offers a deep dive. To see some examples of the code, try the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
 
-## Why use Cmajor?
+## How can Cmajor be used?
 
-The purpose of Cmajor is to fufil all the criteria of a successful and great audio specific DSL. It is designed for all levels of developers.
+There are lots of different workflows in the world of audio development, and we want Cmajor to fit into as many of them as possible. Some of the ways you can use it are:
 
-For Beginners, it provides an environment and community to learn with great libraries and safety.
+### Stand-alone development
 
-For Developers, Cmajor provides JIT compilation for C++ performance levels.
+It's trivially easy to get started writing and playing Cmajor patches on your local machine. (See the [quick-start guide](docs/GettingStarted)).
 
-## Working with Cmajor
+If you don't fancy using our command-line tools, we have a VScode extension which provides a 1-click install process, giving you everything you need to edit and run Cmajor patches inside VScode, without going near a terminal or knowing what a compiler is.
 
-There are two ways of working with the API. The high level format of Cmajor patches and the low level API.
+As well as being able to test patches using a MIDI keyboard and your computer's audio input/output, you can also use our Cmajor VST/AU plugin to load your patches inside any regular DAW. This loader plugin uses a JIT engine, so you can edit your patches while running, and they'll automatically rebuild and update themselves without needing to restart.
 
-### Cmajor Patch
+### Turning a Cmajor patch into a native VST/AU/AAX plugin
 
-A Cmajor patch is similar in nature to formats such as VST, AAX and AU plug-ins. It configures audio i/o bus configuration, MIDI handling and parameters in similar ways. Find more information about Cmajor patches [here](https://soundstacks.github.io/docs-dev/docs/PatchFormat).
+When you have a finished Cmajor patch, you can use our tools to convert it to a native C++ JUCE project, which you can compile into whatever audio plugin format you like, and distributed like any other audio plugin.
 
-### Low Level API
+### Using Cmajor code in C++ projects
 
-The low level API is aimed toward developers wanting to delve deeper into Cmajor. More information [here](https://soundstacks.github.io/docs-dev/docs/C++API).
+Our tools can also export a raw, dependency-free C++ version of any Cmajor code. This means that you could design and test a DSP algorithm using our JIT engine and hot-reloader, and then export the finished code as bare C++ for use in an embedded target or other low-level project.
 
-## Why the Name?
+### Embedding the Cmajor JIT engine in your app
 
-Cmajor is picked from the western musical world of keys. C major is arguably the simplest key. When you learn music theory, you start with no sharps or flats on your key signature. This idea of simplicity in audio development is what inspired the name and drives the platform. It also refers to the C style language syntax - neat!
+For developers who want to embed the Cmajor JIT engine into their own native apps, there's a C++ API to do that - see the documentation [here](docs/C++API).
+
+As well as an API, we supply a whole range of utility C++ classes that make it easy to use Cmajor in various common audio software patterns.
+
+### (Coming soon!) Develop and run Cmajor in your browser
+
+Cmajor has been designed from the outset to fit into a WASM/WebAssembly stack, and we'll soon be offering a full online playground at [cmajor.dev](cmajor.dev). This will let people dabble with the language without needing to install anything on their local machine.
+
+#### (Coming soon!) Native support for Cmajor patches in DAWs
+
+Tracktion Waveform will be the first DAW to support native loading of patches, but we hope others will follow soon!
+
+A DAW which is Cmajor-aware will offer a better experience of scanning for patches, and can do a better job of presenting and hot-reloading them. Our Cmajor JIT plugin can load patches into a DAW, but thanks to the VST/AU formats being designed for static plugins, there are some things it can't do, such as allowing dynamic changes to parameter lists or i/o buses.
+
+---------------------------------------------------------------------------------
+
+<img src="assets/images/SoundStacks-logo.svg" width="190pt">
+
+Cmajor is developed by Sound Stacks Ltd.
