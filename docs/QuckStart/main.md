@@ -60,65 +60,7 @@ For help, run:
 $ cmaj help
 ```
 
-And it'll show you the latest set of available arguments, e.g.
-
-```
-cmaj <command> [options]    Runs the given command. Options can include the following:
-
-    -O0|1|2|3               Set the optimisation level to the given value
-    --debug                 Turn on debug output from the performer
-    --sessionID=n           Set the session id to the given value
-    --engine=<type>         Use the specified engine - e.g. llvm, wasm, cpp
-
-Supported commands:
-
-cmaj help                   Displays this help output
-
-cmaj version                Displays the current Cmajor version
-
-cmaj licenses               Print out legally required licensing details for 3rd-party
-                            libraries that are used by this application.
-
-cmaj play file [opts]       Plays a .cmajorpatch, or executes a .js javascript file.
-
-    --no-gui                Disable automatic launching of the UI in a web browser
-    --stop-on-error         Exits the app if there's a compile error (default is to keep
-                            running and retry when files are modified)
-
-cmaj test [opts] <files>    Runs one or more .cmajtest scripts, and print the aggregate results
-                            for the tests. See the documentation for writing tests for more info.
-
-    --singleThread          Use a single thread to run the tests
-    --threads=n             Run with the given number of threads, defaults to the available cores
-    --runDisabled           Run all tests including any marked disabled
-    --testToRun=n           Only run the specified test number in the test files
-    --xmlOutput=file        Generate a JUNIT compatible xml file containing the test results
-    --iterations=n          How many times to repeat the tests
-
-cmaj render [opts] <file>   Renders the given file or patch
-
-    --length=<frames>       The number of frames to render (optional if an input audio file is provided)
-    --rate=<rate>           Use the specified sample rate (optional if an input audio file is provided)
-    --channels=<num>        Number of output audio channels to render (default is 2 if omitted)
-    --blockSize=<size>      Render in the given block size
-    --output=<file>         Write the output to the given file
-    --input=<file>          Use input from the given file
-    --midi=<file>           Use input MIDI data from the given file
-
-cmaj generate [opts] <file> Generates some code from the given file or patch
-
-    --target=<type>         The type of code to generate - can be cpp|wasm|wast|plugin|module|syntaxtree
-    --output=<file>         Write the generated runtime to the given file (or folder for a plugin)
-    --jucePath=<folder>     If generating a JUCE plugin, this is the path to your JUCE folder
-
-cmaj create [opts] <folder> Creates a folder containing files for a new empty patch
-
-    --name="name"           Provides a name for the patch
-
-cmaj unit-test              Runs internal unit tests.
-
-    --iterations=n          How many times to repeat the tests
-```
+And it'll show you the latest set of available arguments.
 
 ## Playing a patch with the console app
 
@@ -134,6 +76,16 @@ There are command-line options to give you a bit more control over which audio a
 
 While running a patch, the console app will detect any file changes and recompile/reload, so you can quickly experiment with changes to your code.
 
+## Loading patches in your DAW with the Cmajor VST/AU plugin
+
+In our [binary releases](https://github.com/SoundStacks/cmajor/releases), you'll find an installer for our plugin, which can be loaded into most DAWs like any other plugin.
+
+When you create an instance of this plugin in a DAW, you can drag-and-drop a `.cmajorpatch` file onto the plugin's GUI to make it load that patch.
+
+It's worth noting that the nature of the VST/AU plugin formats make it practically impossible for a plugin to dynamically change its parameter list or the number of input/output channels that it provides. This obviously means that when you ask the plugin to load a patch with a different number of parameters or a different endpoint configuration, DAWs aren't always going to deal with that situation correctly. In respose, we've had to resort to some annoying restrictions (like always having a fixed-size list of parameters regardless of how many the patch has), but we'll keep trying to find new tricks and workarounds in the future to make this work better.
+
+-------------------------------------------------------------------------------
+
 ## Creating a new empty patch
 
 To get started with a new patch, the `cmaj` app can generate the basic boilerplate files needed. Just run:
@@ -144,9 +96,7 @@ $ cmaj create --name="Hello" MyNewPatchFolderName
 
 This creates a new folder containing a patch called "Hello" that can be explored, renamed and built upon. For in-depth details on how these files work, see the [Patch Format Guide](./Cmaj%20Patch%20Format.md)
 
-## Advanced functionality
-
-The `cmaj` tool can also code-generate C++ VST/AU versions of patches and run javascript scripts and automated tests. These are described in detail in their own documentation guides.
+The VScode extension also provides the `Cmajor: Create a new patch` command to do the same thing.
 
 -------------------------------------------------------------------------------
 
