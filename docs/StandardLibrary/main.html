@@ -222,268 +222,6 @@ has_toc: false
     </div>
    </div>
   </div>
-  <div class="module" id="std_delay" href="#std_delay">
-   <div class="moduleTitle">
-    <h2>std.delay</h2>
-   </div>
-   <div class="namespace" id="delay" href="#delay">
-    <div class="namespaceTitle">
-     <h2><span class="keyword">namespace </span>std::delay<a href="https://github.com/SoundStacks/cmajor/blob/main/standard_library/std_library_delay.cmajor" target="_blank">code</a>
-     </h2>
-    </div>
-    <div class="comment"><br>Utilities and processors for implementing delays. Note that you graph connections allow a delay to be added without needing to use an explicit processor - see the language guide for more details. <br></div>
-    <div class="processor" id="StreamDelay">
-     <div class="processorTitle">
-      <h2><span class="keyword">processor </span>std::delay::StreamDelay</h2>
-     </div>
-     <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::delay::StreamDelay (<span class="keyword">using </span>StreamType,<br>                                   <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">delayLength</span>)</code></span>
-     </div>
-     <div class="comment">A delay that acts on a pair of input/output streams</div>
-     <div class="endpoints">
-      <h2>Endpoints</h2>
-      <ul>
-       <li>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">StreamType</span>)</div>
-       </li>
-      </ul>
-      <ul>
-       <li>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">in</span> (<span class="code_ident">StreamType</span>)</div>
-       </li>
-      </ul>
-     </div>
-     <div class="variables">
-      <h2>Variables</h2>
-      <table class="variable_table">
-       <th>Type</th>
-       <th>Variable</th>
-       <div class="variable" id="buffer">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_ident">StreamType</span><span class="code">[</span><span class="code_ident">delayLength</span><span class="code">]</span>
-          </div>
-          <td>
-           <div class="variable_name">buffer</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-       <div class="variable" id="pos">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_ident">wrap</span><span class="code">&lt;</span><span class="code_ident">delayLength</span><span class="code">&gt;</span>
-          </div>
-          <td>
-           <div class="variable_name">pos</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-      </table>
-     </div>
-     <div class="functions">
-      <h2>Functions</h2>
-      <div class="function" id="main2"><span class="function_name">main</span>
-       <div class="function_decl">
-        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
-        </code>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="processor" id="ValueDelay">
-     <div class="processorTitle">
-      <h2><span class="keyword">processor </span>std::delay::ValueDelay</h2>
-     </div>
-     <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::delay::ValueDelay (<span class="keyword">using </span>StreamType,<br>                                  <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">delayLength</span>)</code></span>
-     </div>
-     <div class="comment">A delay that acts on a pair of input/output values</div>
-     <div class="endpoints">
-      <h2>Endpoints</h2>
-      <ul>
-       <li>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">value</span> <span class="endpoint_name">out</span> (<span class="code_ident">StreamType</span>)</div>
-       </li>
-      </ul>
-      <ul>
-       <li>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">value</span> <span class="endpoint_name">in</span> (<span class="code_ident">StreamType</span>)</div>
-       </li>
-      </ul>
-     </div>
-     <div class="variables">
-      <h2>Variables</h2>
-      <table class="variable_table">
-       <th>Type</th>
-       <th>Variable</th>
-       <div class="variable" id="buffer2">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_ident">StreamType</span><span class="code">[</span><span class="code_ident">delayLength</span><span class="code">]</span>
-          </div>
-          <td>
-           <div class="variable_name">buffer</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-       <div class="variable" id="pos2">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_ident">wrap</span><span class="code">&lt;</span><span class="code_ident">delayLength</span><span class="code">&gt;</span>
-          </div>
-          <td>
-           <div class="variable_name">pos</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-      </table>
-     </div>
-     <div class="functions">
-      <h2>Functions</h2>
-      <div class="function" id="main3"><span class="function_name">main</span>
-       <div class="function_decl">
-        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
-        </code>
-       </div>
-      </div>
-     </div>
-    </div>
-    <div class="processor" id="EventDelay">
-     <div class="processorTitle">
-      <h2><span class="keyword">processor </span>std::delay::EventDelay</h2>
-     </div>
-     <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::delay::EventDelay (<span class="keyword">using </span>EventType,<br>                                  <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">delayLength</span>,<br>                                  <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">bufferSize</span>)</code></span>
-     </div>
-     <div class="comment">A delay that acts on a pair of input/output event endpoints</div>
-     <div class="endpoints">
-      <h2>Endpoints</h2>
-      <ul>
-       <li>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">out</span> (<span class="code_ident">EventType</span>)</div>
-       </li>
-      </ul>
-      <ul>
-       <li>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">in</span> (<span class="code_ident">EventType</span>)</div>
-       </li>
-      </ul>
-     </div>
-     <div class="structs">
-      <h2>Structs</h2>
-      <div class="struct" id="DelayedEvent"><span class="code">struct </span><span class="struct_name">DelayedEvent</span>
-       <div class="struct_members">
-        <table class="struct_table">
-         <th>Type</th>
-         <th>Member</th>
-         <tr>
-          <td>
-           <div class="type"></div><span class="code_ident">EventType</span>
-           <td>
-            <div class="struct_member_name">e</div> </td>
-          </td>
-         </tr>
-         <tr>
-          <td>
-           <div class="type"></div><span class="code_prim">int32</span>
-           <td>
-            <div class="struct_member_name">eventTime</div> </td>
-          </td>
-         </tr>
-        </table>
-       </div>
-      </div>
-     </div>
-     <div class="variables">
-      <h2>Variables</h2>
-      <table class="variable_table">
-       <th>Type</th>
-       <th>Variable</th>
-       <div class="variable" id="eventBuffer">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_ident">DelayedEvent</span><span class="code">[</span><span class="code_ident">bufferSize</span><span class="code">]</span>
-          </div>
-          <td>
-           <div class="variable_name">eventBuffer</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-       <div class="variable" id="readPos">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_ident">wrap</span><span class="code">&lt;</span><span class="code_ident">bufferSize</span><span class="code">&gt;</span>
-          </div>
-          <td>
-           <div class="variable_name">readPos</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-       <div class="variable" id="writePos">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_ident">wrap</span><span class="code">&lt;</span><span class="code_ident">bufferSize</span><span class="code">&gt;</span>
-          </div>
-          <td>
-           <div class="variable_name">writePos</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-       <div class="variable" id="bufferEntries">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_prim">int32</span>
-          </div>
-          <td>
-           <div class="variable_name">bufferEntries</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-       <div class="variable" id="currentTime">
-        <tr>
-         <td>
-          <div class="variable_type"><span class="code_prim">int32</span>
-          </div>
-          <td>
-           <div class="variable_name">currentTime</div>
-          </td>
-         </td>
-        </tr>
-       </div>
-      </table>
-     </div>
-     <div class="functions">
-      <h2>Functions</h2>
-      <div class="function" id="in"><span class="function_name">in</span>
-       <div class="function_decl">
-        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">in</span><span class="code"> </span><span class="code">(</span><span class="code_ident">EventType</span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
-        </code>
-       </div>
-      </div>
-      <div class="function" id="emitEvents"><span class="function_name">emitEvents</span>
-       <div class="function_decl">
-        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">emitEvents</span><span class="code">(</span><span class="code">)</span>
-        </code>
-       </div>
-      </div>
-      <div class="function" id="main4"><span class="function_name">main</span>
-       <div class="function_decl">
-        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
-        </code>
-       </div>
-      </div>
-     </div>
-    </div>
-   </div>
-  </div>
   <div class="module" id="std_envelopes" href="#std_envelopes">
    <div class="moduleTitle">
     <h2>std.envelopes</h2>
@@ -558,7 +296,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main5"><span class="function_name">main</span>
+      <div class="function" id="main2"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -581,7 +319,7 @@ has_toc: false
     <div class="specialisations"><span class="specialisation">
       <code><span class="keyword">namespace</span> std::filters (<span class="keyword">using </span>FrameType = <span class="code_prim">float32</span>,<br>                        <span class="keyword">using </span>CoefficientType = <span class="code_prim">float32</span>,<br>                        <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">parameterUpdateRate</span><span class="code"> = </span><span class="code_literal">32</span>)</code></span>
     </div>
-    <div class="comment"><br>The <code>std::filters</code> namespace is parametersised, allowing both the <code>FrameType</code> and the <code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use 32 bit preecision, and filter frames of a single channel. <code>FrameType</code> can be specified as a vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter). <br>For efficiency reasons, modulated parameters are not applied every frame, and the <code>parameterUpdateRate</code> can be used to tune the frequency of updates <br>Each filter type is provided as both a Processor, which can be included in graphs, and as an <code>Implementation</code> structure, suitable for being composed into a user processor. <br>The filter processors are parameterised with these parameters setting the initial state of the filter. Parameter modulation is provided by input events. <br>The filter <code>Implementation</code> struture provides the following functions: <ul>
+    <div class="comment"><br>The <code>std::filters</code> namespace is parameterised, allowing both the <code>FrameType</code> and the <code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use 32 bit precision, and filter frames of a single channel. <code>FrameType</code> can be specified as a vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter). <br>For efficiency reasons, modulated parameters are not applied every frame, and the <code>parameterUpdateRate</code> can be used to tune the frequency of updates <br>Each filter type is provided as both a Processor, which can be included in graphs, and as an <code>Implementation</code> structure, suitable for being composed into a user processor. <br>The filter processors are parameterised with these parameters setting the initial state of the filter. Parameter modulation is provided by input events. <br>The filter <code>Implementation</code> structure provides the following functions: <ul>
       <li><code>create()</code> functions which construct an <code>Implementation</code> with the specified initial properties - this is the typical way that the structs are constructed </li>
       <li><code>process()</code> which generates an output frame from an input frame </li>
       <li><code>setFrequency()</code>/<code>setMode()</code> functions for filter parameters to allow the filter to be modified post construction. </li>
@@ -831,7 +569,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main6"><span class="function_name">main</span>
+      <div class="function" id="main3"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -1098,7 +836,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main7"><span class="function_name">main</span>
+      <div class="function" id="main4"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -1214,7 +952,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main8"><span class="function_name">main</span>
+      <div class="function" id="main5"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -1370,7 +1108,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main9"><span class="function_name">main</span>
+      <div class="function" id="main6"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -1547,7 +1285,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main10"><span class="function_name">main</span>
+      <div class="function" id="main7"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -1733,7 +1471,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main11"><span class="function_name">main</span>
+      <div class="function" id="main8"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -2000,7 +1738,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main12"><span class="function_name">main</span>
+      <div class="function" id="main9"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -2650,13 +2388,13 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="in2"><span class="function_name">in</span>
+      <div class="function" id="in"><span class="function_name">in</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">in</span><span class="code"> </span><span class="code">(</span><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">newTarget</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="main13"><span class="function_name">main</span>
+      <div class="function" id="main10"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -2716,7 +2454,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main14"><span class="function_name">main</span>
+      <div class="function" id="main11"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -2752,7 +2490,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main15"><span class="function_name">main</span>
+      <div class="function" id="main12"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -2851,7 +2589,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main16"><span class="function_name">main</span>
+      <div class="function" id="main13"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3258,7 +2996,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main17"><span class="function_name">main</span>
+      <div class="function" id="main14"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3289,7 +3027,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main18"><span class="function_name">main</span>
+      <div class="function" id="main15"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3335,7 +3073,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main19"><span class="function_name">main</span>
+      <div class="function" id="main16"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3371,7 +3109,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main20"><span class="function_name">main</span>
+      <div class="function" id="main17"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3412,7 +3150,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main21"><span class="function_name">main</span>
+      <div class="function" id="main18"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3473,7 +3211,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main22"><span class="function_name">main</span>
+      <div class="function" id="main19"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3564,7 +3302,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main23"><span class="function_name">main</span>
+      <div class="function" id="main20"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3646,7 +3384,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main24"><span class="function_name">main</span>
+      <div class="function" id="main21"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4087,7 +3825,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main25"><span class="function_name">main</span>
+      <div class="function" id="main22"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4148,7 +3886,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main26"><span class="function_name">main</span>
+      <div class="function" id="main23"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4232,7 +3970,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main27"><span class="function_name">main</span>
+      <div class="function" id="main24"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4555,7 +4293,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main28"><span class="function_name">main</span>
+      <div class="function" id="main25"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
