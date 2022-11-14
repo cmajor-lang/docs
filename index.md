@@ -2,7 +2,7 @@
 layout: default
 title: Home
 nav_order: 1
-description: "This is a test website for C major documentation."
+description: "C major documentation."
 permalink: /
 ---
 
