@@ -84,7 +84,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::audio_data::SamplePlayer</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::audio_data::SamplePlayer (<span class="keyword">using </span>SampleContent)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::audio_data::SamplePlayer</span> (<span class="keyword">using </span>SampleContent)</code></span>
      </div>
      <div class="comment"><br>This processor will play chunks of audio sample data with a speed ratio applied. <br>It provides input events to set the audio data, speed ratio and other properties to control playback. <br>The SampleContent type must be a struct containing a &#39;frames&#39; member, which is an array of audio frames, and a &#39;sampleRate&#39; member with the original rate of the audio data. <br></div>
      <div class="endpoints">
@@ -237,7 +237,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::envelopes::FixedASR</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::envelopes::FixedASR (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">attackSeconds</span>,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">releaseSeconds</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::envelopes::FixedASR</span> (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">attackSeconds</span>,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">releaseSeconds</span>)</code></span>
      </div>
      <div class="comment">A very minimal, fixed-length, attack-sustain-release envelope generator. <br>This has fixed-length attach and release times. Given input events of NoteOn and NoteOff objects, it will emit a stream of output gain levels that can be used to attenuate a voice. <br></div>
      <div class="endpoints">
@@ -317,7 +317,7 @@ has_toc: false
      </h2>
     </div>
     <div class="specialisations"><span class="specialisation">
-      <code><span class="keyword">namespace</span> std::filters (<span class="keyword">using </span>FrameType = <span class="code_prim">float32</span>,<br>                        <span class="keyword">using </span>CoefficientType = <span class="code_prim">float32</span>,<br>                        <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">parameterUpdateRate</span><span class="code"> = </span><span class="code_literal">32</span>)</code></span>
+      <code><span class="keyword">namespace</span> <span class="code_ident">std::filters</span> (<span class="keyword">using </span>FrameType = <span class="code_prim">float32</span>,<br>                        <span class="keyword">using </span>CoefficientType = <span class="code_prim">float32</span>,<br>                        <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">parameterUpdateRate</span><span class="code"> = </span><span class="code_literal">32</span>)</code></span>
     </div>
     <div class="comment"><br>The <code>std::filters</code> namespace is parameterised, allowing both the <code>FrameType</code> and the <code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use 32 bit precision, and filter frames of a single channel. <code>FrameType</code> can be specified as a vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter). <br>For efficiency reasons, modulated parameters are not applied every frame, and the <code>parameterUpdateRate</code> can be used to tune the frequency of updates <br>Each filter type is provided as both a Processor, which can be included in graphs, and as an <code>Implementation</code> structure, suitable for being composed into a user processor. <br>The filter processors are parameterised with these parameters setting the initial state of the filter. Parameter modulation is provided by input events. <br>The filter <code>Implementation</code> structure provides the following functions: <ul>
       <li><code>create()</code> functions which construct an <code>Implementation</code> with the specified initial properties - this is the typical way that the structs are constructed </li>
@@ -476,7 +476,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::filters::tpt::onepole::Processor</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::filters::tpt::onepole::Processor (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::filters::tpt::onepole::Processor</span> (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>)</code></span>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
@@ -721,7 +721,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::filters::tpt::svf::Processor</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::filters::tpt::svf::Processor (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                             <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>,<br>                                             <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialQ</span><span class="code"> = </span><span class="code_ident">defaultQ</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::filters::tpt::svf::Processor</span> (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                             <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>,<br>                                             <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialQ</span><span class="code"> = </span><span class="code_ident">defaultQ</span>)</code></span>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
@@ -849,7 +849,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::filters::tpt::svf::MultimodeProcessor</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::filters::tpt::svf::MultimodeProcessor (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>,<br>                                                      <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialQ</span><span class="code"> = </span><span class="code_ident">defaultQ</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::filters::tpt::svf::MultimodeProcessor</span> (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>,<br>                                                      <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialQ</span><span class="code"> = </span><span class="code_ident">defaultQ</span>)</code></span>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
@@ -1122,7 +1122,7 @@ has_toc: false
      <h2><span class="keyword">namespace </span>std::filters::butterworth</h2>
     </div>
     <div class="specialisations"><span class="specialisation">
-      <code><span class="keyword">namespace</span> std::filters::butterworth (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">order</span><span class="code"> = </span><span class="code_literal">2</span>)</code></span>
+      <code><span class="keyword">namespace</span> <span class="code_ident">std::filters::butterworth</span> (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">order</span><span class="code"> = </span><span class="code_literal">2</span>)</code></span>
     </div>
     <div class="comment"><br>Butterworth filter, built from cascaded tpt filters. <br>The order is set at compile time, but the type and frequency can be modulated at runtime. <br></div>
     <div class="structs">
@@ -1192,7 +1192,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::filters::butterworth::Processor</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::filters::butterworth::Processor (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                                <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::filters::butterworth::Processor</span> (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                                <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>)</code></span>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
@@ -1395,7 +1395,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::filters::crossover::Processor</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::filters::crossover::Processor (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::filters::crossover::Processor</span> (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>)</code></span>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
@@ -1601,7 +1601,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::filters::simper::Processor</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::filters::simper::Processor (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                           <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>,<br>                                           <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialQ</span><span class="code"> = </span><span class="code_ident">defaultQ</span>,<br>                                           <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialGain</span><span class="code"> = </span><span class="code_ident">defaultGain</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::filters::simper::Processor</span> (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">initialMode</span><span class="code"> = </span><span class="code_ident">Mode</span><span class="code">::</span><span class="code_ident">lowPass</span>,<br>                                           <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_ident">defaultFrequency</span>,<br>                                           <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialQ</span><span class="code"> = </span><span class="code_ident">defaultQ</span>,<br>                                           <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialGain</span><span class="code"> = </span><span class="code_ident">defaultGain</span>)</code></span>
      </div>
      <div class="endpoints">
       <h2>Endpoints</h2>
@@ -2352,7 +2352,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::smoothing::SmoothedValueStream</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::smoothing::SmoothedValueStream (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>,<br>                                               <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialValue</span><span class="code"> = </span><span class="code_literal">0.0f</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::smoothing::SmoothedValueStream</span> (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>,<br>                                               <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialValue</span><span class="code"> = </span><span class="code_literal">0.0f</span>)</code></span>
      </div>
      <div class="comment"><br>Takes an input that receives floating point events, and produces a continuous output stream of floats which are smoothed by a specified amount. This is handy for smoothing plugin parameters</div>
      <div class="endpoints">
@@ -2436,7 +2436,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::levels::ConstantGain</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::levels::ConstantGain (<span class="keyword">using </span>FrameType,<br>                                     <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">gain</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::levels::ConstantGain</span> (<span class="keyword">using </span>FrameType,<br>                                     <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">gain</span>)</code></span>
      </div>
      <div class="comment"><br>This helper processor simply passes its input through to its output with a constant gain applied. The FrameType parameter could be a float, or a vector of floats. See: DynamicGain, SmoothedGain</div>
      <div class="endpoints">
@@ -2467,7 +2467,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::levels::DynamicGain</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::levels::DynamicGain (<span class="keyword">using </span>FrameType)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::levels::DynamicGain</span> (<span class="keyword">using </span>FrameType)</code></span>
      </div>
      <div class="comment"><br>This helper processor takes two input streams - one for data and the other for a gain level, and emits the input signal with the gain applied. The FrameType parameter could be a float, or a vector of floats. See: ConstantGain, SmoothedGain</div>
      <div class="endpoints">
@@ -2503,7 +2503,7 @@ has_toc: false
       <h2><span class="keyword">graph </span>std::levels::SmoothedGain</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">graph</span> std::levels::SmoothedGain (<span class="keyword">using </span>FrameType,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>)</code></span>
+       <code><span class="keyword">graph</span> <span class="code_ident">std::levels::SmoothedGain</span> (<span class="keyword">using </span>FrameType,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>)</code></span>
      </div>
      <div class="comment"><br>Takes an input stream of the given FrameType, and passes it through using a SmoothedGainParameter processor to apply a smoothed gain to it. The gain level is exposed via the &#39;volume&#39; input.</div>
      <div class="endpoints">
@@ -2547,7 +2547,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::levels::SmoothedGainParameter</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::levels::SmoothedGainParameter (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::levels::SmoothedGainParameter</span> (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>)</code></span>
      </div>
      <div class="comment"><br>Takes input events which change the level in decibels, and produces an output stream of smoothed gain factors which can be applied to a signal.</div>
      <div class="endpoints">
@@ -2978,7 +2978,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::mixers::StereoToMono</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::mixers::StereoToMono (<span class="keyword">using </span>SampleType)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::mixers::StereoToMono</span> (<span class="keyword">using </span>SampleType)</code></span>
      </div>
      <div class="comment"><br>Simple utility processor that takes a vector size 2 and outputs the sum of its elements.</div>
      <div class="endpoints">
@@ -3009,7 +3009,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::mixers::MonoToStereo</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::mixers::MonoToStereo (<span class="keyword">using </span>SampleType)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::mixers::MonoToStereo</span> (<span class="keyword">using </span>SampleType)</code></span>
      </div>
      <div class="comment"><br>Simple utility processor that takes a scalar input and outputs a vector size 2 which contains two copies of the input value</div>
      <div class="endpoints">
@@ -3040,7 +3040,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::mixers::DynamicSum</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::mixers::DynamicSum (<span class="keyword">using </span>FrameType)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::mixers::DynamicSum</span> (<span class="keyword">using </span>FrameType)</code></span>
      </div>
      <div class="comment"><br>Takes two input streams and two gain streams which it uses to attenuate the inputs. Their result is then emitted. FrameType can be a float or float vector type.</div>
      <div class="endpoints">
@@ -3086,7 +3086,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::mixers::ConstantSum</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::mixers::ConstantSum (<span class="keyword">using </span>FrameType,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">inputGain1</span><span class="code"> = </span><span class="code_literal">1.0f</span>,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">inputGain2</span><span class="code"> = </span><span class="code_literal">1.0f</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::mixers::ConstantSum</span> (<span class="keyword">using </span>FrameType,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">inputGain1</span><span class="code"> = </span><span class="code_literal">1.0f</span>,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">inputGain2</span><span class="code"> = </span><span class="code_literal">1.0f</span>)</code></span>
      </div>
      <div class="comment"><br>Takes two input streams which it adds together after applying some optional constant gains. FrameType can be a float or float vector type.</div>
      <div class="endpoints">
@@ -3122,7 +3122,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::mixers::Interpolator</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::mixers::Interpolator (<span class="keyword">using </span>FrameType,<br>                                     <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">mixRange</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::mixers::Interpolator</span> (<span class="keyword">using </span>FrameType,<br>                                     <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">mixRange</span>)</code></span>
      </div>
      <div class="comment"><br>Takes two input streams and outputs a dynamic mix of their values, using a third stream to control the mix. <br>mixRange determines the range of values that the mix stream will take. So the mix input is expected to be between 0 and mixRange, where mix = 0 will cause 100% of in1 to be emitted, and mix = mixRange will cause 100% of in2 to be emitted. <br>This processor is handy as a wet/dry mixer - for example you could connect a dry stream to in1, a wet stream to in2, and set mixRange to 100. Then, the mix input will act as a &quot;percentage wet&quot; control.</div>
      <div class="endpoints">
@@ -3777,7 +3777,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::oscillators::Phasor</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::oscillators::Phasor (<span class="keyword">using </span>FrameType,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">1000</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::oscillators::Phasor</span> (<span class="keyword">using </span>FrameType,<br>                                    <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">1000</span>)</code></span>
      </div>
      <div class="comment"><br>A processor which generates a unipolar ramp, and has an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
      <div class="endpoints">
@@ -3838,7 +3838,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::oscillators::Sine</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::oscillators::Sine (<span class="keyword">using </span>FrameType,<br>                                  <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">440.0f</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::oscillators::Sine</span> (<span class="keyword">using </span>FrameType,<br>                                  <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">440.0f</span>)</code></span>
      </div>
      <div class="comment"><br>A basic sinewave generation processor with an input to control its frequency. The FrameType parameter could be a float or a float vector.</div>
      <div class="endpoints">
@@ -3899,7 +3899,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::oscillators::PolyblepOscillator</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::oscillators::PolyblepOscillator (<span class="keyword">using </span>FrameType,<br>                                                <span class="code_ident">Shape</span><span class="code"> </span><span class="code_ident">initialShape</span><span class="code"> = </span><span class="code_ident">Shape</span><span class="code">::</span><span class="code_ident">sawtoothUp</span>,<br>                                                <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">440.0f</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::oscillators::PolyblepOscillator</span> (<span class="keyword">using </span>FrameType,<br>                                                <span class="code_ident">Shape</span><span class="code"> </span><span class="code_ident">initialShape</span><span class="code"> = </span><span class="code_ident">Shape</span><span class="code">::</span><span class="code_ident">sawtoothUp</span>,<br>                                                <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">440.0f</span>)</code></span>
      </div>
      <div class="comment"><br>Uses a polyblep algorithm to generate a wave, with inputs to control its shape and frequency.</div>
      <div class="endpoints">
@@ -3983,7 +3983,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::oscillators::LFO</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::oscillators::LFO (<span class="code_ident">Shape</span><span class="code"> </span><span class="code_ident">initialShape</span><span class="code"> = </span><span class="code_ident">Shape</span><span class="code">::</span><span class="code_ident">sine</span>,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">1.0f</span>,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialAmplitude</span><span class="code"> = </span><span class="code_literal">1.0f</span>,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialOffset</span><span class="code"> = </span><span class="code_literal">0.0f</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::oscillators::LFO</span> (<span class="code_ident">Shape</span><span class="code"> </span><span class="code_ident">initialShape</span><span class="code"> = </span><span class="code_ident">Shape</span><span class="code">::</span><span class="code_ident">sine</span>,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialFrequency</span><span class="code"> = </span><span class="code_literal">1.0f</span>,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialAmplitude</span><span class="code"> = </span><span class="code_literal">1.0f</span>,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialOffset</span><span class="code"> = </span><span class="code_literal">0.0f</span>)</code></span>
      </div>
      <div class="comment"><br>A LFO processor with event inputs to control its parameters.</div>
      <div class="endpoints">
@@ -4325,7 +4325,7 @@ has_toc: false
      <h2><span class="keyword">namespace </span>std::oscillators::waveshape</h2>
     </div>
     <div class="specialisations"><span class="specialisation">
-      <code><span class="keyword">namespace</span> std::oscillators::waveshape (<span class="keyword">using </span>SampleType = <span class="code_prim">float32</span>)</code></span>
+      <code><span class="keyword">namespace</span> <span class="code_ident">std::oscillators::waveshape</span> (<span class="keyword">using </span>SampleType = <span class="code_prim">float32</span>)</code></span>
     </div>
     <div class="functions">
      <h2>Functions</h2>
@@ -4903,7 +4903,7 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::voices::VoiceAllocator</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> std::voices::VoiceAllocator (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">numVoices</span>,<br>                                       <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">MPEMasterChannel</span><span class="code"> = </span><span class="code_literal">0</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::voices::VoiceAllocator</span> (<span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">numVoices</span>,<br>                                       <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">MPEMasterChannel</span><span class="code"> = </span><span class="code_literal">0</span>)</code></span>
      </div>
      <div class="comment">A basic least-recently-used voice allocator. <br>If there&#39;s an inactive voice, then a new note will be assigned to it, otherwise it will steal the least-recently-used active voice. For more fancy note-stealing algorithms, you can use this as an example and add your own logic! <br></div>
      <div class="endpoints">
