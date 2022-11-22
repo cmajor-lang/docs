@@ -253,7 +253,17 @@ code {
 }
 .code_ident a{
     margin-left: -6pt;
-}:root {
+}
+
+.code_ident {
+    font-family: var(--code-font);
+}
+
+#text{
+    font-family: var(--code-font);
+}
+
+:root {
     --code-font: monaco, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 }
 
@@ -472,7 +482,4 @@ code {
     flex-wrap: nowrap;
     text-align:left;
     font-size: 0;
-}
-.code_ident a{
-    margin-left: -6pt;
 }
