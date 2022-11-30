@@ -2925,6 +2925,55 @@ has_toc: false
       </div>
      </div>
     </div>
+    <div class="variables">
+     <h2>Constants</h2>
+     <table class="variable_table">
+      <th>Type</th>
+      <th>Variable</th>
+      <th>Constant</th>
+      <th>Comment</th>
+      <div class="variable" id="semitoneBendRange">
+       <tr>
+        <td>
+         <div class="variable_type"><span class="code_prim">float32</span>
+         </div>
+         <td>
+          <div class="variable_name">semitoneBendRange</div>
+         </td>
+         <td>
+          <div class="Constant"><span class="code_literal">48.0f</span>
+          </div>
+         </td>
+         <td>
+          <tr>
+           <div class="comment">standard MPE range of 48 semitones</div>
+          </tr>
+         </td>
+        </td>
+       </tr>
+      </div>
+      <div class="variable" id="slideController">
+       <tr>
+        <td>
+         <div class="variable_type"><span class="code_prim">int32</span>
+         </div>
+         <td>
+          <div class="variable_name">slideController</div>
+         </td>
+         <td>
+          <div class="Constant"><span class="code_literal">74</span>
+          </div>
+         </td>
+         <td>
+          <tr>
+           <div class="comment">MPE slide controller number</div>
+          </tr>
+         </td>
+        </td>
+       </tr>
+      </div>
+     </table>
+    </div>
     <div class="processor" id="MPEConverter">
      <div class="processorTitle">
       <h2><span class="keyword">processor </span>std::midi::MPEConverter</h2>
@@ -2956,6 +3005,84 @@ has_toc: false
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">parseMIDI</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
           <a href="#Message">Message</a></span><span class="code"> </span><span class="code_ident">message</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="processor" id="NoteToMidi">
+     <div class="processorTitle">
+      <h2><span class="keyword">processor </span>std::midi::NoteToMidi</h2>
+     </div>
+     <div class="comment"><br>Accepts an input of note events, and converts them to a stream of short midi messages.</div>
+     <div class="endpoints">
+      <h2>Endpoints</h2>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">midiOut</span> (<span class="code_ident">
+          <a href="#Message">Message</a></span>)</div>
+       </li>
+      </ul>
+      <ul>
+       <li>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">eventIn</span> (<span class="code_ident">
+          <a href="#NoteOn">NoteOn</a></span>, <span class="code_ident">
+          <a href="#NoteOff">NoteOff</a></span>, <span class="code_ident">
+          <a href="#PitchBend">PitchBend</a></span>, <span class="code_ident">
+          <a href="#Slide">Slide</a></span>, <span class="code_ident">
+          <a href="#Pressure">Pressure</a></span>, <span class="code_ident">
+          <a href="#Control">Control</a></span>)</div>
+       </li>
+      </ul>
+     </div>
+     <div class="functions">
+      <h2>Functions</h2>
+      <div class="function" id="eventIn3"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#NoteOn">NoteOn</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="eventIn4"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#NoteOff">NoteOff</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="eventIn5"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#PitchBend">PitchBend</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="eventIn6"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#Slide">Slide</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="eventIn7"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#Pressure">Pressure</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="eventIn8"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#Control">Control</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="constructMidi"><span class="function_name">constructMidi</span>
+       <div class="function_decl">
+        <code><span class="code_ident">
+          <a href="#Message">Message</a></span><span class="code"> </span><span class="code_ident">constructMidi</span><span class="code"> </span><span class="code">(</span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">b1</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">b2</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">b3</span><span class="code">)</span>
         </code>
        </div>
       </div>
@@ -5038,37 +5165,37 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="eventIn3"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn9"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span><span class="code"> </span><span class="code_ident">noteOn</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn4"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn10"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span><span class="code"> </span><span class="code_ident">noteOff</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn5"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn11"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">PitchBend</span><span class="code"> </span><span class="code_ident">bend</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn6"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn12"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Pressure</span><span class="code"> </span><span class="code_ident">pressure</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn7"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn13"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Slide</span><span class="code"> </span><span class="code_ident">slide</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn8"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn14"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Control</span><span class="code"> </span><span class="code_ident">control</span><span class="code">)</span>
         </code>
