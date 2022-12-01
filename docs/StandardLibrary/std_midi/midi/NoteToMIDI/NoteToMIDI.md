@@ -1,6 +1,6 @@
 ---
-title: NoteToMidi
-permalink: /docs/StandardLibrary#NoteToMidi
+title: NoteToMIDI
+permalink: /docs/StandardLibrary#NoteToMIDI
 parent: midi
 grand_parent: std.midi
 has_children: False

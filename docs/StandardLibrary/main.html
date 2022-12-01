@@ -2924,6 +2924,14 @@ has_toc: false
        </code>
       </div>
      </div>
+     <div class="function" id="createMessage"><span class="function_name">createMessage</span>
+      <div class="comment"><br>Creates a short MIDI message object from the raw bytes</div>
+      <div class="function_decl">
+       <code><span class="code_ident">
+         <a href="#Message">Message</a></span><span class="code"> </span><span class="code_ident">createMessage</span><span class="code"> </span><span class="code">(</span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">byte1</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">byte2</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">byte3</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
     </div>
     <div class="variables">
      <h2>Constants</h2>
@@ -3010,9 +3018,9 @@ has_toc: false
       </div>
      </div>
     </div>
-    <div class="processor" id="NoteToMidi">
+    <div class="processor" id="NoteToMIDI">
      <div class="processorTitle">
-      <h2><span class="keyword">processor </span>std::midi::NoteToMidi</h2>
+      <h2><span class="keyword">processor </span>std::midi::NoteToMIDI</h2>
      </div>
      <div class="comment"><br>Accepts an input of note events, and converts them to a stream of short midi messages.</div>
      <div class="endpoints">
@@ -3076,13 +3084,6 @@ has_toc: false
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
           <a href="#Control">Control</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
-        </code>
-       </div>
-      </div>
-      <div class="function" id="constructMidi"><span class="function_name">constructMidi</span>
-       <div class="function_decl">
-        <code><span class="code_ident">
-          <a href="#Message">Message</a></span><span class="code"> </span><span class="code_ident">constructMidi</span><span class="code"> </span><span class="code">(</span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">b1</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">b2</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">b3</span><span class="code">)</span>
         </code>
        </div>
       </div>
