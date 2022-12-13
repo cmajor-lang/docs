@@ -2431,12 +2431,12 @@ has_toc: false
       </div>
      </div>
     </div>
-    <div class="processor" id="ConstantGain">
-     <div class="processorTitle">
-      <h2><span class="keyword">processor </span>std::levels::ConstantGain</h2>
+    <div class="graph" id="ConstantGain">
+     <div class="graphTitle">
+      <h2><span class="keyword">graph </span>std::levels::ConstantGain</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> <span class="code_ident">std::levels::ConstantGain</span> (<span class="keyword">using </span><span class="code_ident">FrameType</span>,<br>                                     <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">gain</span>)</code></span>
+       <code><span class="keyword">graph</span> <span class="code_ident">std::levels::ConstantGain</span> (<span class="keyword">using </span><span class="code_ident">FrameType</span>,<br>                                 <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">gain</span>)</code></span>
      </div>
      <div class="comment"><br>This helper processor simply passes its input through to its output with a constant gain applied. The FrameType parameter could be a float, or a vector of floats. See: DynamicGain, SmoothedGain</div>
      <div class="endpoints">
@@ -2452,22 +2452,18 @@ has_toc: false
        </li>
       </ul>
      </div>
-     <div class="functions">
-      <h2>Functions</h2>
-      <div class="function" id="main11"><span class="function_name">main</span>
-       <div class="function_decl">
-        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
-        </code>
-       </div>
+     <div class="connections">
+      <h2>Connections</h2>
+      <div class="connection"><span class="code_keyword">connection </span><span class="code_ident">in</span><span class="code"> * </span><span class="code_ident">gain</span><span class="code"> -&gt; </span><span class="code_ident">out</span>
       </div>
      </div>
     </div>
-    <div class="processor" id="DynamicGain">
-     <div class="processorTitle">
-      <h2><span class="keyword">processor </span>std::levels::DynamicGain</h2>
+    <div class="graph" id="DynamicGain">
+     <div class="graphTitle">
+      <h2><span class="keyword">graph </span>std::levels::DynamicGain</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> <span class="code_ident">std::levels::DynamicGain</span> (<span class="keyword">using </span><span class="code_ident">FrameType</span>)</code></span>
+       <code><span class="keyword">graph</span> <span class="code_ident">std::levels::DynamicGain</span> (<span class="keyword">using </span><span class="code_ident">FrameType</span>)</code></span>
      </div>
      <div class="comment"><br>This helper processor takes two input streams - one for data and the other for a gain level, and emits the input signal with the gain applied. The FrameType parameter could be a float, or a vector of floats. See: ConstantGain, SmoothedGain</div>
      <div class="endpoints">
@@ -2488,13 +2484,9 @@ has_toc: false
        </li>
       </ul>
      </div>
-     <div class="functions">
-      <h2>Functions</h2>
-      <div class="function" id="main12"><span class="function_name">main</span>
-       <div class="function_decl">
-        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
-        </code>
-       </div>
+     <div class="connections">
+      <h2>Connections</h2>
+      <div class="connection"><span class="code_keyword">connection </span><span class="code_ident">in</span><span class="code"> * </span><span class="code_ident">gain</span><span class="code"> -&gt; </span><span class="code_ident">out</span>
       </div>
      </div>
     </div>
@@ -2527,18 +2519,12 @@ has_toc: false
      </div>
      <div class="nodes">
       <h2>Nodes</h2>
-      <div class="node"><span class="node_name">gainProcessor</span><span class="code"> = </span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">levels</span><span class="code">::</span><span class="code_ident">DynamicGain</span><span class="code">(</span><span class="code_ident">FrameType</span><span class="code">)</span>
-      </div>
       <div class="node"><span class="node_name">gainParameter</span><span class="code"> = </span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">levels</span><span class="code">::</span><span class="code_ident">SmoothedGainParameter</span><span class="code">(</span><span class="code_ident">smoothingTimeSeconds</span><span class="code">)</span>
       </div>
      </div>
      <div class="connections">
       <h2>Connections</h2>
-      <div class="connection"><span class="code_keyword">connection </span><span class="code_ident">gainParameter</span><span class="code">.</span><span class="code_ident">gain</span><span class="code"> -&gt; </span><span class="code_ident">gainProcessor</span><span class="code">.</span><span class="code_ident">gain</span>
-      </div>
-      <div class="connection"><span class="code_keyword">connection </span><span class="code_ident">in</span><span class="code"> -&gt; </span><span class="code_ident">gainProcessor</span><span class="code">.</span><span class="code_ident">in</span>
-      </div>
-      <div class="connection"><span class="code_keyword">connection </span><span class="code_ident">gainProcessor</span><span class="code">.</span><span class="code_ident">out</span><span class="code"> -&gt; </span><span class="code_ident">out</span>
+      <div class="connection"><span class="code_keyword">connection </span><span class="code_ident">in</span><span class="code"> * </span><span class="code_ident">gainParameter</span><span class="code">.</span><span class="code_ident">gain</span><span class="code"> -&gt; </span><span class="code_ident">out</span>
       </div>
      </div>
     </div>
@@ -2589,9 +2575,15 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main13"><span class="function_name">main</span>
+      <div class="function" id="main11"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="init2"><span class="function_name">init</span>
+       <div class="function_decl">
+        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
        </div>
       </div>
@@ -3124,7 +3116,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main14"><span class="function_name">main</span>
+      <div class="function" id="main12"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3155,7 +3147,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main15"><span class="function_name">main</span>
+      <div class="function" id="main13"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3201,7 +3193,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main16"><span class="function_name">main</span>
+      <div class="function" id="main14"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3237,7 +3229,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main17"><span class="function_name">main</span>
+      <div class="function" id="main15"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3278,7 +3270,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="main18"><span class="function_name">main</span>
+      <div class="function" id="main16"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3333,13 +3325,13 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="init2"><span class="function_name">init</span>
+      <div class="function" id="init3"><span class="function_name">init</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="main19"><span class="function_name">main</span>
+      <div class="function" id="main17"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3424,13 +3416,13 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="init3"><span class="function_name">init</span>
+      <div class="function" id="init4"><span class="function_name">init</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="main20"><span class="function_name">main</span>
+      <div class="function" id="main18"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3506,13 +3498,13 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="init4"><span class="function_name">init</span>
+      <div class="function" id="init5"><span class="function_name">init</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="main21"><span class="function_name">main</span>
+      <div class="function" id="main19"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3941,7 +3933,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="init5"><span class="function_name">init</span>
+      <div class="function" id="init6"><span class="function_name">init</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -3953,7 +3945,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main22"><span class="function_name">main</span>
+      <div class="function" id="main20"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4002,7 +3994,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="init6"><span class="function_name">init</span>
+      <div class="function" id="init7"><span class="function_name">init</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4014,7 +4006,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main23"><span class="function_name">main</span>
+      <div class="function" id="main21"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4080,7 +4072,7 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="init7"><span class="function_name">init</span>
+      <div class="function" id="init8"><span class="function_name">init</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4098,7 +4090,7 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="main24"><span class="function_name">main</span>
+      <div class="function" id="main22"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
@@ -4415,13 +4407,13 @@ has_toc: false
         </code>
        </div>
       </div>
-      <div class="function" id="init8"><span class="function_name">init</span>
+      <div class="function" id="init9"><span class="function_name">init</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">init</span><span class="code">(</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="main25"><span class="function_name">main</span>
+      <div class="function" id="main23"><span class="function_name">main</span>
        <div class="function_decl">
         <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">main</span><span class="code">(</span><span class="code">)</span>
         </code>
