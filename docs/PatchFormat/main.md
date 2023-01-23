@@ -258,42 +258,58 @@ _(note: for all methods below, `endpointID` is the endpoint name, as specified i
   - i.e something like the default patch player UI, where controls are programatically laid out using type and annotation information
   - Here, much more is done in the `onPatchStatusChanged` callback, typically including tearing down the whole UI and starting again using the various bits of information about the patch (e.g. the title from the manifest, input endpoint annotations, etc) to decide what to render
 
-Regardless of the specific use case, the app will typically instantiate a `PatchConnection` early in its bootstrapping, setup callbacks for manipulating UI state when aspects of the patch change, and then request the initial state from the runtime. i.e:
+Regardless of the specific use case, the app will typically setup callbacks on the given `PatchConnection` instance early in its bootstrapping for manipulating UI state when aspects of the patch change, and then request the initial state from the runtime. i.e:
 
 ```js
-const connection = new PatchConnection();
-
-connection.onPatchStatusChanged = (errorMessage, patchManifest, inputList, outputList) =>
+export default async function createPatchView (connection)
 {
-    // following a status update, it is typical to request the value
-    // of all input parameters, and update the UI accordingly. e.g:
-    const inputParameters = inputList.filter (e => e.purpose === "parameter");
-    inputParameters.forEach (({ endpointID, annotation }) =>
+    // This is the entry point for a patch GUI.
+    //
+    // A host (the command line patch player, or other environments) will call
+    // it to get a patch's view. Ultimately, a DOM element must be returned to
+    // the caller for it to append to its document. However, as the function is
+    // `async`, it is possible to perform various asyncronous tasks, such as
+    // fetching remote resources for use in the view, before doing so.
+    //
+    // When using libraries such as React, this is where the call to
+    // `ReactDOM.createRoot` would go, rendering into a container component
+    // before returning.
+    const container = document.createElement ("div");
+
+    connection.onPatchStatusChanged = (errorMessage, patchManifest, inputList, outputList) =>
     {
-        // ...update any UI state dependent on annotation data etc
+        // following a status update, it is typical to request the value
+        // of all input parameters, and update the UI accordingly. e.g:
+        const inputParameters = inputList.filter (e => e.purpose === "parameter");
+        inputParameters.forEach (({ endpointID, annotation }) =>
+        {
+            // ...update any UI state dependent on annotation data etc
 
-        // further request current value
-        connection.requestEndpointValue (endpointID);
-    });
-};
+            // further request current value
+            connection.requestEndpointValue (endpointID);
+        });
+    };
 
-connection.onSampleRateChanged = (newSampleRate) =>
-{
-    // ...update any UI state that needs the sample rate information
-};
+    connection.onSampleRateChanged = (newSampleRate) =>
+    {
+        // ...update any UI state that needs the sample rate information
+    };
 
-connection.onParameterEndpointChanged = (endpointID, newValue) =>
-{
-    // ...update UI state for endpoint, typically some kind of knob, slider, etc
-};
+    connection.onParameterEndpointChanged = (endpointID, newValue) =>
+    {
+        // ...update UI state for endpoint, typically some kind of knob, slider, etc
+    };
 
-connection.onOutputEvent = (endpointID, newValue) =>
-{
-    // ...update UI state for endpoint, typically some kind of visualisation
-};
+    connection.onOutputEvent = (endpointID, newValue) =>
+    {
+        // ...update UI state for endpoint, typically some kind of visualisation
+    };
 
-// initial request for state
-connection.requestStatusUpdate();
+    // initial request for state
+    connection.requestStatusUpdate();
+
+    return container;
+}
 ```
 
 It is worth noting that the runtime should be considered the source of truth for patch state, as parameters can change from outside the GUI (i.e. via automation in a DAW). Therefore UI controls should only really update in reaction to patch connection callbacks.
@@ -302,9 +318,7 @@ _Note: The patch player and plugin provide access to the dev tools / inspector o
 
 #### Known limitations
 
-- Currently, `PatchConnection` is effectively a singleton / the app is limited to a single instance. This is due to the current mechanism used by the runtime to invoke callbacks, and it will only notify the most recently created instance about changes. However, multiple instances can be used to communicate from the GUI to the runtime. More sophisticated abstractions can be built client-side to work around these limitations, allowing for multiple listeners etc.
 - The annotations are currently the raw annotations as written in the cmajor source file, and therefore do not contain the default properties picked by the C++ runtime
-- The patch player and plugins will only process input values for parameter and timeline related input endpoints
 
 ## Playing a Patch
 
