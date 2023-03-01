@@ -2046,7 +2046,7 @@ has_toc: false
      <div class="function" id="lerp"><span class="function_name">lerp</span>
       <div class="comment">Performs a linear-interpolation between a pair of scalar values.</div>
       <div class="function_decl">
-       <code><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">lerp</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">value1</span><span class="code">, </span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">value2</span><span class="code">, </span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">proportion</span><span class="code">)</span>
+       <code><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">lerp</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">value1</span><span class="code">, </span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">value2</span><span class="code">, </span><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">proportion</span><span class="code">)</span>
        </code>
       </div>
      </div>
@@ -2291,7 +2291,10 @@ has_toc: false
      <h2><span class="keyword">namespace </span>std::smoothing<a href="https://github.com/SoundStacks/cmajor/blob/main/standard_library/std_library_levels.cmajor" target="_blank">code</a>
      </h2>
     </div>
-    <div class="comment"><br>Utilities for calculating and applying smoothing ramps and gain levels. <br></div>
+    <div class="specialisations"><span class="specialisation">
+      <code><span class="keyword">namespace</span> <span class="code_ident">std::smoothing</span> (<span class="keyword">using </span><span class="code_ident">FrameType</span> = <span class="code_prim">float32</span>)</code></span>
+    </div>
+    <div class="comment"><br>Utilities for calculating and applying smoothing ramps and gain levels. The <code>std::smoothing</code> namespace is parameterised. <code>FrameType</code> defaults to float32, but can be specified to allow support for different precision types (e.g. <code>float64</code>) as well as smoothed values for multi-channel use (e.g. <code>float32&lt;2&gt;</code>) <br></div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="SmoothedValue"><span class="code">struct </span><span class="struct_name">SmoothedValue</span>
@@ -2302,21 +2305,21 @@ has_toc: false
         <th>Member</th>
         <tr>
          <td>
-          <div class="type"></div><span class="code_prim">float32</span>
+          <div class="type"></div><span class="code_ident">FrameType</span>
           <td>
            <div class="struct_member_name">value</div> </td>
          </td>
         </tr>
         <tr>
          <td>
-          <div class="type"></div><span class="code_prim">float32</span>
+          <div class="type"></div><span class="code_ident">FrameType</span>
           <td>
            <div class="struct_member_name">target</div> </td>
          </td>
         </tr>
         <tr>
          <td>
-          <div class="type"></div><span class="code_prim">float32</span>
+          <div class="type"></div><span class="code_ident">FrameType</span>
           <td>
            <div class="struct_member_name">increment</div> </td>
          </td>
@@ -2338,7 +2341,7 @@ has_toc: false
       <div class="comment">Immediately resets the value to the given argument</div>
       <div class="function_decl">
        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">reset</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-         <a href="#SmoothedValue">SmoothedValue</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">, </span><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">newValue</span><span class="code">)</span>
+         <a href="#SmoothedValue">SmoothedValue</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">, </span><span class="code_ident">FrameType</span><span class="code"> </span><span class="code_ident">newValue</span><span class="code">)</span>
        </code>
       </div>
      </div>
@@ -2346,14 +2349,21 @@ has_toc: false
       <div class="comment">Gives the object a target value and the number of steps it should take to reach it.</div>
       <div class="function_decl">
        <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">setTarget</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-         <a href="#SmoothedValue">SmoothedValue</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">, </span><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">targetValue</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">numStepsToReachTarget</span><span class="code">)</span>
+         <a href="#SmoothedValue">SmoothedValue</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">, </span><span class="code_ident">FrameType</span><span class="code"> </span><span class="code_ident">targetValue</span><span class="code">, </span><span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">stepsToReachTarget</span><span class="code">)</span>
        </code>
       </div>
      </div>
      <div class="function" id="getNext"><span class="function_name">getNext</span>
       <div class="comment">Returns the current value and increments it towards the current target.</div>
       <div class="function_decl">
-       <code><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">getNext</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+       <code><span class="code_ident">FrameType</span><span class="code"> </span><span class="code_ident">getNext</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+         <a href="#SmoothedValue">SmoothedValue</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="currentValue"><span class="function_name">currentValue</span>
+      <div class="function_decl">
+       <code><span class="code_ident">FrameType</span><span class="code"> </span><span class="code_ident">currentValue</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
          <a href="#SmoothedValue">SmoothedValue</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">)</span>
        </code>
       </div>
@@ -2364,19 +2374,19 @@ has_toc: false
       <h2><span class="keyword">processor </span>std::smoothing::SmoothedValueStream</h2>
      </div>
      <div class="specialisations"><span class="specialisation">
-       <code><span class="keyword">processor</span> <span class="code_ident">std::smoothing::SmoothedValueStream</span> (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>,<br>                                               <span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">initialValue</span><span class="code"> = </span><span class="code_literal">0.0f</span>)</code></span>
+       <code><span class="keyword">processor</span> <span class="code_ident">std::smoothing::SmoothedValueStream</span> (<span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">smoothingTimeSeconds</span><span class="code"> = </span><span class="code_literal">0.2f</span>,<br>                                               <span class="code_ident">FrameType</span><span class="code"> </span><span class="code_ident">initialValue</span><span class="code"> = </span><span class="code_literal">0.0f</span>)</code></span>
      </div>
      <div class="comment"><br>Takes an input that receives floating point events, and produces a continuous output stream of floats which are smoothed by a specified amount. This is handy for smoothing plugin parameters</div>
      <div class="endpoints">
       <h2>Endpoints</h2>
       <ul>
        <li>
-        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_prim">float32</span>)</div>
+        <div class="endpoint"><span class="endpoint_dir">output </span> <span class="endpoint_kind">stream</span> <span class="endpoint_name">out</span> (<span class="code_ident">FrameType</span>)</div>
        </li>
       </ul>
       <ul>
        <li>
-        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">in</span> (<span class="code_prim">float32</span>)</div>
+        <div class="endpoint"><span class="endpoint_dir">input </span> <span class="endpoint_kind">event</span> <span class="endpoint_name">in</span> (<span class="code_ident">FrameType</span>)</div>
        </li>
       </ul>
      </div>
@@ -2402,7 +2412,7 @@ has_toc: false
       <h2>Functions</h2>
       <div class="function" id="in"><span class="function_name">in</span>
        <div class="function_decl">
-        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">in</span><span class="code"> </span><span class="code">(</span><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">newTarget</span><span class="code">)</span>
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">in</span><span class="code"> </span><span class="code">(</span><span class="code_ident">FrameType</span><span class="code"> </span><span class="code_ident">newTarget</span><span class="code">)</span>
         </code>
        </div>
       </div>
