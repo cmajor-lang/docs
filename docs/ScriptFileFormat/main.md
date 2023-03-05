@@ -119,7 +119,6 @@ class Session
     stop()
     sendEvent (endpoint, value)
     sendValue (endpoint, value, numFramesToReachValue)
-    startServer (address, root)
     openGUI (view)
     closeGUI()
 }
