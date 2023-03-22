@@ -317,9 +317,9 @@ has_toc: false
      </h2>
     </div>
     <div class="specialisations"><span class="specialisation">
-      <code><span class="keyword">namespace</span> <span class="code_ident">std::filters</span> (<span class="keyword">using </span><span class="code_ident">FrameType</span> = <span class="code_prim">float32</span>,<br>                        <span class="keyword">using </span><span class="code_ident">CoefficientType</span> = <span class="code_prim">float32</span>,<br>                        <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">parameterUpdateRate</span><span class="code"> = </span><span class="code_literal">32</span>)</code></span>
+      <code><span class="keyword">namespace</span> <span class="code_ident">std::filters</span> (<span class="keyword">using </span><span class="code_ident">FrameType</span> = <span class="code_prim">float32</span>,<br>                        <span class="keyword">using </span><span class="code_ident">CoefficientType</span> = <span class="code_prim">float32</span>,<br>                        <span class="code_prim">int32</span><span class="code"> </span><span class="code_ident">framesPerParameterUpdate</span><span class="code"> = </span><span class="code_literal">32</span>)</code></span>
     </div>
-    <div class="comment"><br>The <code>std::filters</code> namespace is parameterised, allowing both the <code>FrameType</code> and the <code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use 32 bit precision, and filter frames of a single channel. <code>FrameType</code> can be specified as a vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter). <br>For efficiency reasons, modulated parameters are not applied every frame, and the <code>parameterUpdateRate</code> can be used to tune the frequency of updates <br>Each filter type is provided as both a Processor, which can be included in graphs, and as an <code>Implementation</code> structure, suitable for being composed into a user processor. <br>The filter processors are parameterised with these parameters setting the initial state of the filter. Parameter modulation is provided by input events. <br>The filter <code>Implementation</code> structure provides the following functions: <ul>
+    <div class="comment"><br>The <code>std::filters</code> namespace is parameterised, allowing both the <code>FrameType</code> and the <code>CoefficientType</code> to be modified. By default the filters are <code>float32</code>, and hence use 32 bit precision, and filter frames of a single channel. <code>FrameType</code> can be specified as a vector to support more channels (e.g. <code>float&lt;2&gt;</code> for a stereo filter). <br>For efficiency reasons, modulated parameters are not applied every frame, and the <code>framesPerParameterUpdate</code> parameter can be used to tune the frequency of updates. <br>Each filter type is provided as both a Processor, which can be included in graphs, and as an <code>Implementation</code> structure, suitable for being composed into a user processor. <br>The filter processors are parameterised with these parameters setting the initial state of the filter. Parameter modulation is provided by input events. <br>The filter <code>Implementation</code> structure provides the following functions: <ul>
       <li><code>create()</code> functions which construct an <code>Implementation</code> with the specified initial properties - this is the typical way that the structs are constructed </li>
       <li><code>process()</code> which generates an output frame from an input frame </li>
       <li><code>setFrequency()</code>/<code>setMode()</code> functions for filter parameters to allow the filter to be modified post construction. </li>
@@ -395,13 +395,13 @@ has_toc: false
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::filters::tpt</h2>
     </div>
-    <div class="comment"><br>These filters are based on the designs outlined in The Art of VA Filter Design by Vadim Zavalishin, with help from Will Pirkle in Virtual Analog Filter Implementation. The topology-preserving transform approach leads to designs where parameter modulation can be applied with minimal instability. <br>Parameter changes are applied at a lower rate than processor.frequency to reduce computational cost, and the frames between updates can be altered using the parameterUpdateRate, smaller being more frequent. <br></div>
+    <div class="comment"><br>These filters are based on the designs outlined in The Art of VA Filter Design by Vadim Zavalishin, with help from Will Pirkle in Virtual Analog Filter Implementation. The topology-preserving transform approach leads to designs where parameter modulation can be applied with minimal instability. <br>Parameter changes are applied at a lower rate than processor.frequency to reduce computational cost, and the frames between updates can be altered using the <code>framesPerParameterUpdate</code>, smaller numbers causing more frequent updates. <br></div>
    </div>
    <div class="namespace" id="onepole" href="#onepole">
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::filters::tpt::onepole</h2>
     </div>
-    <div class="comment">One pole filter implementation providing low and high pass options. The frequency and mode can be modulated at the parameterUpdateRate</div>
+    <div class="comment">One pole filter implementation providing low and high pass options. The frequency and mode can be updated at a frequency determined by <code>framesPerParameterUpdate</code>.</div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="Implementation"><span class="code">struct </span><span class="struct_name">Implementation</span>
@@ -1341,7 +1341,7 @@ has_toc: false
     <div class="namespaceTitle">
      <h2><span class="keyword">namespace </span>std::filters::crossover</h2>
     </div>
-    <div class="comment"><br>4th Order two band crossover filter <br>This filter is implemented using the StateVariableFilter and outputs two streams which can be summed to produce a flat response. The crossover frequency can be modulated <br></div>
+    <div class="comment"><br>4th Order two band crossover filter <br>This filter is implemented using the StateVariableFilter and outputs two streams which can be summed to produce a flat response. The crossover frequency can be modulated. <br></div>
     <div class="structs">
      <h2>Structs</h2>
      <div class="struct" id="Implementation5"><span class="code">struct </span><span class="struct_name">Implementation</span>
