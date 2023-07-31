@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Multi-dimensional arrays
+title: Multi-Dimensional Arrays
 permalink: /docs/LanguageReference#multi-dimensional-arrays
 parent: Types
 grand_parent: Language Reference
