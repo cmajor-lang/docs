@@ -2182,35 +2182,30 @@ has_toc: false
       </div>
      </div>
      <div class="function" id="anyTrue"><span class="function_name">anyTrue</span>
-      <div class="comment"><br>Takes a bool vector, and returns true if any of its elements are true.</div>
+      <div class="comment"><br>Takes a vector or array of bools, and returns true if any of its elements are true.</div>
       <div class="function_decl">
-       <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">anyTrue</span><span class="code"> </span><span class="code">(</span><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">b</span><span class="code">)</span>
-       </code>
-      </div>
-     </div>
-     <div class="function" id="anyTrue2"><span class="function_name">anyTrue</span>
-      <div class="function_decl">
-       <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">anyTrue</span><span class="code">&lt;</span><span class="code_ident">BoolVector</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">BoolVector</span><span class="code"> </span><span class="code_ident">boolVector</span><span class="code">)</span>
+       <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">anyTrue</span><span class="code">&lt;</span><span class="code_ident">BoolArray</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">BoolArray</span><span class="code"> </span><span class="code_ident">boolArray</span><span class="code">)</span>
        </code>
       </div>
      </div>
      <div class="function" id="allTrue"><span class="function_name">allTrue</span>
-      <div class="comment">Takes a bool vector, and returns true if all of its elements are true.</div>
+      <div class="comment">Takes a vector or array of bools, and returns true if all of its elements are true.</div>
       <div class="function_decl">
-       <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">allTrue</span><span class="code"> </span><span class="code">(</span><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">b</span><span class="code">)</span>
-       </code>
-      </div>
-     </div>
-     <div class="function" id="allTrue2"><span class="function_name">allTrue</span>
-      <div class="function_decl">
-       <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">allTrue</span><span class="code">&lt;</span><span class="code_ident">BoolVector</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">BoolVector</span><span class="code"> </span><span class="code_ident">boolVector</span><span class="code">)</span>
+       <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">allTrue</span><span class="code">&lt;</span><span class="code_ident">BoolArray</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">BoolArray</span><span class="code"> </span><span class="code_ident">boolArray</span><span class="code">)</span>
        </code>
       </div>
      </div>
      <div class="function" id="allEqual"><span class="function_name">allEqual</span>
-      <div class="comment">Takes two array or vector arguments, and returns true if all of the corresponding elements are equal.</div>
+      <div class="comment">Takes two array or vector arguments, and returns true if all of their corresponding elements are equal.</div>
       <div class="function_decl">
        <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">allEqual</span><span class="code">&lt;</span><span class="code_ident">Array1</span><span class="code">, </span><span class="code_ident">Array2</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_keyword">const </span><span class="code_ident">Array1</span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">array1</span><span class="code">, </span><span class="code_keyword">const </span><span class="code_ident">Array2</span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">array2</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="swap"><span class="function_name">swap</span>
+      <div class="comment"><br>Swaps the contents of two assignable values.</div>
+      <div class="function_decl">
+       <code><span class="code_prim">void</span><span class="code"> </span><span class="code_ident">swap</span><span class="code">&lt;</span><span class="code_ident">Type</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">Type</span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">value1</span><span class="code">, </span><span class="code_ident">Type</span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">value2</span><span class="code">)</span>
        </code>
       </div>
      </div>
@@ -2656,6 +2651,63 @@ has_toc: false
       <div class="comment">Takes a pan position between -1 and 1 and returns a vector pair of left/right gains using a 3dB-centre pan-law.</div>
       <div class="function_decl">
        <code><span class="code_ident">T</span><span class="code">&lt;</span><span class="code_literal">2</span><span class="code">&gt;</span><span class="code"> </span><span class="code_ident">centre3dB</span><span class="code">&lt;</span><span class="code_ident">T</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">T</span><span class="code"> </span><span class="code_ident">panPosition</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <div class="module" id="std_matrix" href="#std_matrix">
+   <div class="moduleTitle">
+    <h2>std.matrix</h2>
+   </div>
+   <div class="namespace" id="matrix" href="#matrix">
+    <div class="namespaceTitle">
+     <h2><span class="keyword">namespace </span>std::matrix<a href="https://github.com/SoundStacks/cmajor/blob/main/standard_library/std_library_matrix.cmajor" target="_blank">code</a>
+     </h2>
+    </div>
+    <div class="comment"><br>This namespace contains various matrix manipulation functions. <br></div>
+    <div class="functions">
+     <h2>Functions</h2>
+     <div class="function" id="multiply"><span class="function_name">multiply</span>
+      <div class="comment"><br>Returns the matrix product of two 2-dimensional arrays.</div>
+      <div class="function_decl">
+       <code><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">multiply</span><span class="code">&lt;</span><span class="code_ident">ElementType</span><span class="code">, </span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">, </span><span class="code_ident">k</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">k</span><span class="code">]</span><span class="code"> </span><span class="code_ident">a</span><span class="code">, </span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">k</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">b</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="dot"><span class="function_name">dot</span>
+      <div class="comment">Returns the dot-product of two 1-dimensional arrays.</div>
+      <div class="function_decl">
+       <code><span class="code_ident">ElementType</span><span class="code"> </span><span class="code_ident">dot</span><span class="code">&lt;</span><span class="code_ident">ElementType</span><span class="code">, </span><span class="code_ident">n</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">]</span><span class="code"> </span><span class="code_ident">a</span><span class="code">, </span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">]</span><span class="code"> </span><span class="code_ident">b</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="inverse"><span class="function_name">inverse</span>
+      <div class="comment">Returns the inverse of the input 2-dimensional array. If no inverse is possible, it returns an empty array. This algorithm uses the Gaussian elimination method to calculate the inverse.</div>
+      <div class="function_decl">
+       <code><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">n</span><span class="code">]</span><span class="code"> </span><span class="code_ident">inverse</span><span class="code">&lt;</span><span class="code_ident">ElementType</span><span class="code">, </span><span class="code_ident">n</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">n</span><span class="code">]</span><span class="code"> </span><span class="code_ident">matrix</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="dot2"><span class="function_name">dot</span>
+      <div class="comment">Returns the dot-product of two 2-dimensional arrays. (The dot product for 2D arrays is the same as a matrix multiplication).</div>
+      <div class="function_decl">
+       <code><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">dot</span><span class="code">&lt;</span><span class="code_ident">ElementType</span><span class="code">, </span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">, </span><span class="code_ident">k</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">k</span><span class="code">]</span><span class="code"> </span><span class="code_ident">a</span><span class="code">, </span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">k</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">b</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="add"><span class="function_name">add</span>
+      <div class="comment">Returns the sum of two 2-dimensional arrays.</div>
+      <div class="function_decl">
+       <code><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">add</span><span class="code">&lt;</span><span class="code_ident">ElementType</span><span class="code">, </span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">a</span><span class="code">, </span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">b</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
+     <div class="function" id="subtract"><span class="function_name">subtract</span>
+      <div class="comment">Returns the difference between two 2-dimensional arrays.</div>
+      <div class="function_decl">
+       <code><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">subtract</span><span class="code">&lt;</span><span class="code_ident">ElementType</span><span class="code">, </span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">&gt;</span><span class="code"> </span><span class="code">(</span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">a</span><span class="code">, </span><span class="code_ident">ElementType</span><span class="code">[</span><span class="code_ident">n</span><span class="code">, </span><span class="code_ident">m</span><span class="code">]</span><span class="code"> </span><span class="code_ident">b</span><span class="code">)</span>
        </code>
       </div>
      </div>
