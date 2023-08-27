@@ -306,13 +306,15 @@ The listener function that is supplied will be called asynchronously with the st
 
 #### Listener methods
 
-- **`addEndpointEventListener (endpointID, listener)`**
-Attaches a listener function which will be called whenever an event passes through a specific endpoint.
-This can be used to monitor both input and output endpoints.
-The listener function will be called with an argument which is the value of the event.
+- **`addEndpointListener (endpointID, listener, granularity)`**
+Attaches a listener function that will receive updates with the events or audio data that is being sent or received by an endpoint.
+If the endpoint is an event or value, the callback will be given an argument which is the new value.
+If the endpoint has the right shape to be treated as "audio" then the callback will receive a stream of updates of the min/max range of chunks of data that is flowing through it. There will be one callback per chunk of data, and the size of chunks is specified by the optional granularity parameter.
+If sendFullAudioData is false, the listener will receive an argument object containing two properties 'min' and 'max', which are each an array of values, one element per audio channel. This allows you to find the highest and lowest samples in that chunk for each channel.
+If sendFullAudioData is true, the listener's argument will have a property 'data' which is an array containing one array per channel of raw audio samples data.
 
-- **`removeEndpointEventListener (endpointID, listener)`**
-Removes a listener that was previously added with `addEndpointEventListener()`
+- **`removeEndpointListener (endpointID, listener)`**
+Removes a listener that was previously added with `addEndpointListener()`
 
 - **`requestParameterValue (endpointID)`**
 This will trigger an asynchronous callback to any parameter listeners that are
