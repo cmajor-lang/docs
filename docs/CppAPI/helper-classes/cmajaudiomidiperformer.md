@@ -1,6 +1,6 @@
 ---
 layout: default
-title: `AudioMIDIPerformer`
+title: cmaj::AudioMIDIPerformer
 permalink: /docs/C++API#cmajaudiomidiperformer
 parent: Helper classes
 grand_parent: C++ API
