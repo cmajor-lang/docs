@@ -2,7 +2,7 @@ remote_theme: pdmosses/just-the-docs@rec-nav
 title: Cmajor Documentation
 description: Documentation for the Cmajor language
 # baseurl: "/cmajor" # the subpath of your site, e.g. /blog
-# url: "https://haz-test.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+# the base hostname & protocol for your site, e.g. http://example.com
 
 permalink: pretty
 exclude: ["node_modules/", "*.gemspec", "*.gem", "Gemfile", "Gemfile.lock", "package.json", "package-lock.json",  "script/", "LICENSE.txt", "lib/", "bin/", "README.md", "Rakefile", "vendor"]
