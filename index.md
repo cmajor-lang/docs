@@ -72,9 +72,3 @@ For bugs and feature requests, you can use our [github issue tracker](https://gi
 To find out about any upcoming job openings, follow us on [LinkedIn](https://www.linkedin.com/company/sound-stacks-ltd/).
 
 For business-related enquiries, email us at info@soundstacks.co.uk
-
----------------------------------------------------------------------------------
-
-<img src="assets/images/SoundStacks-logo.png" width="190pt">
-
-Cmajor is developed by [Sound Stacks Ltd.](https://soundstacks.co.uk)
