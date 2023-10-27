@@ -76,9 +76,11 @@ As with all cmajor manifest files, this file describes the patch's properties an
 
 ## ONNX
 
+## 
+
 With our [ONNX](https://onnx.ai/) to Cmajor python script, a Cmajor patch is outputted, routing your model through the ONNX operators that have been created in Cmajor. Layers are broken down into mathematical functions, known as operators. The `.onnx` format includes not only the model's architecture but also its weights and other metadata.
 
-### What are ONNX Operators?
+### Operators
 
 ONNX operators provide a standardised way to represent these operations, regardless of the deep learning framework used to define or train the model. This means that if you have a neural network model built in one framework (e.g. PyTorch or TensorFlow) and you want to run it on a different platform or framework, you can use ONNX to convert and execute the model seamlessly with Cmajor.
 
