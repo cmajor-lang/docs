@@ -15,7 +15,7 @@ In Cmajor, you may want to run inference on a machine learning model that has be
 
 [RTNeural](https://github.com/jatinchowdhury18/RTNeural) is a real-time audio processing inference engine written in C++. It takes a trained network, loads the weights and runs inference on that network.
 
-## RTNeural to Cmajor Python Script
+### RTNeural to Cmajor Python Script
 
 The command line options are given as follows:
 
@@ -78,11 +78,11 @@ As with all cmajor manifest files, this file describes the patch's properties an
 
 With our [ONNX](https://onnx.ai/) to Cmajor python script, a Cmajor patch is outputted, routing your model through the ONNX operators that have been created in Cmajor. Layers are broken down into mathematical functions, known as operators. The `.onnx` format includes not only the model's architecture but also its weights and other metadata.
 
-## What are ONNX Operators?
+### What are ONNX Operators?
 
 ONNX operators provide a standardised way to represent these operations, regardless of the deep learning framework used to define or train the model. This means that if you have a neural network model built in one framework (e.g. PyTorch or TensorFlow) and you want to run it on a different platform or framework, you can use ONNX to convert and execute the model seamlessly with Cmajor.
 
-## Using the ONNX to Cmajor Python script
+### Using the ONNX to Cmajor Python script
 
 The command line options are given as follows:
 
