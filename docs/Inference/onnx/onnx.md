@@ -1,7 +1,7 @@
 ---
 title: ONNX
-permalink: /docs/Inference#onnx
-parent: Inference
+permalink: /docs/MachineLearning#onnx
+parent: Machine Learning
 has_children: False
-nav_order: 2
+nav_order: 1
 ---

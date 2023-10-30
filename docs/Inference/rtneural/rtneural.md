@@ -1,7 +1,7 @@
 ---
 title: RTNeural
-permalink: /docs/Inference#rtneural
-parent: Inference
+permalink: /docs/MachineLearning#rtneural
+parent: Machine Learning
 has_children: False
-nav_order: 1
+nav_order: 2
 ---
