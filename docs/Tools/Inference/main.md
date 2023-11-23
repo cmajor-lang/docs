@@ -1,6 +1,6 @@
 ---
 title: Machine Learning
-permalink: /docs/MachineLearning#MachineLearning
+permalink: /docs/parentTitle/MachineLearning#MachineLearning
 parent: Tools
 has_children: true
 nav_order: 2
