@@ -1,7 +1,8 @@
 ---
+layout: default
 title: RTNeural
 permalink: /docs/MachineLearning#rtneural
 parent: Machine Learning
-has_children: False
+grand_parent: False
 nav_order: 2
 ---

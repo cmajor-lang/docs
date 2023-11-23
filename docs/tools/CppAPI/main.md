@@ -1,12 +1,10 @@
 ---
-layout: default
 title: C++ API
-permalink: /docs/C++API
-nav_order: 1
+permalink: /docs/C++API#C++ API
+parent: Tools
 has_children: true
-has_toc: false
+nav_order: 1
 ---
-
 # The Cmajor native API
 
 This document covers the API you'll need to use if you want to embed the Cmajor JIT engine into a native C++ app.

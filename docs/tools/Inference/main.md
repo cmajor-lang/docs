@@ -1,12 +1,10 @@
 ---
-layout: default
 title: Machine Learning
-permalink: /docs/MachineLearning
-nav_order: 2
+permalink: /docs/MachineLearning#Machine Learning
+parent: Tools
 has_children: true
-has_toc: false
+nav_order: 2
 ---
-
 # Machine Learning Tools in Cmajor
 
 Cmajor makes a great platform for high-performance execution (inference) of real-time machine learning tasks. ML inference involves a lot of matrix operators, and the Cmajor JIT engine can do a great job of vectorising that kind of code. In most cases it equals or outperforms equivalent C++ code by taking advantage of processor-specific SIMD extensions where available, and is real-time safe by design.
