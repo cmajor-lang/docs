@@ -1,6 +1,6 @@
 ---
 title: C++ API
-permalink: /docs/C++API#C++ API
+permalink: /docs/C++API#C++API
 parent: Tools
 has_children: true
 nav_order: 1

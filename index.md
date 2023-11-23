@@ -23,7 +23,7 @@ Our goal is to improve on the current status-quo for audio development in quite 
 - To speed-up commercial product cycles by enabling sound-designers to be more independent from the instrument platforms
 - To attract students and beginners by being vastly easier to learn than C/C++
 
-If you're keen to learn the nitty-gritty of the language itself, the [language guide](docs/LanguageReference) offers a deep dive. To see some examples of the code, try the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
+If you're keen to learn the nitty-gritty of the language itself, the [language guide](docs/LanguageReference) offers a deep dive. To see some examples of the code, try the [examples](https://github.com/cmajor-lang/cmajor/tree/main/examples/patches) folder.
 
 ## How can Cmajor be used?
 
