@@ -32,7 +32,7 @@ This command will prompt you to select the name of a new `.cmajorpatch` file. It
 
 #### `Cmajor: Find example patches`
 
-This command will take you to the Cmajor repository where you can find our example patches. You can either clone the [whole repository](https://github.com/SoundStacks/cmajor) from github, or just download specific examples from the [examples](https://github.com/SoundStacks/cmajor/tree/main/examples/patches) folder.
+This command will take you to the Cmajor repository where you can find our example patches. You can either clone the [whole repository](https://github.com/cmajor-lang/cmajor) from github, or just download specific examples from the [examples](https://github.com/cmajor-lang/cmajor/tree/main/examples/patches) folder.
 
 #### `Cmajor: Export patch as JUCE plugin`
 
@@ -42,7 +42,7 @@ This will prompt you for a folder in which to create a new JUCE project containi
 
 ## Installing the Cmajor command-line tools
 
-On the Github releases page, you'll find [downloadable binaries for Mac and Windows](https://github.com/SoundStacks/cmajor/releases). These provide:
+On the Github releases page, you'll find [downloadable binaries for Mac and Windows](https://github.com/cmajor-lang/cmajor/releases). These provide:
 
 - The command-line tool (`cmaj` or `cmaj.exe`) which provides a compiler, utilities and can load and run Cmajor patches.
 - The redistributable libraries (`CmajPerformer.dll` or `libCmajPerformer.so`) which are needed if you're building your own native app which embeds the Cmajor JIT engine.
@@ -52,7 +52,7 @@ On the Github releases page, you'll find [downloadable binaries for Mac and Wind
 
 The `cmaj` command can create, build, test and run patches, as well as perform code-generation of C++ and plugin projects, and various other tasks.
 
-To install, just [download](https://github.com/SoundStacks/cmajor/releases) and unzip the executable into a location of your choice, and you can run it from a terminal.
+To install, just [download](https://github.com/cmajor-lang/cmajor/releases) and unzip the executable into a location of your choice, and you can run it from a terminal.
 
 For help, run:
 
@@ -78,7 +78,7 @@ While running a patch, the console app will detect any file changes and recompil
 
 ## Loading patches in your DAW with the Cmajor VST/AU plugin
 
-In our [binary releases](https://github.com/SoundStacks/cmajor/releases), you'll find an installer for our plugin, which can be loaded into most DAWs like any other plugin.
+In our [binary releases](https://github.com/cmajor-lang/cmajor/releases), you'll find an installer for our plugin, which can be loaded into most DAWs like any other plugin.
 
 When you create an instance of this plugin in a DAW, you can drag-and-drop a `.cmajorpatch` file onto the plugin's GUI to make it load that patch.
 
