@@ -2,7 +2,7 @@
 layout: default
 title: Getting Started
 permalink: /docs/GettingStarted
-nav_order: 1
+nav_order: 2
 has_children: true
 has_toc: false
 ---
