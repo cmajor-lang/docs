@@ -2,7 +2,6 @@
 layout: default
 title: Home
 nav_order: 1
-has_children: true
 description: "C major documentation."
 permalink: /
 ---
@@ -47,7 +46,7 @@ Our tools can also export a raw, dependency-free C++ version of any Cmajor code.
 
 ### Embedding the Cmajor JIT engine in your app
 
-For developers who want to embed the Cmajor JIT engine into their own native apps, there's a C++ API to do that - see the documentation [here](docs/C++API).
+For developers who want to embed the Cmajor JIT engine into their own native apps, there's a C++ API to do that - see the documentation [here](docs/Tools/C++API).
 
 As well as an API, we supply a whole range of utility C++ classes that make it easy to use Cmajor in various common audio software patterns.
 
@@ -67,8 +66,14 @@ A DAW with native support for Cmajor will offer a better experience of scanning 
 
 To chat about Cmajor, you can join our [discord channel](https://discord.gg/Abtc5xabcT) at [theaudioprogrammer.com](https://www.theaudioprogrammer.com/)
 
-For bugs and feature requests, you can use our [github issue tracker](https://github.com/SoundStacks/cmajor/issues).
+For bugs and feature requests, you can use our [github issue tracker](https://github.com/cmajor-lang/cmajor/issues).
 
-To find out about any upcoming job openings, follow us on [LinkedIn](https://www.linkedin.com/company/sound-stacks-ltd/).
+To find out about any upcoming job openings, follow us on [LinkedIn](https://www.linkedin.com/company/cmajor-software-ltd/).
 
-For business-related enquiries, email us at info@soundstacks.co.uk
+For business-related enquiries, email us at info@cmajor.dev
+
+---------------------------------------------------------------------------------
+
+<img src="assets/images/Cmajor-Logo.png" width="190pt">
+
+Cmajor is developed by [Cmajor Software Ltd.](https://cmajor.dev)
