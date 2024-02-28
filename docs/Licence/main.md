@@ -11,56 +11,17 @@ has_toc: false
 
 ## Different Cmajor licensing options
 
-We offer a range of different license plans for Cmajor, which are summarised below.
+Cmajor is available under a dual GPLv3/Commercial licensing scheme.
 
 If you fully comply with the terms of the [GPLv3 (or later)](https://www.gnu.org/licenses/gpl-3.0.en.html) then you can use Cmajor without needing to contact us.
 
-If you'd like to use it in a closed-source product, or cannot use the GPL for other reasons, then you can contact us to register for one of the commercial options listed below:
+If you'd like to embed the Cmajor engine in a closed-source product, or to mix it with non-GPL-compliant code, then we will offer a range of commercial licenses to cover many types of use-case.
 
+> We are currently working on our list of commercial license tiers, and payment systems..
+> **All the prices and terms will be published here very soon, so watch this space...!**
+> (If you're an enterprise user and can't wait to discuss a custom Cmajor license, please contact us directly at info@cmajor.dev)
 
-| Plan       | Price                 | Support                        | Suitability                                   |
-|------------|-----------------------|--------------------------------|-----------------------------------------------|
-| GPLv3      | Free                  | Forum                          | Products must be fully GPLv3 compliant        |
-| Personal   | Free                  | Forum                          | For companies with revenue < $50k             |
-| Education  | Free                  | Forum                          | For educational institutions only             |
-| Indie      | 20GBP/month per seat  | Forum                          | For companies with revenue < $200k            |
-| Pro 1      | 40GBP/month per seat  | Forum                          | For companies with revenue < $400k            |
-| Pro 2      | 80GBP/month per seat  | Forum                          | For companies with revenue < $2m              |
-| Pro 3      | 100GBP/month per seat | Forum                          | For companies with revenue < $10m             |
-| Enterprise |                       | Negotiated as part of contract | For companies with revenue > $10m             |
-
-Where a plan stipulates a revenue limit, this refers to gross revenue, meaning all monies collected, including through funding, whether it be received in connection with your Cmajor-related project or not, without offsets of any kind.
-
-Extra notes:
-
-  - **GPLv3 License**
-    All the code in the Cmajor repository is released under the [GPLv3](https://www.gnu.org/licenses/gpl-3.0.en.html).
-    This means that anyone is free to use Cmajor in their own GPLv3-licensed codebases, as long as they fully comply with the terms of that license. In practice, that means that if you're building a product, you'll need to release all of your own sourcecode under GPL (or a compatible open-source license). If you intend to release binaries which contain closed-source code, you'll need to choose one of our other commercial licensing plans.
-
-  - **Personal License**
-    For individuals and single-person companies with low revenues, we offer a free personal license.
-    This allows an individual developer to release closed-source products, as long as their revenue is below \$50k USD (or local equivalent).
-    Another requirement here is that the app must display prominent "Powered by Cmajor" branding.
-    If you start with a free Personal license plan and are lucky enough that your revenue exceeds the \$50k USD limit, you must either upgrade to one of the Indie or Pro licenses (or release your code in a way that complies with the GPLv3 option).
-
-  - **Indie License**
-    For small companies whose total revenue is below \$200,000 USD (or equivalent), we offer a low-cost monthly per-seat license.
-    This permits a small company with one or more developers to release closed-source apps which use Cmajor.
-    Per-seat, monthly cost: 20 GBP
-    Minimum term: 12 months
-
-  - **Pro License (for various revenue levels)**
-    For medium-sized companies whose total revenue ranges between \$200,000 and \$10m USD (or equivalent), we offer tiered pricing on a per-developer-seat basis.
-    Per-seat, monthly cost: between 40 GBP and 100GBP
-    Minimum term: 12 months
-
-  - **Enterprise License**
-    Companies with a total revenue over \$10m USD (or equivalent) can call us to negotiate a custom license.
-    This may include technical support
-    Either per-seat monthly or perpetual licenses (for a specified version of Cmajor) can be arranged as needed.
-
-  - **Education License**
-    Our Education license is offered to educational institutions, for use in creating products that are released by the institution itself. If requesting this license, we may require documentation to prove that you're a bona fide educational establishment.
+For reference, the terms of our commercial license will be:
 
 ---
 
