@@ -12,7 +12,8 @@ has_toc: false
 
 ## Using Cmajor in VScode
 
-If you're a VScode user, then the [Cmajor VScode extension](https://marketplace.visualstudio.com/items?itemName=SoundStacks.cmajor) offers a hassle-free way to play with the language.
+If you're a VScode user, then the [Cmajor VScode extension](https://marketplace.visualstudio.com/items?itemName=
+CmajorSoftware.cmajor-tools) offers a hassle-free way to play with the language.
 
 It's a one-click process to get up and running: VScode will automatically install everything you need to create, edit and test Cmajor patches. Simply go to the extensions tab in VScode, search for "Cmajor" and click "install" on the extension.
 
