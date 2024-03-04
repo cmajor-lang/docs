@@ -36,23 +36,27 @@ If you don't fancy using our command-line tools, we have a VScode extension whic
 
 As well as being able to test patches using a MIDI keyboard and your computer's audio input/output, you can also use our Cmajor VST/AU plugin to load your patches inside any regular DAW. This loader plugin uses a JIT engine, so you can edit your patches while running, and they'll automatically rebuild and update themselves without needing to restart.
 
-### Turning a Cmajor patch into a native VST/AU/AAX plugin
+### Exporting a Cmajor patch as a native VST/AU/AAX plugin
 
 When you have a finished Cmajor patch, you can use our tools to convert it to a native C++ JUCE project, which you can compile into whatever audio plugin format you like, and distributed like any other audio plugin.
 
-### Using Cmajor code in C++ projects
+### Exporting a Cmajor patch as Javascript/WebAssembly/HTML
 
-Our tools can also export a raw, dependency-free C++ version of any Cmajor code. This means that you could design and test a DSP algorithm using our JIT engine and hot-reloader, and then export the finished code as C++ for use in any kind of app or even a bare-metal project.
+The Cmajor command-line tools and VScode extension can instantly export a folder of dependency-free HTML/Javascript which you can view with a webserver to play your patch using WebAudio/WebMIDI.
+
+Internally, we use the latest LLVM backend to convert the DSP to optimised WebAssembly, so it'll run about as fast as you can get inside a browser. The export process also bundles any custom GUI code.
+
+Our tools can either emit an `index.html` that gets you up-and-running, or you can just export the javascript classes and write your own glue code to plumb them into your website.
+
+### Exporting a Cmajor patch for use in legacy C++ projects
+
+Our tools can also export a raw, dependency-free C++ version of any Cmajor code. This means that you could design and test a DSP algorithm using our JIT engine and hot-reloader, and then export the finished code as C++ for integration into any kind of app or even a bare-metal project.
 
 ### Embedding the Cmajor JIT engine in your app
 
 For developers who want to embed the Cmajor JIT engine into their own native apps, there's a C++ API to do that - see the documentation [here](docs/Tools/C++API).
 
 As well as an API, we supply a whole range of utility C++ classes that make it easy to use Cmajor in various common audio software patterns.
-
-### (Coming soon!) Develop and run Cmajor in your browser
-
-Cmajor has been designed from the outset to fit into a WASM/WebAssembly stack, and we'll soon be offering a full online playground at [cmajor.dev](https://cmajor.dev). This will let people dabble with the language without needing to install anything on their local machine.
 
 ### (Coming soon!) Native support for Cmajor patches in DAWs
 
