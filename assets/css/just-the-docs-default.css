@@ -684,7 +684,7 @@ body {
 .main-content h1,.main-content h2,.main-content h3,.main-content h4,.main-content h5,.main-content h6,.main-content #toctitle {
     position: relative;
     margin-top: 1.5em;
-    margin-bottom: 0.25em
+    margin-bottom: 0.6em
 }
 
 .main-content h1+table,.main-content h1+.table-wrapper,.main-content h1+.code-example,.main-content h1+.highlighter-rouge,.main-content h1+.sectionbody .listingblock,.main-content h2+table,.main-content h2+.table-wrapper,.main-content h2+.code-example,.main-content h2+.highlighter-rouge,.main-content h2+.sectionbody .listingblock,.main-content h3+table,.main-content h3+.table-wrapper,.main-content h3+.code-example,.main-content h3+.highlighter-rouge,.main-content h3+.sectionbody .listingblock,.main-content h4+table,.main-content h4+.table-wrapper,.main-content h4+.code-example,.main-content h4+.highlighter-rouge,.main-content h4+.sectionbody .listingblock,.main-content h5+table,.main-content h5+.table-wrapper,.main-content h5+.code-example,.main-content h5+.highlighter-rouge,.main-content h5+.sectionbody .listingblock,.main-content h6+table,.main-content h6+.table-wrapper,.main-content h6+.code-example,.main-content h6+.highlighter-rouge,.main-content h6+.sectionbody .listingblock,.main-content #toctitle+table,.main-content #toctitle+.table-wrapper,.main-content #toctitle+.code-example,.main-content #toctitle+.highlighter-rouge,.main-content #toctitle+.sectionbody .listingblock {
