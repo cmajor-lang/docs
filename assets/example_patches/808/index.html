@@ -95,6 +95,7 @@ import { createPatchView, scalePatchViewToFit } from "./cmaj_api/cmaj-patch-view
 async function loadPatch()
 {
     const audioContext = new AudioContext();
+    audioContext.suspend();
     const connection = await patch.createAudioWorkletNodePatchConnection (audioContext, "cmaj-worklet-processor");
 
     const outer = document.getElementById ("cmaj-outer-container");
@@ -133,6 +134,7 @@ async function loadPatch()
         startOverlay.style.display = "none";
         resetButton.style.display = "block";
         connection.connectDefaultAudioAndMIDI (audioContext);
+        audioContext.resume();
     };
 }
 
