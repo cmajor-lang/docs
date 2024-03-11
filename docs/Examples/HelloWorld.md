@@ -1,16 +1,15 @@
 ---
 layout: default
-title: HelloWorld
+title: Hello World
 parent: Examples
 nav_order: 1
 has_children: false
 has_toc: false
 ---
 
-## HelloWorld
+## Hello World
 
-This is a Javascript/WebAssembly build of the "HelloWorld" example patch.
-
+This is a Javascript/WebAssembly build of the "Hello World" example patch.
 
 
 <a href="https://github.com/cmajor-lang/cmajor/tree/main/examples/patches/HelloWorld" target="_blank">Click here to view the source code.</a>

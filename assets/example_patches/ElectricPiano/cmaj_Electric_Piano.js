@@ -415,26 +415,55 @@ class ElectricPiano
 
   /** Copies frames from the output stream "audioOut" into a destination array.
    *
-   * @param {Array} destChannelArrays   - An array of arrays (one per channel) into
-   *                                      which the samples will be copied
+   * @param {Array} destChannelArrays - An array of arrays (one per channel) into
+   *                                    which the samples will be copied
    * @param {number} maxNumFramesToRead - The maximum number of frames to copy
-   * @param {number} destChannel        - The channel to start writing from
    */
-  getOutputFrames_audioOut (destChannelArrays, maxNumFramesToRead, destChannel)
+  getOutputFrames_audioOut (destChannelArrays, maxNumFramesToRead)
   {
     let source = 134672;
+    let numDestChans = destChannelArrays.length;
 
     if (maxNumFramesToRead > 512)
       maxNumFramesToRead = 512;
 
-    const channelsToCopy = Math.min (2, destChannelArrays.length - destChannel);
-
-    for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+    if (numDestChans < 2)
     {
-      for (let channel = 0; channel < channelsToCopy; ++channel)
-        destChannelArrays[destChannel + channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        for (let channel = 0; channel < numDestChans; ++channel)
+          destChannelArrays[channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
 
-      source += 8;
+        source += 8;
+      }
+    }
+    else if (numDestChans > 2)
+    {
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        let lastSample;
+
+        for (let channel = 0; channel < 2; ++channel)
+        {
+          lastSample = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+          destChannelArrays[channel][frame] = lastSample;
+        }
+
+        for (let channel = 2; channel < numDestChans; ++channel)
+          destChannelArrays[channel][frame] = lastSample;
+
+        source += 8;
+      }
+    }
+    else
+    {
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        for (let channel = 0; channel < 2; ++channel)
+          destChannelArrays[channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+
+        source += 8;
+      }
     }
   }
 

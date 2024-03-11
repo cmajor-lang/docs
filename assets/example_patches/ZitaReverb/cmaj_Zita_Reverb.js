@@ -437,10 +437,9 @@ class ZitaReverb
   /** Stores frames for the input to endpoint "in"
    *
    * @param {Array} sourceChannelArrays - An array of channel arrays to read
-   * @param {number} numFramesToWrite   - The number of frames to copy
-   * @param {number} sourceChannel      - The source channel to copy from
+   * @param {number} numFramesToWrite - The number of frames to copy
    */
-  setInputStreamFrames_in (sourceChannelArrays, numFramesToWrite, sourceChannel)
+  setInputStreamFrames_in (sourceChannelArrays, numFramesToWrite)
   {
     try
     {
@@ -449,14 +448,32 @@ class ZitaReverb
 
       let dest = 1283248;
 
-      const channelsToCopy = Math.min (2, sourceChannelArrays.length - sourceChannel);
-
-      for (let frame = 0; frame < numFramesToWrite; ++frame)
+      if (sourceChannelArrays[0].length === undefined)  // If the input is a single channel
       {
-        for (let channel = 0; channel < channelsToCopy; ++channel)
-          this._pack_f32 (dest + 4 * channel, sourceChannelArrays[sourceChannel + channel][frame]);
+        for (let frame = 0; frame < numFramesToWrite; ++frame)
+        {
+          const sourceSample = sourceChannelArrays[frame] || 0;
 
-        dest += 8;
+          for (let channel = 0; channel < 2; ++channel)
+            this._pack_f32 (dest + 4 * channel, sourceSample);
+
+          dest += 8;
+        }
+      }
+      else
+      {
+        const numSourceChannels = sourceChannelArrays.length;
+
+        for (let frame = 0; frame < numFramesToWrite; ++frame)
+        {
+          for (let channel = 0; channel < 2; ++channel)
+          {
+            const sourceSample = channel < numSourceChannels ? (sourceChannelArrays[channel][frame] || 0) : 0;
+            this._pack_f32 (dest + 4 * channel, sourceSample);
+          }
+
+          dest += 8;
+        }
       }
     }
     catch (error)
@@ -478,26 +495,55 @@ class ZitaReverb
 
   /** Copies frames from the output stream "out" into a destination array.
    *
-   * @param {Array} destChannelArrays   - An array of arrays (one per channel) into
-   *                                      which the samples will be copied
+   * @param {Array} destChannelArrays - An array of arrays (one per channel) into
+   *                                    which the samples will be copied
    * @param {number} maxNumFramesToRead - The maximum number of frames to copy
-   * @param {number} destChannel        - The channel to start writing from
    */
-  getOutputFrames_out (destChannelArrays, maxNumFramesToRead, destChannel)
+  getOutputFrames_out (destChannelArrays, maxNumFramesToRead)
   {
     let source = 1287344;
+    let numDestChans = destChannelArrays.length;
 
     if (maxNumFramesToRead > 512)
       maxNumFramesToRead = 512;
 
-    const channelsToCopy = Math.min (2, destChannelArrays.length - destChannel);
-
-    for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+    if (numDestChans < 2)
     {
-      for (let channel = 0; channel < channelsToCopy; ++channel)
-        destChannelArrays[destChannel + channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        for (let channel = 0; channel < numDestChans; ++channel)
+          destChannelArrays[channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
 
-      source += 8;
+        source += 8;
+      }
+    }
+    else if (numDestChans > 2)
+    {
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        let lastSample;
+
+        for (let channel = 0; channel < 2; ++channel)
+        {
+          lastSample = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+          destChannelArrays[channel][frame] = lastSample;
+        }
+
+        for (let channel = 2; channel < numDestChans; ++channel)
+          destChannelArrays[channel][frame] = lastSample;
+
+        source += 8;
+      }
+    }
+    else
+    {
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        for (let channel = 0; channel < 2; ++channel)
+          destChannelArrays[channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+
+        source += 8;
+      }
     }
   }
 

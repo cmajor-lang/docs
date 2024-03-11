@@ -197,26 +197,55 @@ class HelloWorld
 
   /** Copies frames from the output stream "out" into a destination array.
    *
-   * @param {Array} destChannelArrays   - An array of arrays (one per channel) into
-   *                                      which the samples will be copied
+   * @param {Array} destChannelArrays - An array of arrays (one per channel) into
+   *                                    which the samples will be copied
    * @param {number} maxNumFramesToRead - The maximum number of frames to copy
-   * @param {number} destChannel        - The channel to start writing from
    */
-  getOutputFrames_out (destChannelArrays, maxNumFramesToRead, destChannel)
+  getOutputFrames_out (destChannelArrays, maxNumFramesToRead)
   {
     let source = 71744;
+    let numDestChans = destChannelArrays.length;
 
     if (maxNumFramesToRead > 512)
       maxNumFramesToRead = 512;
 
-    const channelsToCopy = Math.min (1, destChannelArrays.length - destChannel);
-
-    for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+    if (numDestChans < 1)
     {
-      for (let channel = 0; channel < channelsToCopy; ++channel)
-        destChannelArrays[destChannel + channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        for (let channel = 0; channel < numDestChans; ++channel)
+          destChannelArrays[channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
 
-      source += 4;
+        source += 4;
+      }
+    }
+    else if (numDestChans > 1)
+    {
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        let lastSample;
+
+        for (let channel = 0; channel < 1; ++channel)
+        {
+          lastSample = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+          destChannelArrays[channel][frame] = lastSample;
+        }
+
+        for (let channel = 1; channel < numDestChans; ++channel)
+          destChannelArrays[channel][frame] = lastSample;
+
+        source += 4;
+      }
+    }
+    else
+    {
+      for (let frame = 0; frame < maxNumFramesToRead; ++frame)
+      {
+        for (let channel = 0; channel < 1; ++channel)
+          destChannelArrays[channel][frame] = this.memoryDataView.getFloat32 (source + 4 * channel, true);
+
+        source += 4;
+      }
     }
   }
 

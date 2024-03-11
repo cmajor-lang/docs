@@ -104,27 +104,14 @@ function registerWorkletProcessor (workletName, WrapperClass)
         if (endpoints.length === 0)
             return () => {};
 
-        var handlers = [];
-        var targetChannels = [];
+        // N.B. we just take the first for now (and do the same when creating the node).
+        // we can do better, and should probably align with something similar to what the patch player does
+        const first = endpoints[0];
+        const handleFrames = wrapper[`${wrapperMethodNamePrefix}_${first.endpointID}`]?.bind (wrapper);
+        if (! handleFrames)
+            return () => {};
 
-        var channelCount = 0;
-
-        for (const endpoint of endpoints)
-        {
-            const handleFrames = wrapper[`${wrapperMethodNamePrefix}_${endpoint.endpointID}`]?.bind (wrapper);
-            if (! handleFrames)
-                return () => {};
-
-            handlers.push (handleFrames);
-            targetChannels.push (channelCount);
-            channelCount += endpoint.numAudioChannels;
-        }
-
-        return (channels, blockSize) =>
-        {
-            for (var i = 0; i < handlers.length; i++)
-                handlers[i] (channels, blockSize, targetChannels[i]);
-        }
+        return (channels, blockSize) => handleFrames (channels, blockSize);
     }
 
     function makeInputStreamEndpointHandler (wrapper)
@@ -527,11 +514,12 @@ export class AudioWorkletPatchConnection extends PatchConnection
         const audioInputEndpoints  = this.inputEndpoints.filter (({ purpose }) => purpose === "audio in");
         const audioOutputEndpoints = this.outputEndpoints.filter (({ purpose }) => purpose === "audio out");
 
-        var inputChannelCount = 0;
-        var outputChannelCount = 0;
+        // N.B. we just take the first for now (and do the same in the processor too).
+        // we can do better, and should probably align with something similar to what the patch player does
+        const pickFirstEndpointChannelCount = (endpoints) => endpoints.length ? endpoints[0].numAudioChannels : 0;
 
-        audioInputEndpoints.forEach  ((endpoint) => { inputChannelCount = inputChannelCount + endpoint.numAudioChannels; });
-        audioOutputEndpoints.forEach ((endpoint) => { outputChannelCount = outputChannelCount + endpoint.numAudioChannels; });
+        const inputChannelCount = pickFirstEndpointChannelCount (audioInputEndpoints);
+        const outputChannelCount = pickFirstEndpointChannelCount (audioOutputEndpoints);
 
         const hasInput = inputChannelCount > 0;
         const hasOutput = outputChannelCount > 0;

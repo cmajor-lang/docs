@@ -1,6 +1,6 @@
 ---
 layout: default
-title: RingMod
+title: Ring Modulator
 parent: Examples
 nav_order: 6
 has_children: false
@@ -32,7 +32,6 @@ This contains a block diagram and a branch equation we can use to model our exam
 ![Block Diagram for the Ring Modulator](blockDiagram.png)
 
 We use a sine wave as the modulating signal (Vin) and audioIn from the user (Vc). Two distinct diode blocks are created, each utilising a phase invert signal that is combined with the distorted signal. Both diode blocks are then summed back together to complete the ring modulation effect.
-
 
 
 <a href="https://github.com/cmajor-lang/cmajor/tree/main/examples/patches/RingMod" target="_blank">Click here to view the source code.</a>
