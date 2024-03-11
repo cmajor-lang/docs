@@ -9,7 +9,7 @@ has_toc: false
 
 ## Replicant...
 
-This example by [Oli Larkin](https://github.com/olilarkin).
+This example is by [Oli Larkin](https://github.com/olilarkin).
 
 Cmajor port of [maximillian "replicant" example](https://github.com/micknoise/Maximilian/blob/master/cpp/commandline/maximilian_examples/16.Replicant/main.cpp)
 
