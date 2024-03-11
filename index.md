@@ -48,7 +48,7 @@ Internally, we use the latest LLVM backend to convert the DSP to optimised WebAs
 
 Our tools can either emit an `index.html` that gets you up-and-running, or you can just export the javascript classes and write your own glue code to plumb them into your website.
 
-To see how this looks, have a look through our [online gallery of examples](docs/Examples/).
+To see how this looks, have a look through our [online gallery of examples](docs/Examples).
 
 ### Exporting a Cmajor patch as pure C++
 
