@@ -9,7 +9,7 @@ has_toc: false
 
 ## Filters by Will Pirkle ported to CMajor
 
-This example by [Oli Larkin](https://github.com/olilarkin).
+This example is by [Oli Larkin](https://github.com/olilarkin).
 
 These filters are ported from the C++ projects in Will Pirkle's books
 and the application notes on his website
