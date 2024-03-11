@@ -48,7 +48,9 @@ Internally, we use the latest LLVM backend to convert the DSP to optimised WebAs
 
 Our tools can either emit an `index.html` that gets you up-and-running, or you can just export the javascript classes and write your own glue code to plumb them into your website.
 
-### Exporting a Cmajor patch for use in legacy C++ projects
+To see how this looks, have a look through our [online gallery of examples](docs/Examples/).
+
+### Exporting a Cmajor patch as pure C++
 
 Our tools can also export a raw, dependency-free C++ version of any Cmajor code. This means that you could design and test a DSP algorithm using our JIT engine and hot-reloader, and then export the finished code as C++ for integration into any kind of app or even a bare-metal project.
 
