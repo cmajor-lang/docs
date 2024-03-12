@@ -1,6 +1,6 @@
 ---
 layout: default
-title: STunedBar
+title: Tuned Bar
 parent: Examples
 nav_order: 10
 has_children: false
