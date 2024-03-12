@@ -1,6 +1,6 @@
 ---
 layout: default
-title: ZitaReverb
+title: Zita Reverb
 parent: Examples
 nav_order: 7
 has_children: false
