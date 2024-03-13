@@ -2,7 +2,7 @@
 layout: default
 title: Pirkle Filters
 parent: Examples
-nav_order: 9
+nav_order: 10
 has_children: false
 has_toc: false
 ---
