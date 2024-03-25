@@ -74,7 +74,7 @@ To chat about Cmajor, you can join our [discord channel](https://discord.gg/Abtc
 
 For bugs and feature requests, you can use our [github issue tracker](https://github.com/cmajor-lang/cmajor/issues).
 
-To find out about any upcoming job openings, follow us on [LinkedIn](https://www.linkedin.com/company/cmajor-software-ltd/).
+You can follow us on [LinkedIn](https://www.linkedin.com/company/cmajor-software-ltd/) or [github](https://github.com/cmajor-lang) to get updates and news.
 
 For business-related enquiries, email us at info@cmajor.dev
 
