@@ -30,7 +30,7 @@ export const manifest =
   "category": "generator",
   "manufacturer": "Cmajor Software Ltd",
   "isInstrument": false,
-  "source": "zitaReverb.cmajor"
+  "source": "ZitaReverb.cmajor"
 };
 
 /** Returns the patch's output endpoint list */
