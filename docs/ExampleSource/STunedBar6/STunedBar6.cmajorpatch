@@ -1,0 +1,12 @@
+{
+	"CmajorVersion": 1,
+	"ID": "grame.cmajor.STunedBar6",
+	"version": "1.0",
+	"name": "STunedBar6",
+	"description": "Cmajor example",
+	"category": "synth",
+	"manufacturer": "GRAME",
+	"website": "https://faust.grame.fr",
+	"isInstrument": false,
+	"source": "STunedBar6.cmajor"
+}

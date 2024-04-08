@@ -1,0 +1,26 @@
+
+{
+    "CmajorVersion":    1,
+    "ID":               "dev.cmajor.examples.tremolo",
+    "version":          "1.0",
+    "name":             "Tremolo",
+    "description":      "A simple tremolo effect, with a custom GUI",
+    "category":         "effect",
+    "manufacturer":     "Cmajor Software Ltd",
+    "isInstrument":     false,
+
+    "plugin":
+    {
+        "manufacturerCode":  "Cmaj",
+        "pluginCode":        "adc8"
+    },
+
+    "source":           "Tremolo.cmajor",
+    "view":
+    {
+        "src": "ui/index.js",
+        "width": 250,
+        "height": 423,
+        "resizable": false
+    }
+}
