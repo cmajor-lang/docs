@@ -22,8 +22,8 @@
 import { EventListenerList } from "./cmaj-event-listener-list.js"
 import * as midi from "./cmaj-midi-helpers.js"
 import PianoKeyboard from "./cmaj-piano-keyboard.js"
-import * as ParameterControls from "./cmaj-parameter-controls.js"
 import GenericPatchView from "./cmaj-generic-patch-view.js"
+import * as ParameterControls from "./cmaj-parameter-controls.js"
 
 //==============================================================================
 /** This class implements the API and much of the logic for communicating with
@@ -211,13 +211,17 @@ export class PatchConnection  extends EventListenerList
 
     //==============================================================================
     /**
-     *  This object contains other utility classes and functions from the Cmajor API,
+     *  This property contains various utility classes and functions from the Cmajor API,
      *  for use in your GUI or worker code.
      */
     utilities = {
+        /** MIDI utility functions from cmaj-midi-helpers.js */
         midi,
+        /** On-screen keyboard class from cmaj-piano-keyboard.js */
         PianoKeyboard,
+        /** Basic parameter control GUI elements, from cmaj-parameter-controls.js */
         ParameterControls,
+        /** The default view GUI, from cmaj-generic-patch-view.js */
         GenericPatchView
     };
 
