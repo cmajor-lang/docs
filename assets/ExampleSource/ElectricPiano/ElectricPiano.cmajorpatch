@@ -1,0 +1,12 @@
+{
+    "CmajorVersion":    1,
+    "ID":               "dev.cmajor.examples.electricpiano",
+    "version":          "1.0",
+    "name":             "Electric Piano",
+    "description":      "An additive model of an electric piano",
+    "category":         "generator",
+    "manufacturer":     "Cmajor Software Ltd",
+    "isInstrument":     true,
+
+    "source":           "ElectricPiano.cmajor"
+}
