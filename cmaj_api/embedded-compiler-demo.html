@@ -9,12 +9,13 @@
         <a href="https://cmajor.dev"><img class="logo" src="./assets/cmajor-logo.svg"/></a>
 
         <p>This is a demo page showing how to build a website that uses the Cmajor in-browser compiler to dynamically build javascript/WASM from Cmajor patches.</p>
-        <p>We provide a javascript module at https://cmajor.dev/api/TODOTODO.js which contains a class CmajorCompiler. This can take a patch (either in the form of a
-           URL to load from, or as an array of filenames + content), and will build either some raw javascript, or a ready-to-run AudioWorkletNodePatchConnection object. </p>
+        <p>We provide a javascript module at https://cmajor.dev/cmaj_api/cmaj-embedded-compiler.js which contains a class CmajorCompiler.
+           This can take a patch (either in the form of a URL to load from, or as an array of filenames + content), and will build either
+           some raw javascript, or a ready-to-run AudioWorkletNodePatchConnection object.</p>
         <p>To see it in action, clicking these links will load and build patches from the URLs of our examples, or you can enter
            your own URL to try it with any other .cmajorpatch file.</p>
         <p>NOTE: This currently uses our binaryen WASM generator, which is small but produces slow code... As soon as we figure out how to squeeze the LLVM
-            backend into our WASM compiler, it'll get faster (but bigger!)</p>
+           backend into our WASM compiler, it'll get faster (but bigger!)</p>
 
         <div>
             <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/HelloWorld/HelloWorld.cmajorpatch')">HelloWorld</div>
