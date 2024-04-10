@@ -35,10 +35,7 @@
 
         <label>Load a patch from a URL:<input type="url" id="load-url" name="Patch URL" required size="50" onchange="loadPatch(this.value)"/></label>
     </div>
-    <div id="cmaj-outer-container">
-        <div id="cmaj-inner-container">
-        </div>
-    </div>
+    <div id="cmaj-view-container"></div>
 </body>
 
 <style>
@@ -88,21 +85,13 @@
         margin: 0.5rem;
     }
 
-    #cmaj-outer-container {
+    #cmaj-view-container {
         padding: 0.5rem;
         display: block;
         position: relative;
         width: 100%;
         height: 100%;
         overflow: auto;
-    }
-
-    #cmaj-inner-container {
-        position: relative;
-        width: 100%;
-        height: 100%;
-        overflow: visible;
-        transform-origin: 0% 0%;
     }
 
     .logo {
@@ -113,7 +102,7 @@
 
 <script type="module">
 
-import { createPatchView, scalePatchViewToFit } from "./cmaj-patch-view.js"
+import { createPatchViewHolder } from "./cmaj-patch-view.js"
 import CmajorCompiler from "./cmaj-embedded-compiler.js"
 
 let audioContext;
@@ -124,10 +113,9 @@ window.loadPatch = async function (url)
     const manifestPath = parts.pop();
     const baseURL = new URL (parts.join ("/") + "/");
 
-    const outer = document.getElementById ("cmaj-outer-container");
-    const inner = document.getElementById ("cmaj-inner-container");
+    const viewContainer = document.getElementById ("cmaj-view-container");
 
-    inner.innerHTML = `Loading ${manifestPath}...`;
+    viewContainer.innerHTML = `Loading ${manifestPath}...`;
     await audioContext?.close();
 
     try
@@ -141,18 +129,12 @@ window.loadPatch = async function (url)
 
         const connection = await compiler.createAudioWorkletNodePatchConnection (audioContext, "cmaj-worklet-processor");
 
-        const view = await createPatchView (connection);
+        const view = await createPatchViewHolder (connection);
+
+        viewContainer.innerHTML = "";
 
         if (view)
-        {
-            inner.innerHTML = "";
-            inner.appendChild (view);
-
-            const resizeObserver = new ResizeObserver (() => scalePatchViewToFit (view, inner, outer));
-            resizeObserver.observe (outer);
-
-            scalePatchViewToFit (view, inner, outer);
-        }
+            viewContainer.appendChild (view);
 
         await connection.connectDefaultAudioAndMIDI (audioContext);
         audioContext.resume();
@@ -166,7 +148,7 @@ window.loadPatch = async function (url)
             return JSON.stringify (e);
         }
 
-        inner.innerHTML = "Error:\n" + formatError();
+        viewContainer.innerHTML = "Error:\n" + formatError();
     }
 }
 
