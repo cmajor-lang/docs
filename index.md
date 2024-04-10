@@ -4,6 +4,7 @@ title: Home
 nav_order: 1
 description: "C major documentation."
 permalink: /
+has_toc: false
 ---
 
 # Welcome to Cmajor!
