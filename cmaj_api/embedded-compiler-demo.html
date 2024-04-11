@@ -115,7 +115,7 @@ window.loadPatch = async function (url)
 
     const viewContainer = document.getElementById ("cmaj-view-container");
 
-    viewContainer.innerHTML = `Loading ${manifestPath}...`;
+    viewContainer.innerHTML = `Building ${manifestPath}...`;
     await audioContext?.close();
 
     try
