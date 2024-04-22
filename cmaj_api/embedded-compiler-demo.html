@@ -182,10 +182,6 @@ let audioContext;
 
 async function loadPatch (prepareCompiler)
 {
-    const parts = url.split ("/");
-    const manifestPath = parts.pop();
-    const baseURL = new URL (parts.join ("/") + "/");
-
     const viewContainer = document.getElementById ("cmaj-view-container");
 
     viewContainer.innerHTML = `Building ${manifestPath}...`;
@@ -229,6 +225,10 @@ window.loadPatchFromURL = async function (url)
 {
     loadPatch ((compiler) =>
     {
+        const parts = url.split ("/");
+        const manifestPath = parts.pop();
+        const baseURL = new URL (parts.join ("/") + "/");
+
         compiler.setManifestURL (baseURL, manifestPath);
     });
 }
