@@ -213,7 +213,7 @@ export default class CmajorCompiler
             if (this.manifestPath)
                 return await this.getSourceFileContent (this.manifestPath);
 
-            for (const f of sources)
+            for (const f of this.sources)
                 if (f.path.endsWith (".cmajorpatch"))
                     return f.content;
 
