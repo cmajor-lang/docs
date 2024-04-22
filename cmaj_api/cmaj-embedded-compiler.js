@@ -210,9 +210,7 @@ export default class CmajorCompiler
     {
         const content = await this.getSourceFileContent (path);
 
-        const s = content?.toString?.();
-
-        if (s)
+        if (typeof content === "string")
             return s;
 
         const decoder = new TextDecoder('utf-8');
