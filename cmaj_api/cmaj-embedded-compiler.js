@@ -205,24 +205,36 @@ export default class CmajorCompiler
         return content;
     }
 
+    /** Tries to read and return the content of a file as a string. */
+    async getSourceFileContentAsString (path)
+    {
+        const content = await this.getSourceFileContent (path);
+
+        const s = content?.toString?.();
+
+        if (s)
+            return s;
+
+        const decoder = new TextDecoder('utf-8');
+        return await decoder.decode (content);
+    }
+
     /** Tries to read and return the manifest as a JSON object. */
     async readManifest()
     {
-        const getContent = async () =>
+        const getManifestPath = () =>
         {
             if (this.manifestPath)
-                return await this.getSourceFileContent (this.manifestPath);
+                return this.manifestPath;
 
             for (const f of this.sources)
                 if (f.path.endsWith (".cmajorpatch"))
-                    return f.content;
+                    return f.path;
 
             throw new Error ("Couldn't find a manifest file");
         }
 
-        const decoder = new TextDecoder('utf-8');
-        const content = await decoder.decode (await getContent());
-        return JSON.parse (content);
+        return JSON.parse (await this.getSourceFileContentAsString (getManifestPath()));
     }
 
     /** @private */
