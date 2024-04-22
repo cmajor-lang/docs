@@ -16,22 +16,85 @@
            your own URL to try it with any other .cmajorpatch file.</p>
 
         <div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/HelloWorld/HelloWorld.cmajorpatch')">HelloWorld</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/ElectricPiano/ElectricPiano.cmajorpatch')">ElectricPiano</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/808/808.cmajorpatch')">808</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/Piano/Piano.cmajorpatch')">Piano</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/Tremolo/Tremolo.cmajorpatch')">Tremolo</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/RingMod/RingMod.cmajorpatch')">RingMod</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/ZitaReverb/ZitaReverb.cmajorpatch')">ZitaReverb</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/Pro54/Pro54.cmajorpatch')">Pro54</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/GuitarLSTM/GuitarLSTM.cmajorpatch')">GuitarLSTM</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/PirkleFilters/vafilters.cmajorpatch')">PirkleFilters</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/Replicant/replicant.cmajorpatch')">Replicant</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/STunedBar6/STunedBar6.cmajorpatch')">STunedBar6</div>
-            <div class="example-patch" onclick="loadPatch('https://cmajor.dev/assets/ExampleSource/CompuFart/CompuFartSynth.cmajorpatch')">CompuFart</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/HelloWorld/HelloWorld.cmajorpatch')">HelloWorld</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/ElectricPiano/ElectricPiano.cmajorpatch')">ElectricPiano</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/808/808.cmajorpatch')">808</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/Piano/Piano.cmajorpatch')">Piano</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/Tremolo/Tremolo.cmajorpatch')">Tremolo</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/RingMod/RingMod.cmajorpatch')">RingMod</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/ZitaReverb/ZitaReverb.cmajorpatch')">ZitaReverb</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/Pro54/Pro54.cmajorpatch')">Pro54</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/GuitarLSTM/GuitarLSTM.cmajorpatch')">GuitarLSTM</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/PirkleFilters/vafilters.cmajorpatch')">PirkleFilters</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/Replicant/replicant.cmajorpatch')">Replicant</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/STunedBar6/STunedBar6.cmajorpatch')">STunedBar6</div>
+            <div class="example-patch" onclick="loadPatchFromURL('https://cmajor.dev/assets/ExampleSource/CompuFart/CompuFartSynth.cmajorpatch')">CompuFart</div>
         </div>
 
-        <label>Load a patch from a URL:<input type="url" id="load-url" name="Patch URL" required size="50" onchange="loadPatch(this.value)"/></label>
+        <label>Or load a patch from a URL:<input type="url" id="load-url" name="Patch URL" required size="50" onchange="loadPatchFromURL(this.value)"/></label>
+
+        <div>
+            <p>Or paste in a manifest and some source file content:</p>
+
+            <textarea id="manifest" name="manifest" rows="10" cols="50">{
+    "CmajorVersion":    1,
+    "ID":               "dev.cmajor.examples.helloworld",
+    "version":          "1.0",
+    "name":             "Hello World",
+    "description":      "The classic audio Hello World",
+    "manufacturer":     "Cmajor Software Ltd",
+    "category":         "generator",
+    "isInstrument":     false,
+
+    "source":           "test.cmajor"
+} </textarea>
+
+            <textarea id="source" name="source" rows="10" cols="50">processor HelloWorld
+{
+    output stream float out;
+
+    // This simple struct holds a note + duration for our melody
+    struct Note
+    {
+        int pitch, length;
+
+        void play() const
+        {
+            let numFrames = this.length * framesPerQuarterNote;
+            let frequency  = std::notes::noteToFrequency (this.pitch);
+            let phaseDelta = float (frequency * processor.period * twoPi);
+
+            loop (numFrames)
+            {
+                out <- volume * sin (phase);
+                phase = addModulo2Pi (phase, phaseDelta);
+                advance();
+            }
+        }
+    }
+
+    // This is our processor's entry-point function, which is invoked
+    // by the system
+    void main()
+    {
+        let melody = Note[] ( (79, 1),  (77, 1),  (69, 2),  (71, 2),
+                                (76, 1),  (74, 1),  (65, 2),  (67, 2),
+                                (74, 1),  (72, 1),  (64, 2),  (67, 2),
+                                (72, 4) );
+
+        for (wrap<melody.size> i)
+            melody[i].play();
+    }
+
+    // We'll define a couple of constants here to set the volume and tempo
+    let volume = 0.15f;
+    let framesPerQuarterNote = int (processor.frequency / 7);
+
+    float phase;
+}
+            </textarea>
+            <button id="build" onclick="loadPatchFromTextBoxContent()">Build</button>
+        </div>
     </div>
     <div id="cmaj-view-container"></div>
 </body>
@@ -83,6 +146,18 @@
         margin: 0.5rem;
     }
 
+    textarea {
+        background: rgb(172, 172, 172);
+        margin: 0.5rem;
+    }
+
+    button {
+        display: block;
+        margin: 0.5rem;
+        padding: 0.5rem;
+        background: lightblue;
+    }
+
     #cmaj-view-container {
         padding: 0.5rem;
         display: block;
@@ -105,15 +180,11 @@ import CmajorCompiler from "./cmaj-embedded-compiler.js"
 
 let audioContext;
 
-window.loadPatch = async function (url)
+async function loadPatch (prepareCompiler)
 {
-    const parts = url.split ("/");
-    const manifestPath = parts.pop();
-    const baseURL = new URL (parts.join ("/") + "/");
-
     const viewContainer = document.getElementById ("cmaj-view-container");
 
-    viewContainer.innerHTML = `Building ${manifestPath}...`;
+    viewContainer.innerHTML = `Building...`;
     await audioContext?.close();
 
     try
@@ -123,7 +194,7 @@ window.loadPatch = async function (url)
 
         const compiler = new CmajorCompiler();
 
-        compiler.setManifestURL (baseURL, manifestPath);
+        prepareCompiler (compiler);
 
         const connection = await compiler.createAudioWorkletNodePatchConnection (audioContext, "cmaj-worklet-processor");
 
@@ -149,6 +220,31 @@ window.loadPatch = async function (url)
         viewContainer.innerHTML = "Error:\n" + formatError();
     }
 }
+
+window.loadPatchFromURL = async function (url)
+{
+    loadPatch ((compiler) =>
+    {
+        const parts = url.split ("/");
+        const manifestPath = parts.pop();
+        const baseURL = new URL (parts.join ("/") + "/");
+
+        compiler.setManifestURL (baseURL, manifestPath);
+    });
+}
+
+window.loadPatchFromTextBoxContent = async function()
+{
+    loadPatch ((compiler) =>
+    {
+        const manifestBox = document.getElementById ("manifest");
+        const sourceBox = document.getElementById ("source");
+
+        compiler.addSourceFile ("test.cmajorpatch", manifestBox.value);
+        compiler.addSourceFile ("test.cmajor", sourceBox.value);
+    });
+}
+
 
 </script>
 </html>
