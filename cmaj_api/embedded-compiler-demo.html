@@ -240,8 +240,8 @@ window.loadPatchFromTextBoxContent = async function()
         const manifestBox = document.getElementById ("manifest");
         const sourceBox = document.getElementById ("source");
 
-        compiler.addSourceFile ("test.cmajorpatch", manifestBox.textContent);
-        compiler.addSourceFile ("test.cmajor", sourceBox.textContent);
+        compiler.addSourceFile ("test.cmajorpatch", manifestBox.value);
+        compiler.addSourceFile ("test.cmajor", sourceBox.value);
     });
 }
 
