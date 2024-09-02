@@ -14,7 +14,7 @@ This is a Javascript/WebAssembly build of the "SubtractOne" example patch.
 
 <a href="https://github.com/cmajor-lang/cmajor/tree/main/examples/patches/SubtractOne" target="_blank">Click here to view the source code.</a>
 
-<iframe style="display: inline-block; width: 100%; height: 32rem; border:none; padding-top: 1rem;"
+<iframe style="display: inline-block; width: 1024; height: 768; border:none; padding-top: 1rem;"
         src="../../../assets/example_patches/SubtractOne/index.html">
 </iframe>
 
