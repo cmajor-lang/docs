@@ -2,7 +2,7 @@
 layout: default
 title: CompuFart
 parent: Examples
-nav_order: 13
+nav_order: 14
 has_children: false
 has_toc: false
 ---

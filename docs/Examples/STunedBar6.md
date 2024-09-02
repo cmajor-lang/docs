@@ -2,7 +2,7 @@
 layout: default
 title: Tuned Bar
 parent: Examples
-nav_order: 12
+nav_order: 13
 has_children: false
 has_toc: false
 ---
