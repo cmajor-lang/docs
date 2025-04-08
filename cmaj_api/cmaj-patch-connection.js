@@ -159,10 +159,11 @@ export class PatchConnection  extends EventListenerList
      */
     addEndpointListener (endpointID, listener, granularity, sendFullAudioData)
     {
-        listener.eventID = "event_" + endpointID + "_" + (Math.floor (Math.random() * 100000000)).toString();
-        this.addEventListener (listener.eventID, listener);
-        this.sendMessageToServer ({ type: "add_endpoint_listener", endpoint: endpointID, replyType:
-                                    listener.eventID, granularity: granularity, fullAudioData: sendFullAudioData });
+        const listenerID = "event_" + endpointID + "_" + (Math.floor (Math.random() * 100000000)).toString();
+        listener["cmaj_endpointListenerID_" + endpointID] = listenerID;
+        this.addEventListener (listenerID, listener);
+        this.sendMessageToServer ({ type: "add_endpoint_listener", endpoint: endpointID, replyType: listenerID,
+                                    granularity: granularity, fullAudioData: sendFullAudioData });
     }
 
     /** Removes a listener that was previously added with addEndpointListener()
@@ -170,8 +171,10 @@ export class PatchConnection  extends EventListenerList
     */
     removeEndpointListener (endpointID, listener)
     {
-        this.removeEventListener (listener.eventID, listener);
-        this.sendMessageToServer ({ type: "remove_endpoint_listener", endpoint: endpointID, replyType: listener.eventID });
+        const listenerID = listener["cmaj_endpointListenerID_" + endpointID];
+        listener["cmaj_endpointListenerID_" + endpointID] = undefined;
+        this.removeEventListener (listenerID, listener);
+        this.sendMessageToServer ({ type: "remove_endpoint_listener", endpoint: endpointID, replyType: listenerID });
     }
 
     /** This will trigger an asynchronous callback to any parameter listeners that are
@@ -204,7 +207,7 @@ export class PatchConnection  extends EventListenerList
     /** This takes a relative path to an asset within the patch bundle, and converts it to a
      *  path relative to the root of the browser that is showing the view.
      *
-     *  You need you use this in your view code to translate your asset URLs to a form that
+     *  You need to use this in your view code to translate your asset URLs to a form that
      *  can be safely used in your view's HTML DOM (e.g. in its CSS). This is needed because the
      *  host's HTTP server (which is delivering your view pages) may have a different '/' root
      *  than the root of your patch (e.g. if a single server is serving multiple patch GUIs).
