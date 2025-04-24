@@ -39,7 +39,7 @@
 }
 
 .specialisations h2:after, .endpoints h2:after, .variables h2:after, .functions h2:after, .structs h2:after, .nodes h2:after, .connections h2:after {
-    content: ""; /* This is necessary for the pseudo element to work. */ 
+    content: ""; /* This is necessary for the pseudo element to work. */
     display: block; /* This will put the pseudo element on its own line. */
     /*margin: 0 auto; /* This will center the border. */
     margin-left: 0pt;
@@ -87,7 +87,7 @@ pre{
 
 .endpoint{
     list-style: none;
-    font-family: var(--code-font); 
+    font-family: var(--code-font);
 }
 
 .li{
@@ -127,7 +127,7 @@ pre{
 
 .function_decl code{
     font-family: var(--code-font);
-    font-size: 11pt; 
+    font-size: 11pt;
     font-style: normal;
     /*white-space: pre;*/
     margin-top: 7pt;
@@ -184,7 +184,7 @@ module {
 .variable{
     font-family: var(--code-font);
     padding: 0;
-    margin: 0 0 .559pt 0;  
+    margin: 0 0 .559pt 0;
 }
 
 .struct .code, .struct_name{
@@ -228,7 +228,7 @@ code .keyword{
 code {
     color:black;
     font-size: 10.5pt;
-    font-family: var(--code-font); 
+    font-family: var(--code-font);
     background-color: #f5f6fa00!important;
 }
 .specialisation code {
@@ -330,7 +330,7 @@ pre{
 
 .endpoint{
     list-style: none;
-    font-family: var(--code-font); 
+    font-family: var(--code-font);
 }
 
 .li{
@@ -370,7 +370,7 @@ pre{
 
 .function_decl code{
     font-family: var(--code-font);
-    font-size: 11pt; 
+    font-size: 11pt;
     font-style: normal;
     /*white-space: pre;*/
     margin-top: 7pt;
@@ -427,7 +427,7 @@ module {
 .variable{
     font-family: var(--code-font);
     padding: 0;
-    margin: 0 0 .559pt 0;  
+    margin: 0 0 .559pt 0;
 }
 
 .struct .code, .struct_name{
@@ -471,7 +471,7 @@ code .keyword{
 code {
     color:black;
     font-size: 10.5pt;
-    font-family: var(--code-font); 
+    font-family: var(--code-font);
     background-color: #f5f6fa00!important;
 }
 
