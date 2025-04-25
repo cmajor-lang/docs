@@ -19,7 +19,7 @@ If you'd like to embed the Cmajor engine in a closed-source product, or to mix i
 
 ### Commercial License terms
 
-The Cmajor commercial license can be [viewed here](./License/Cmajor-license) or [downloaded here](../assets/license/Cmajor-Commercial-License.pdf).
+The Cmajor commercial license can be [viewed here](./Licence/Cmajor-license) or [downloaded here](../assets/license/Cmajor-Commercial-License.pdf).
 
 Our commercial licenses are perpetual licenses to use the current version of the software. When there is a major version upgrade, existing customers can either continue using the old version, or upgrade their license to take advantage of the ongoing changes.
 
