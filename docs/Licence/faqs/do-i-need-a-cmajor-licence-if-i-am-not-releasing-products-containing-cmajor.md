@@ -4,5 +4,5 @@ title: Do I need a Cmajor licence if I am not releasing products containing Cmaj
 permalink: /docs/Licence#do-i-need-a-cmajor-licence-if-i-am-not-releasing-products-containing-cmajor
 parent: FAQs
 grand_parent: Licence
-nav_order: 4
+nav_order: 3
 ---
