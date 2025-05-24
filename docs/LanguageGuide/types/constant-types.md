@@ -4,5 +4,5 @@ title: Constant Types
 permalink: /docs/LanguageReference#constant-types
 parent: Types
 grand_parent: Language Reference
-nav_order: 12
+nav_order: 13
 ---

@@ -4,5 +4,5 @@ title: String Type
 permalink: /docs/LanguageReference#string-type
 parent: Types
 grand_parent: Language Reference
-nav_order: 10
+nav_order: 11
 ---

@@ -4,5 +4,5 @@ title: Vectors
 permalink: /docs/LanguageReference#vectors
 parent: Types
 grand_parent: Language Reference
-nav_order: 8
+nav_order: 9
 ---
