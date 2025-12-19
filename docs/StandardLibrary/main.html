@@ -3363,6 +3363,13 @@ has_toc: false
        </code>
       </div>
      </div>
+     <div class="function" id="getFloatAfterTouchValue"><span class="function_name">getFloatAfterTouchValue</span>
+      <div class="function_decl">
+       <code><span class="code_prim">float32</span><span class="code"> </span><span class="code_ident">getFloatAfterTouchValue</span><span class="code"> </span><span class="code">(</span><span class="code_keyword">const </span><span class="code_ident">
+         <a href="#Message">Message</a></span><span class="code">&amp;</span><span class="code"> </span><span class="code_ident">this</span><span class="code">)</span>
+       </code>
+      </div>
+     </div>
      <div class="function" id="isChannelPressure"><span class="function_name">isChannelPressure</span>
       <div class="function_decl">
        <code><span class="code_prim">bool</span><span class="code"> </span><span class="code_ident">isChannelPressure</span><span class="code"> </span><span class="code">(</span><span class="code_keyword">const </span><span class="code_ident">
@@ -3576,7 +3583,9 @@ has_toc: false
           <a href="#PitchBend">PitchBend</a></span>, <span class="code_ident">
           <a href="#Slide">Slide</a></span>, <span class="code_ident">
           <a href="#Pressure">Pressure</a></span>, <span class="code_ident">
-          <a href="#Control">Control</a></span>)</div>
+          <a href="#Aftertouch">Aftertouch</a></span>, <span class="code_ident">
+          <a href="#Control">Control</a></span>, <span class="code_ident">
+          <a href="#ProgramChange">ProgramChange</a></span>)</div>
        </li>
       </ul>
       <ul>
@@ -3618,7 +3627,9 @@ has_toc: false
           <a href="#PitchBend">PitchBend</a></span>, <span class="code_ident">
           <a href="#Slide">Slide</a></span>, <span class="code_ident">
           <a href="#Pressure">Pressure</a></span>, <span class="code_ident">
-          <a href="#Control">Control</a></span>)</div>
+          <a href="#Aftertouch">Aftertouch</a></span>, <span class="code_ident">
+          <a href="#Control">Control</a></span>, <span class="code_ident">
+          <a href="#ProgramChange">ProgramChange</a></span>)</div>
        </li>
       </ul>
      </div>
@@ -3627,42 +3638,56 @@ has_toc: false
       <div class="function" id="eventIn3"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-          <a href="#NoteOn">NoteOn</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+          <a href="#NoteOff">NoteOff</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
         </code>
        </div>
       </div>
       <div class="function" id="eventIn4"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-          <a href="#NoteOff">NoteOff</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+          <a href="#NoteOn">NoteOn</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
         </code>
        </div>
       </div>
       <div class="function" id="eventIn5"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-          <a href="#PitchBend">PitchBend</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+          <a href="#Aftertouch">Aftertouch</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
         </code>
        </div>
       </div>
       <div class="function" id="eventIn6"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-          <a href="#Pressure">Pressure</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+          <a href="#Control">Control</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
         </code>
        </div>
       </div>
       <div class="function" id="eventIn7"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-          <a href="#Slide">Slide</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+          <a href="#ProgramChange">ProgramChange</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
         </code>
        </div>
       </div>
       <div class="function" id="eventIn8"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
-          <a href="#Control">Control</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+          <a href="#Slide">Slide</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="eventIn9"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#Pressure">Pressure</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
+        </code>
+       </div>
+      </div>
+      <div class="function" id="eventIn10"><span class="function_name">eventIn</span>
+       <div class="function_decl">
+        <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">
+          <a href="#PitchBend">PitchBend</a></span><span class="code"> </span><span class="code_ident">e</span><span class="code">)</span>
         </code>
        </div>
       </div>
@@ -4191,6 +4216,46 @@ has_toc: false
        </table>
       </div>
      </div>
+     <div class="struct" id="Aftertouch"><span class="code">struct </span><span class="struct_name">Aftertouch</span>
+      <div class="comment">This message represents a per note aftertouch event (polyphonic aftertouch)</div>
+      <div class="struct_members">
+       <table class="struct_table">
+        <th>Type</th>
+        <th>Member</th>
+        <th>Comment</th>
+        <tr>
+         <td>
+          <div class="type"></div><span class="code_prim">int32</span>
+          <td>
+           <div class="struct_member_name">channel</div> </td>
+          <div class="comment">
+           <td>This channel ID can be used to associate this event with the earlier NoteOn to which it applies.</td>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <div class="type"></div><span class="code_prim">float32</span>
+          <td>
+           <div class="struct_member_name">pitch</div> </td>
+          <div class="comment">
+           <td>The pitch of the note affected by this aftertouch</td>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <div class="type"></div><span class="code_prim">float32</span>
+          <td>
+           <div class="struct_member_name">pressure</div> </td>
+          <div class="comment">
+           <td>Key pressure in the range 0 to 1</td>
+          </div>
+         </td>
+        </tr>
+       </table>
+      </div>
+     </div>
      <div class="struct" id="PitchBend"><span class="code">struct </span><span class="struct_name">PitchBend</span>
       <div class="struct_members">
        <table class="struct_table">
@@ -4221,6 +4286,7 @@ has_toc: false
       </div>
      </div>
      <div class="struct" id="Pressure"><span class="code">struct </span><span class="struct_name">Pressure</span>
+      <div class="comment">This message represents a per channel pressure event (channel aftertouch)</div>
       <div class="struct_members">
        <table class="struct_table">
         <th>Type</th>
@@ -4312,6 +4378,35 @@ has_toc: false
            <div class="struct_member_name">value</div> </td>
           <div class="comment">
            <td>The normalised value of the controller, between 0 and 1</td>
+          </div>
+         </td>
+        </tr>
+       </table>
+      </div>
+     </div>
+     <div class="struct" id="ProgramChange"><span class="code">struct </span><span class="struct_name">ProgramChange</span>
+      <div class="struct_members">
+       <table class="struct_table">
+        <th>Type</th>
+        <th>Member</th>
+        <th>Comment</th>
+        <tr>
+         <td>
+          <div class="type"></div><span class="code_prim">int32</span>
+          <td>
+           <div class="struct_member_name">channel</div> </td>
+          <div class="comment">
+           <td>The channel affected by this change</td>
+          </div>
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <div class="type"></div><span class="code_prim">int32</span>
+          <td>
+           <div class="struct_member_name">program</div> </td>
+          <div class="comment">
+           <td>The new program selected on this channel</td>
           </div>
          </td>
         </tr>
@@ -5600,37 +5695,37 @@ has_toc: false
      </div>
      <div class="functions">
       <h2>Functions</h2>
-      <div class="function" id="eventIn9"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn11"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOn</span><span class="code"> </span><span class="code_ident">noteOn</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn10"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn12"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">NoteOff</span><span class="code"> </span><span class="code_ident">noteOff</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn11"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn13"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">PitchBend</span><span class="code"> </span><span class="code_ident">bend</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn12"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn14"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Pressure</span><span class="code"> </span><span class="code_ident">pressure</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn13"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn15"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Slide</span><span class="code"> </span><span class="code_ident">slide</span><span class="code">)</span>
         </code>
        </div>
       </div>
-      <div class="function" id="eventIn14"><span class="function_name">eventIn</span>
+      <div class="function" id="eventIn16"><span class="function_name">eventIn</span>
        <div class="function_decl">
         <code><span class="code_keyword">event</span><span class="code"> </span><span class="code_ident">eventIn</span><span class="code"> </span><span class="code">(</span><span class="code_ident">std</span><span class="code">::</span><span class="code_ident">notes</span><span class="code">::</span><span class="code_ident">Control</span><span class="code"> </span><span class="code_ident">control</span><span class="code">)</span>
         </code>
