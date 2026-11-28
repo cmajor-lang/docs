@@ -2,7 +2,7 @@
 layout: default
 title: FilterEQ
 parent: Examples
-nav_order: 10
+nav_order: 17
 has_children: false
 has_toc: false
 ---

@@ -2,7 +2,7 @@
 layout: default
 title: CompuFart
 parent: Examples
-nav_order: 14
+nav_order: 7
 has_children: false
 has_toc: false
 ---
@@ -29,7 +29,7 @@ The provided mono synth, `CompuFartSynth` shows one possible way to construct a 
 * There is currently no guarantee of compatibility or consistency between different versions of the model, synth, or other patches and code. If you wish to preserve a particular sound, it is recommended that you record it and make note of the parameter values and the version and git commit SHA. Of course, you can also fork the code.
 
 
-<a href="https://github.com/alexmfink/compufart" target="_blank">Click here to view the source code.</a>
+<a href="https://github.com/cmajor-lang/cmajor/tree/main/examples/patches/CompuFart" target="_blank">Click here to view the source code.</a>
 
 <iframe style="display: inline-block; width: 100%; height: 32rem; border:none; padding-top: 1rem;"
         src="../../../assets/example_patches/CompuFart/index.html">

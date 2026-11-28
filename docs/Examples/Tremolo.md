@@ -2,7 +2,7 @@
 layout: default
 title: Tremolo
 parent: Examples
-nav_order: 5
+nav_order: 10
 has_children: false
 has_toc: false
 ---

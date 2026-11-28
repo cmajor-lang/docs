@@ -2,7 +2,7 @@
 layout: default
 title: GuitarLSTM
 parent: Examples
-nav_order: 9
+nav_order: 16
 has_children: false
 has_toc: false
 ---

@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Pro-54
+title: Pro54
 parent: Examples
-nav_order: 8
+nav_order: 4
 has_children: false
 has_toc: false
 ---

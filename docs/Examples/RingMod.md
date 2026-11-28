@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Ring Modulator
+title: Ring Mod
 parent: Examples
-nav_order: 6
+nav_order: 11
 has_children: false
 has_toc: false
 ---
@@ -29,7 +29,7 @@ For this demo, we use the simplified ring modulator research from a paper by [Ju
 
 This contains a block diagram and a branch equation we can use to model our example.
 
-![Block Diagram for the Ring Modulator](blockDiagram.png)
+![Block Diagram for the Ring Modulator](../../../assets/ExampleSource/RingMod/blockDiagram.png)
 
 We use a sine wave as the modulating signal (Vin) and audioIn from the user (Vc). Two distinct diode blocks are created, each utilising a phase invert signal that is combined with the distorted signal. Both diode blocks are then summed back together to complete the ring modulation effect.
 
